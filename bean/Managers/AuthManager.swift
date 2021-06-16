@@ -14,16 +14,13 @@ class AuthManager: NSObject{
     let firebaseAuth = Auth.auth()
     var user: User?
     
-    override init() {
-        super.init()
-        loginStateChangeListener()
-    }
-    
     func isLogin() -> Observable<Bool> {
-        return Observable.create({ seal in
-            self.firebaseAuth.addStateDidChangeListener { (auth, user) in
-                if(self.user != user) {
-                    self.user = user
+        return Observable.create({ [weak self] seal in
+            self?.user = self?.firebaseAuth.currentUser
+            seal.onNext(self?.user != nil)
+            self?.firebaseAuth.addStateDidChangeListener { (auth, user) in
+                if(self?.user != user) {
+                    self?.user = user
                     seal.onNext(user != nil)
                 }
             }
@@ -45,9 +42,5 @@ class AuthManager: NSObject{
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-    }
-    
-    private func loginStateChangeListener() {
-        
     }
 }

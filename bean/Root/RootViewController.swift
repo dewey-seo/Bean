@@ -16,8 +16,11 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         AuthManager.shared.isLogin()
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: switchViewController)
             .disposed(by: disposeBag)
     }
