@@ -9,38 +9,49 @@ import UIKit
 import RxSwift
 import FirebaseAuth
 
-class AuthManager: NSObject{
+class AuthManager: NSObject {
     static let shared = AuthManager()
     let firebaseAuth = Auth.auth()
-    var user: User?
-    
-    func isLogin() -> Observable<Bool> {
-        return Observable.create({ [weak self] seal in
-            self?.user = self?.firebaseAuth.currentUser
-            seal.onNext(self?.user != nil)
-            self?.firebaseAuth.addStateDidChangeListener { (auth, user) in
-                if(self?.user != user) {
-                    self?.user = user
-                    seal.onNext(user != nil)
-                }
-            }
-            return Disposables.create()
-        })
+    var user = BehaviorSubject<User?>(value: Auth.auth().currentUser)
+    var userStateHandler: AuthStateDidChangeListenerHandle?
+
+    override init() {
+        super.init()
+        userStateHandler = firebaseAuth.addStateDidChangeListener { [weak self] auth, user in
+            self?.userStateChangeListener(auth, user)
+        }
     }
-    
+
+    deinit {
+        firebaseAuth.removeStateDidChangeListener(userStateHandler!)
+    }
+
+    func userStateChangeListener(_ auth: Auth, _ user: User?) {
+        let currentUser = try? self.user.value()
+        if currentUser != user {
+            self.user.onNext(user)
+        }
+    }
+
+    func isLogin() -> Observable<Bool> {
+        return user.map { user in
+            return user != nil
+        }
+    }
+
     func signIn(with credential: AuthCredential) {
-        firebaseAuth.signIn(with: credential) { (authResult, error) in
-            if (error != nil) {
+        firebaseAuth.signIn(with: credential) { (_, error) in
+            if error != nil {
                 return
             }
         }
     }
-    
+
     func signOut() {
         do {
-            try firebaseAuth.signOut()
+          try firebaseAuth.signOut()
         } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
+          print("Error signing out: %@", signOutError)
         }
     }
 }

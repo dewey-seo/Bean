@@ -14,15 +14,21 @@ class RootViewController: UIViewController {
     var loginVC: LoginViewController?
     var mainVC: MainViewController?
     
+    var isMounted = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        AuthManager.shared.isLogin()
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: switchViewController)
-            .disposed(by: disposeBag)
+        if(self.isMounted == false) {
+            AuthManager.shared.isLogin()
+                .observe(on: MainScheduler.instance)
+                .subscribe(onNext: switchViewController)
+                .disposed(by: disposeBag)
+        }
+        
+        self.isMounted = true
     }
     
     func switchViewController(_ isLogin: Bool) {
@@ -43,7 +49,6 @@ class RootViewController: UIViewController {
     func showMainViewController() {
         loginVC?.dismiss(animated: true, completion: nil)
         mainVC?.dismiss(animated: true, completion: nil)
-        
         mainVC = MainViewController(nibName: "MainViewController", bundle: nil)
         mainVC?.modalPresentationStyle = .fullScreen
         if let mainVC = mainVC {
