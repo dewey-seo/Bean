@@ -20,16 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().delegate = SignInManager.shared
         
         let rootVC = RootViewController(nibName: "RootViewController", bundle: nil)
+        let navC = UINavigationController.init(rootViewController: rootVC)
+        navC.setNavigationBarHidden(true, animated: false)
         
         window.bounds = UIScreen.main.bounds
-        window.rootViewController = rootVC
+        window.rootViewController = navC
         window.makeKeyAndVisible()
-        
         return true
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
+        
+        if(GIDSignIn.sharedInstance().handle(url)) {
+            return true
+        }
+        
+        return true
     }
 }
 

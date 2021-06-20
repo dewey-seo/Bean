@@ -41,8 +41,9 @@ class RootViewController: UIViewController {
         
         loginVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
         if let loginVC = loginVC {
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
+            let navC = UINavigationController.init(rootViewController: loginVC)
+            navC.modalPresentationStyle = .fullScreen
+            self.present(navC, animated: true, completion: nil)
         }
     }
     
@@ -50,10 +51,10 @@ class RootViewController: UIViewController {
         loginVC?.dismiss(animated: true, completion: nil)
         mainVC?.dismiss(animated: true, completion: nil)
         mainVC = MainViewController(nibName: "MainViewController", bundle: nil)
-        mainVC?.modalPresentationStyle = .fullScreen
         if let mainVC = mainVC {
-            mainVC.modalPresentationStyle = .fullScreen
-            self.present(mainVC, animated: true, completion: nil)
+            let navC = UINavigationController.init(rootViewController: mainVC)
+            navC.modalPresentationStyle = .fullScreen
+            self.present(navC, animated: true, completion: nil)
         }
     }
 }

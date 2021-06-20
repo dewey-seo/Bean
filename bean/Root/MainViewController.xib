@@ -18,24 +18,74 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-bI-0D1">
-                    <rect key="frame" x="181" y="433" width="52" height="30"/>
-                    <state key="normal" title="Log out"/>
-                    <connections>
-                        <action selector="onPressLogout:" destination="-1" eventType="touchUpInside" id="QDK-qP-8yn"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AC3-UE-XlN">
+                    <rect key="frame" x="60" y="338" width="294" height="220"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-bI-0D1">
+                            <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="byR-kT-L73"/>
+                            </constraints>
+                            <state key="normal" title="Log out">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressLogout:" destination="-1" eventType="touchUpInside" id="QDK-qP-8yn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5s-K6-grb">
+                            <rect key="frame" x="0.0" y="80" width="294" height="60"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="d4m-6Y-WgP"/>
+                            </constraints>
+                            <state key="normal" title="Spotify">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressSpotify:" destination="-1" eventType="touchUpInside" id="s4K-Ed-aJm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPM-1Z-yq0">
+                            <rect key="frame" x="0.0" y="160" width="294" height="60"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="gxo-U0-Hmx"/>
+                            </constraints>
+                            <state key="normal" title="Weather">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressSpotify:" destination="-1" eventType="touchUpInside" id="npG-oW-9p0"/>
+                                <action selector="onPressWeather:" destination="-1" eventType="touchUpInside" id="ORG-eA-i74"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="aXg-bI-0D1" secondAttribute="trailing" id="4fv-mF-eaV"/>
+                        <constraint firstAttribute="trailing" secondItem="BPM-1Z-yq0" secondAttribute="trailing" id="Aas-S0-go5"/>
+                        <constraint firstAttribute="trailing" secondItem="U5s-K6-grb" secondAttribute="trailing" id="HqQ-yS-jZJ"/>
+                        <constraint firstItem="aXg-bI-0D1" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="W2o-ST-jFP"/>
+                        <constraint firstItem="U5s-K6-grb" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="htF-MU-BxY"/>
+                        <constraint firstItem="BPM-1Z-yq0" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="oGv-sB-r81"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="aXg-bI-0D1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P0b-GV-KAu"/>
-                <constraint firstItem="aXg-bI-0D1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="PmT-Wx-xrB"/>
+                <constraint firstItem="AC3-UE-XlN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-60" id="99w-J1-fy4"/>
+                <constraint firstItem="AC3-UE-XlN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="IKr-8g-yWi"/>
+                <constraint firstItem="AC3-UE-XlN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="k9b-jH-8x7"/>
             </constraints>
-            <point key="canvasLocation" x="-41" y="-21"/>
+            <point key="canvasLocation" x="-42.028985507246382" y="-21.428571428571427"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

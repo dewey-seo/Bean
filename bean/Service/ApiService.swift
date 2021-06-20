@@ -1,0 +1,39 @@
+//
+//  ApiRequest.swift
+//  bean
+//
+//  Created by dewey seo on 19/06/2021.
+//
+
+import Alamofire
+import RxSwift
+
+class ApiService {
+    static var shared: ApiService = ApiService()
+    static func request(_ router: ApiRouter) -> Single<Any> {
+        return Single<Any>.create { (single) in
+            shared.session
+                .request(router)
+                .validate(statusCode: 200..<401)
+                .responseJSON { response in
+                    print("=-=-=-=-=-=-=-=- response, \(response)")
+                    switch response.result {
+                    case .success(let json):
+                        single(.success(json))
+                    case .failure(let err):
+                        single(.failure(err))
+                    }
+                }
+            return Disposables.create()
+        }
+        
+    }
+    
+    let interceptors = Interceptor(interceptors: [BaseInterceptor()])
+    let monitors: [EventMonitor] = [ApiLogger()]
+    let session: Session
+    
+    private init() {
+        session = Session(interceptor: interceptors, eventMonitors: monitors)
+    }
+}

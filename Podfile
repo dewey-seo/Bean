@@ -12,6 +12,10 @@ target 'bean' do
   
   pod 'GoogleSignIn'
   
+  pod 'Alamofire', '~> 5.4'
+  pod 'ObjectMapper', '~> 3.5'
+  pod 'Kingfisher'
+  
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
 end
