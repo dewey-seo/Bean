@@ -18,8 +18,6 @@ extension WeatherApiRouter: ApiRouter {
         switch self {
         case .getCurrentWeather:
             return "http://api.openweathermap.org/data/2.5/"
-        default:
-            return ""
         }
     }
     
@@ -27,8 +25,6 @@ extension WeatherApiRouter: ApiRouter {
         switch self {
         case .getCurrentWeather:
             return "weather"
-        default:
-            return ""
         }
     }
     
@@ -36,8 +32,6 @@ extension WeatherApiRouter: ApiRouter {
         switch self {
         case .getCurrentWeather:
             return .get
-        default:
-            return .post
         }
     }
     
@@ -74,3 +68,5 @@ extension WeatherApiRouter: ApiRouter {
     }
     
 }
+
+

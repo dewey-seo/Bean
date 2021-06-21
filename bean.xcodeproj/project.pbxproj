@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CDF975ADC8ED477EE3B78C7 /* Pods_bean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */; };
+		580A0DAB268098AE00EF39FE /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580A0DAA268098AE00EF39FE /* ApiResponse.swift */; };
 		5825559F2679D23E00416A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825559D2679D23E00416A6C /* MainViewController.swift */; };
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		580A0DAA268098AE00EF39FE /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		5825559D2679D23E00416A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				5859E312267DDA0A0080BEDC /* WeatherModel.swift */,
+				580A0DAA268098AE00EF39FE /* ApiResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				5825559F2679D23E00416A6C /* MainViewController.swift in Sources */,
 				5859E320267E3EC80080BEDC /* ApiLogger.swift in Sources */,
 				5859E31E267E35C70080BEDC /* BaseInterceptor.swift in Sources */,
+				580A0DAB268098AE00EF39FE /* ApiResponse.swift in Sources */,
 				585DFF9626791EC800CADE6B /* RootViewController.swift in Sources */,
 				582D46622679925300A1B908 /* AuthManager.swift in Sources */,
 				5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */,

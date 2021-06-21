@@ -10,16 +10,15 @@ import RxSwift
 
 class ApiService {
     static var shared: ApiService = ApiService()
-    static func request(_ router: ApiRouter) -> Single<Any> {
-        return Single<Any>.create { (single) in
+    static func request<T: Decodable>(_ router: ApiRouter) -> Single<ApiResponse<T>> {
+        return Single.create { (single) in
             shared.session
                 .request(router)
                 .validate(statusCode: 200..<401)
-                .responseJSON { response in
-                    print("=-=-=-=-=-=-=-=- response, \(response)")
+                .responseDecodable(of: T.self) { response in
                     switch response.result {
-                    case .success(let json):
-                        single(.success(json))
+                    case .success(let model):
+                        single(.success(ApiResponse<T>(model)))
                     case .failure(let err):
                         single(.failure(err))
                     }

@@ -1,5 +1,5 @@
 //
-//  WeatherApiResponse.swift
+//  WeatherModel.swift
 //  bean
 //
 //  Created by dewey seo on 19/06/2021.
@@ -49,21 +49,17 @@
 //    let deg: Int
 //}
 //
-//struct WeatherModel: Mappable {
-//
-//    mutating func mapping(map: Map) {
-//    }
-//    
-//    let id: String?
+struct WeatherModel: Decodable {
+    var base: String?
 //    let coordinate: WeatherCoordinate?
 //    let weather: WeatherInfo?
-////    let detailInfo: WeatherDetail
-////    let wind: WeatherWind
-//    
+//    let detailInfo: WeatherDetail
+//    let wind: WeatherWind
+//
 //    init?(map: Map) {
 //        id      =  map["id"]
 //        coordinate = WeatherCoordinate(map: map["coord"])
 //        weather = WeatherInfo(map: map["weather"])
 //    }
-//}
-//
+}
+
