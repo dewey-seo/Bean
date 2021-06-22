@@ -40,24 +40,15 @@ class WeatherViewController: UIViewController {
     }
     
     func getWeather(_ lat: String, _ lon: String) {
-        ApiService.request<WeatherModel>(WeatherApiRouter.getCurrentWeather(lat, lon))
-        //            .subscribe { [weak self] response in
-        //                if let res = response as? NSDictionary {
-        //                    if let weatherArray = res.object(forKey: "weather") as? Array<NSDictionary> {
-        //                        if let weather = weatherArray.first {
-        //                            if let title = weather.object(forKey: "main") as? String,
-        //                               let description = weather.object(forKey: "description") as? String,
-        //                               let icon = weather.object(forKey: "icon") as? String
-        //                            {
-        //                                self?.displayWeather(title, description, icon)
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //            } onFailure: { err in
-        //
-        //            }
-        //            .disposed(by: disposeBag)
+        WeatherApiRouter.getCurrentWeather(lat, lon)
+            .request(WeatherModel.self)
+            .subscribe { response in
+                if let weather = response.data {
+                    print(weather)
+                }
+            } onFailure: { error in
+            }
+            .disposed(by: disposeBag)
     }
     
     func displayWeather(_ title: String, _ description:String , _ icon: String) {

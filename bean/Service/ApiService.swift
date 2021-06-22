@@ -10,10 +10,18 @@ import RxSwift
 
 class ApiService {
     static var shared: ApiService = ApiService()
-    static func request<T: Decodable>(_ router: ApiRouter) -> Single<ApiResponse<T>> {
+    
+    let interceptors = Interceptor(interceptors: [BaseInterceptor()])
+    let monitors: [EventMonitor] = [ApiLogger()]
+    let session: Session
+    
+    private init() {
+        session = Session(interceptor: interceptors, eventMonitors: monitors)
+    }
+    
+    func request<T: Decodable>(_ typeOf: T.Type, _ router: ApiRouter) -> Single<ApiResponse<T>>{
         return Single.create { (single) in
-            shared.session
-                .request(router)
+            ApiService.shared.session.request(router)
                 .validate(statusCode: 200..<401)
                 .responseDecodable(of: T.self) { response in
                     switch response.result {
@@ -25,14 +33,5 @@ class ApiService {
                 }
             return Disposables.create()
         }
-        
-    }
-    
-    let interceptors = Interceptor(interceptors: [BaseInterceptor()])
-    let monitors: [EventMonitor] = [ApiLogger()]
-    let session: Session
-    
-    private init() {
-        session = Session(interceptor: interceptors, eventMonitors: monitors)
     }
 }

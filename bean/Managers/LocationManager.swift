@@ -36,6 +36,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             return
         }
         completion?(location)
+        completion = nil
         manager.stopUpdatingLocation()
     }
     

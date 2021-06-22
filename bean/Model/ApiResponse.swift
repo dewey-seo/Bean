@@ -11,5 +11,6 @@ class ApiResponse<T: Decodable> {
     var data: T?
     
     init(_ data: T? = nil) {
+        self.data = data
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import RxSwift
 
 typealias tParameters = [String: String]
 protocol ApiRouter: URLRequestConvertible {
@@ -50,5 +51,9 @@ extension ApiRouter {
         }
         
         return request
+    }
+    
+    func request<T: Decodable>(_ typeOf: T.Type) -> Single<ApiResponse<T>> {
+        return ApiService.shared.request(typeOf, self)
     }
 }
