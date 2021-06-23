@@ -41,20 +41,19 @@ class WeatherViewController: UIViewController {
     
     func getWeather(_ lat: String, _ lon: String) {
         WeatherApiRouter.getCurrentWeather(lat, lon)
-            .request(WeatherModel.self)
-            .subscribe { response in
+            .request(Weather.self)
+            .subscribe { [weak self] response in
                 if let weather = response.data {
-                    print(weather)
+                    self?.displayWeather(weather)
                 }
             } onFailure: { error in
             }
             .disposed(by: disposeBag)
     }
     
-    func displayWeather(_ title: String, _ description:String , _ icon: String) {
-        titleLabel.text = title
-        descriptionLabel.text = description
-        let url = "http://openweathermap.org/img/wn/\(icon)@2x.png"
-        try? weatherIcon.kf.setImage(with: url.asURL())
+    func displayWeather(_ weather: Weather) {
+        titleLabel.text = weather.display.first?.title ?? ""
+        descriptionLabel.text = weather.display.first?.description ?? ""
+        let _ = try? weatherIcon.kf.setImage(with: weather.weatherIcon.asURL())
     }
 }

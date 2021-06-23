@@ -28,6 +28,7 @@ class ApiService {
                     case .success(let model):
                         single(.success(ApiResponse<T>(model)))
                     case .failure(let err):
+                        print("err: \(err)")
                         single(.failure(err))
                     }
                 }

@@ -8,13 +8,12 @@
 import Alamofire
 import RxSwift
 
-typealias tParameters = [String: String]
 protocol ApiRouter: URLRequestConvertible {
     var baseUrlString: String { get }
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: HTTPHeaders? { get }
-    var parameters: tParameters? { get }
+    var parameters: Parameters? { get }
 }
 
 extension ApiRouter {
@@ -31,7 +30,7 @@ extension ApiRouter {
         return components?.string
     }
     
-    func body(_ parameters: tParameters) throws -> Data? {
+    func body(_ parameters: Parameters) throws -> Data? {
         return try? JSONSerialization.data(withJSONObject: body, options: [])
     }
     

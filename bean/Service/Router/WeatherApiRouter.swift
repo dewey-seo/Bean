@@ -39,7 +39,7 @@ extension WeatherApiRouter: ApiRouter {
         return nil
     }
     
-    var parameters: tParameters? {
+    var parameters: Parameters? {
         var parameters = ["appid": KeyManager.shared.getWeatherApiId()]
         switch self {
         case .getCurrentWeather(let lat, let lon):
@@ -51,20 +51,8 @@ extension WeatherApiRouter: ApiRouter {
     
     func asURLRequest() throws -> URLRequest {
         let url = try baseUrlString.asURL().appendingPathComponent(path)
-        var request = try URLRequest(url: url, method: method, headers: headers)
-        
-        if let params = parameters, params.count > 0 {
-            switch method {
-            case .get:
-                request = try URLEncodedFormParameterEncoder().encode(params, into: request)
-            case .post:
-                request = try JSONParameterEncoder().encode(params, into: request)
-            default:
-                break
-            }
-        }
-        
-        return request
+        let request = try URLRequest(url: url, method: method, headers: headers)
+        return try URLEncoding.default.encode(request, with: parameters)
     }
     
 }
