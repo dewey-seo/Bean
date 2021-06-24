@@ -213,6 +213,8 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - Alamofire (5.4.3)
+  - AlamofireNetworkActivityLogger (3.4.0):
+    - Alamofire (~> 5.4.0)
   - AppAuth (1.4.0):
     - AppAuth/Core (= 1.4.0)
     - AppAuth/ExternalUserAgent (= 1.4.0)
@@ -356,6 +358,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - AlamofireNetworkActivityLogger (~> 3.4)
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
@@ -369,6 +372,7 @@ SPEC REPOS:
   trunk:
     - abseil
     - Alamofire
+    - AlamofireNetworkActivityLogger
     - AppAuth
     - BoringSSL-GRPC
     - Firebase
@@ -398,6 +402,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AlamofireNetworkActivityLogger: 162ab8aee00e6267a4304d7cc134e13ccfe3bcc5
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: fffddd0bab8677d07376538365faa93ff3889b39
@@ -424,6 +429,6 @@ SPEC CHECKSUMS:
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: 2b2446f62ba97a2cfc12f29c7576f6922b943a7a
+PODFILE CHECKSUM: 0d9e41d5c91265adbcc840ca00e216afb610bf9e
 
 COCOAPODS: 1.10.1

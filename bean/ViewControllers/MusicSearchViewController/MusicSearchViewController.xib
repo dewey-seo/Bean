@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MusicSearchViewController" customModule="bean" customModuleProvider="target">
             <connections>
+                <outlet property="searchTextField" destination="yU4-qk-lF9" id="NkS-rF-I7s"/>
+                <outlet property="tableView" destination="nfV-vD-IYd" id="u8U-q8-B2j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,15 +49,23 @@
                         <constraint firstAttribute="bottom" secondItem="yU4-qk-lF9" secondAttribute="bottom" id="yMb-3a-idI"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfV-vD-IYd">
+                    <rect key="frame" x="0.0" y="99" width="414" height="763"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="hxt-Fd-7tk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0Qh-wv-0Tq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nfV-vD-IYd" secondAttribute="bottom" id="2cB-KZ-nle"/>
                 <constraint firstItem="hxt-Fd-7tk" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="45e-HO-fBm"/>
                 <constraint firstItem="hxt-Fd-7tk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BA9-Wq-z3v"/>
+                <constraint firstItem="nfV-vD-IYd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="D8f-O6-pAe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nfV-vD-IYd" secondAttribute="trailing" id="ZJh-et-tLc"/>
                 <constraint firstItem="hxt-Fd-7tk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Zdf-CH-bwh"/>
                 <constraint firstItem="hxt-Fd-7tk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cVo-YB-3rM"/>
+                <constraint firstItem="nfV-vD-IYd" firstAttribute="top" secondItem="hxt-Fd-7tk" secondAttribute="bottom" id="oGh-1s-wMq"/>
             </constraints>
             <point key="canvasLocation" x="-33.333333333333336" y="-21.428571428571427"/>
         </view>

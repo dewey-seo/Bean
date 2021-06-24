@@ -42,12 +42,13 @@ class WeatherViewController: UIViewController {
     func getWeather(_ lat: String, _ lon: String) {
         WeatherApiRouter.getCurrentWeather(lat, lon)
             .request(Weather.self)
-            .subscribe { [weak self] response in
+            .subscribe(onSuccess: { [weak self] response in
                 if let weather = response.data {
                     self?.displayWeather(weather)
                 }
-            } onFailure: { error in
-            }
+            }, onFailure: { error in
+                
+            })
             .disposed(by: disposeBag)
     }
     

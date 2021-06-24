@@ -35,6 +35,10 @@
 		585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF992679263E00CADE6B /* SignInManager.swift */; };
 		585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF9B267928B300CADE6B /* LoginViewController.swift */; };
 		585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF9C267928B300CADE6B /* LoginViewController.xib */; };
+		58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803B2684452900E75801 /* MusicApiRouter.swift */; };
+		58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */; };
+		58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */; };
+		58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		585DFF992679263E00CADE6B /* SignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
 		585DFF9B267928B300CADE6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		585DFF9C267928B300CADE6B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		58C2803B2684452900E75801 /* MusicApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApiRouter.swift; sourceTree = "<group>"; };
+		58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultModel.swift; sourceTree = "<group>"; };
+		58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultItemCell.swift; sourceTree = "<group>"; };
+		58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchResultItemCell.xib; sourceTree = "<group>"; };
 		7F55D6943F7C44B36893FD55 /* Pods-bean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bean.release.xcconfig"; path = "Target Support Files/Pods-bean/Pods-bean.release.xcconfig"; sourceTree = "<group>"; };
 		FAA2F8C4177623A6B5C73394 /* Pods-bean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bean.debug.xcconfig"; path = "Target Support Files/Pods-bean/Pods-bean.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +110,7 @@
 			children = (
 				5859E312267DDA0A0080BEDC /* WeatherModel.swift */,
 				580A0DAA268098AE00EF39FE /* ApiResponse.swift */,
+				58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,8 +125,7 @@
 		5859E307267DAD500080BEDC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5859E302267DAD330080BEDC /* MusicSearchViewController.swift */,
-				5859E303267DAD330080BEDC /* MusicSearchViewController.xib */,
+				58C2803F2684646200E75801 /* MusicSearchViewController */,
 				5859E328267F1EA60080BEDC /* WeatherViewController.swift */,
 				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
 			);
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5859E318267E254A0080BEDC /* WeatherApiRouter.swift */,
+				58C2803B2684452900E75801 /* MusicApiRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -153,6 +162,7 @@
 		585DFF7A2679189500CADE6B /* bean */ = {
 			isa = PBXGroup;
 			children = (
+				58C280402684647F00E75801 /* Views */,
 				5859E307267DAD500080BEDC /* ViewControllers */,
 				5859E306267DAD3E0080BEDC /* Tabs */,
 				5859E2FD267DA8350080BEDC /* Model */,
@@ -191,6 +201,32 @@
 				5859E324267EF8800080BEDC /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		58C2803F2684646200E75801 /* MusicSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58C280412684649900E75801 /* Cells */,
+				5859E302267DAD330080BEDC /* MusicSearchViewController.swift */,
+				5859E303267DAD330080BEDC /* MusicSearchViewController.xib */,
+			);
+			path = MusicSearchViewController;
+			sourceTree = "<group>";
+		};
+		58C280402684647F00E75801 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		58C280412684649900E75801 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */,
+				58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7585B0275D2E68EC34982204 /* Frameworks */ = {
@@ -274,6 +310,7 @@
 				585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */,
 				582555A02679D23E00416A6C /* MainViewController.xib in Resources */,
 				585DFF882679189600CADE6B /* LaunchScreen.storyboard in Resources */,
+				58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */,
 				585DFF9026791B9D00CADE6B /* GoogleService-Info.plist in Resources */,
 				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
 				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
@@ -352,7 +389,10 @@
 				5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */,
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				5859E325267EF8800080BEDC /* LocationManager.swift in Sources */,
+				58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */,
+				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
 				585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */,
+				58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */,
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
 				5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */,
 				585DFF7C2679189500CADE6B /* AppDelegate.swift in Sources */,

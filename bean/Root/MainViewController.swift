@@ -19,8 +19,8 @@ class MainViewController: UIViewController {
         AuthManager.shared.signOut()
     }
     @IBAction func onPressSpotify(_ sender: Any) {
-        
-        
+        let musicVC = MusicSearchViewController.init(nibName: "MusicSearchViewController", bundle: nil)
+        navigationController?.pushViewController(musicVC, animated: true)
     }
     @IBAction func onPressWeather(_ sender: Any) {
         let weatherVC = WeatherViewController.init(nibName: "WeatherViewController", bundle: nil)

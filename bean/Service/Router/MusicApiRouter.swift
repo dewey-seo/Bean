@@ -1,36 +1,36 @@
 //
-//  WeatherApiRequestType.swift
+//  MusicApiRouter.swift
 //  bean
 //
-//  Created by dewey seo on 19/06/2021.
+//  Created by dewey seo on 24/06/2021.
 //
 
 import Foundation
 import Alamofire
 import CoreLocation
 
-enum WeatherApiRouter {
-    case getCurrentWeather(_ lat: String, _ lon: String)
+enum MusicApiRouter {
+    case searchMusic(_ keyword: String)
 }
 
-extension WeatherApiRouter: ApiRouter {
+extension MusicApiRouter: ApiRouter {
     var baseUrlString: String {
         switch self {
-        case .getCurrentWeather:
-            return "http://api.openweathermap.org/data/2.5/"
+        case .searchMusic:
+            return "https://itunes.apple.com/"
         }
     }
     
     var path: String {
         switch self {
-        case .getCurrentWeather:
-            return "weather"
+        case .searchMusic:
+            return "search"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getCurrentWeather:
+        case .searchMusic:
             return .get
         }
     }
@@ -40,11 +40,12 @@ extension WeatherApiRouter: ApiRouter {
     }
     
     var parameters: Parameters? {
-        var parameters = ["appid": KeyManager.shared.getWeatherApiId()]
+        var parameters = Parameters()
         switch self {
-        case .getCurrentWeather(let lat, let lon):
-            parameters["lat"] = lat
-            parameters["lon"] = lon
+        case .searchMusic(let keyword):
+            parameters["attribute"] = "songTerm"
+            parameters["limit"] = 50
+            parameters["term"] = keyword
         }
         return parameters
     }
@@ -54,6 +55,8 @@ extension WeatherApiRouter: ApiRouter {
         let request = try URLRequest(url: url, method: method, headers: headers)
         return try URLEncoding.default.encode(request, with: parameters)
     }
+
 }
+
 
 

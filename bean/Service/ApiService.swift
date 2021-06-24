@@ -7,6 +7,7 @@
 
 import Alamofire
 import RxSwift
+import AlamofireNetworkActivityLogger
 
 class ApiService {
     static var shared: ApiService = ApiService()
@@ -16,6 +17,11 @@ class ApiService {
     let session: Session
     
     private init() {
+        #if DEBUG
+        NetworkActivityLogger.shared.level = .error
+        NetworkActivityLogger.shared.startLogging()
+        #endif
+        
         session = Session(interceptor: interceptors, eventMonitors: monitors)
     }
     
