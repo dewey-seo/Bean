@@ -55,7 +55,6 @@ extension MusicApiRouter: ApiRouter {
         let request = try URLRequest(url: url, method: method, headers: headers)
         return try URLEncoding.default.encode(request, with: parameters)
     }
-
 }
 
 

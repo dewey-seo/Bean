@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         let musicVC = MusicSearchViewController.init(nibName: "MusicSearchViewController", bundle: nil)
         navigationController?.pushViewController(musicVC, animated: true)
     }
+    
     @IBAction func onPressWeather(_ sender: Any) {
         let weatherVC = WeatherViewController.init(nibName: "WeatherViewController", bundle: nil)
         navigationController?.pushViewController(weatherVC, animated: true)

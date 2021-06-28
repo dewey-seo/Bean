@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CDF975ADC8ED477EE3B78C7 /* Pods_bean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */; };
+		5806F7A626857CC7001117C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A526857CC7001117C6 /* UserModel.swift */; };
+		5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A826857DB8001117C6 /* FirebaseService.swift */; };
 		580A0DAB268098AE00EF39FE /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580A0DAA268098AE00EF39FE /* ApiResponse.swift */; };
 		5825559F2679D23E00416A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825559D2679D23E00416A6C /* MainViewController.swift */; };
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
@@ -35,6 +37,9 @@
 		585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF992679263E00CADE6B /* SignInManager.swift */; };
 		585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF9B267928B300CADE6B /* LoginViewController.swift */; };
 		585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF9C267928B300CADE6B /* LoginViewController.xib */; };
+		5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5897DABF26882AE300F288F4 /* SignUpViewController.swift */; };
+		5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5897DAC026882AE300F288F4 /* SignUpViewController.xib */; };
+		589C4D912686115600E7A019 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C4D902686115600E7A019 /* UserService.swift */; };
 		58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803B2684452900E75801 /* MusicApiRouter.swift */; };
 		58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */; };
 		58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */; };
@@ -43,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5806F7A526857CC7001117C6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5806F7A826857DB8001117C6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		580A0DAA268098AE00EF39FE /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		5825559D2679D23E00416A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -72,6 +79,9 @@
 		585DFF992679263E00CADE6B /* SignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
 		585DFF9B267928B300CADE6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		585DFF9C267928B300CADE6B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5897DABF26882AE300F288F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5897DAC026882AE300F288F4 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		589C4D902686115600E7A019 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		58C2803B2684452900E75801 /* MusicApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApiRouter.swift; sourceTree = "<group>"; };
 		58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultModel.swift; sourceTree = "<group>"; };
 		58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultItemCell.swift; sourceTree = "<group>"; };
@@ -93,9 +103,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5806F7A726857D49001117C6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5806F7A826857DB8001117C6 /* FirebaseService.swift */,
+				589C4D902686115600E7A019 /* UserService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		5859E2F4267DA0BE0080BEDC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5806F7A726857D49001117C6 /* Firebase */,
 				5859E31C267E2E440080BEDC /* Router */,
 				5859E2F5267DA27C0080BEDC /* ApiRouter.swift */,
 				5859E314267E219B0080BEDC /* ApiService.swift */,
@@ -111,6 +131,7 @@
 				5859E312267DDA0A0080BEDC /* WeatherModel.swift */,
 				580A0DAA268098AE00EF39FE /* ApiResponse.swift */,
 				58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */,
+				5806F7A526857CC7001117C6 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +209,8 @@
 				585DFF9C267928B300CADE6B /* LoginViewController.xib */,
 				5825559D2679D23E00416A6C /* MainViewController.swift */,
 				5825559E2679D23E00416A6C /* MainViewController.xib */,
+				5897DABF26882AE300F288F4 /* SignUpViewController.swift */,
+				5897DAC026882AE300F288F4 /* SignUpViewController.xib */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -312,6 +335,7 @@
 				585DFF882679189600CADE6B /* LaunchScreen.storyboard in Resources */,
 				58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */,
 				585DFF9026791B9D00CADE6B /* GoogleService-Info.plist in Resources */,
+				5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */,
 				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
 				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
 				585DFF9726791EC800CADE6B /* RootViewController.xib in Resources */,
@@ -387,10 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */,
+				5806F7A626857CC7001117C6 /* UserModel.swift in Sources */,
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				5859E325267EF8800080BEDC /* LocationManager.swift in Sources */,
+				5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */,
 				58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */,
 				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
+				589C4D912686115600E7A019 /* UserService.swift in Sources */,
 				585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */,
 				58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */,
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
@@ -401,6 +428,7 @@
 				5859E31E267E35C70080BEDC /* BaseInterceptor.swift in Sources */,
 				580A0DAB268098AE00EF39FE /* ApiResponse.swift in Sources */,
 				585DFF9626791EC800CADE6B /* RootViewController.swift in Sources */,
+				5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */,
 				582D46622679925300A1B908 /* AuthManager.swift in Sources */,
 				5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */,
 				5859E31B267E29620080BEDC /* KeyManager.swift in Sources */,
@@ -474,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -529,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -545,7 +573,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D4Z53MQAF2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -558,6 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hibiscus.bean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Bean provisioning";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -569,7 +599,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D4Z53MQAF2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -582,6 +613,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hibiscus.bean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Bean provisioning";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

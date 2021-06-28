@@ -13,8 +13,6 @@ struct Music: Codable {
     var trackName: String
     var artistName: String
     var collectionName: String
-//    var censoredName: String
-//    var viewURL: String
     var previewUrl: String
     var artistId: Int
     var collectionId: Int
