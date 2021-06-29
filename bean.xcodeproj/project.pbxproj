@@ -15,7 +15,6 @@
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
 		5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E2F5267DA27C0080BEDC /* ApiRouter.swift */; };
-		5859E301267DAA600080BEDC /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5859E300267DAA600080BEDC /* SpotifyiOS.framework */; };
 		5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E302267DAD330080BEDC /* MusicSearchViewController.swift */; };
 		5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5859E303267DAD330080BEDC /* MusicSearchViewController.xib */; };
 		5859E30D267DD8350080BEDC /* keys-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5859E30C267DD8350080BEDC /* keys-Info.plist */; };
@@ -55,7 +54,6 @@
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5859E2F5267DA27C0080BEDC /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
-		5859E300267DAA600080BEDC /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		5859E302267DAD330080BEDC /* MusicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		5859E303267DAD330080BEDC /* MusicSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchViewController.xib; sourceTree = "<group>"; };
 		5859E30C267DD8350080BEDC /* keys-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "keys-Info.plist"; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CDF975ADC8ED477EE3B78C7 /* Pods_bean.framework in Frameworks */,
-				5859E301267DAA600080BEDC /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +252,6 @@
 		7585B0275D2E68EC34982204 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5859E300267DAA600080BEDC /* SpotifyiOS.framework */,
 				0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */,
 			);
 			name = Frameworks;
