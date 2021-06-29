@@ -9,8 +9,8 @@ import Foundation
 import FirebaseAuth
 
 enum UserSNSType: String, Codable {
-    case UNKNOWN = ""
-    case GOOGLE = "google.com"
+    case unknown = ""
+    case google = "google.com"
 }
 
 struct User: Codable {
@@ -29,7 +29,7 @@ struct User: Codable {
         email = user.email
         profileUrl = user.photoURL
         phone = user.phoneNumber
-        sns = UserSNSType(rawValue: user.providerID) ?? UserSNSType.UNKNOWN
+        sns = UserSNSType(rawValue: user.providerID) ?? UserSNSType.unknown
     }
     
     var registUserData: [String: Any]? {

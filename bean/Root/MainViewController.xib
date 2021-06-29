@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AC3-UE-XlN">
-                    <rect key="frame" x="60" y="338" width="294" height="220"/>
+                    <rect key="frame" x="60" y="298" width="294" height="300"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-bI-0D1">
                             <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
@@ -61,12 +61,27 @@
                                 <action selector="onPressWeather:" destination="-1" eventType="touchUpInside" id="3LD-d4-AxN"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1t-lk-XfK">
+                            <rect key="frame" x="0.0" y="240" width="294" height="60"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="5sj-z9-3si"/>
+                            </constraints>
+                            <state key="normal" title="Photo">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressPhoto:" destination="-1" eventType="touchUpInside" id="f8W-56-1qK"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="aXg-bI-0D1" secondAttribute="trailing" id="4fv-mF-eaV"/>
                         <constraint firstAttribute="trailing" secondItem="BPM-1Z-yq0" secondAttribute="trailing" id="Aas-S0-go5"/>
                         <constraint firstAttribute="trailing" secondItem="U5s-K6-grb" secondAttribute="trailing" id="HqQ-yS-jZJ"/>
+                        <constraint firstItem="V1t-lk-XfK" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="SC0-7d-b06"/>
                         <constraint firstItem="aXg-bI-0D1" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="W2o-ST-jFP"/>
+                        <constraint firstAttribute="trailing" secondItem="V1t-lk-XfK" secondAttribute="trailing" id="X3P-I7-DvA"/>
                         <constraint firstItem="U5s-K6-grb" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="htF-MU-BxY"/>
                         <constraint firstItem="BPM-1Z-yq0" firstAttribute="leading" secondItem="AC3-UE-XlN" secondAttribute="leading" id="oGv-sB-r81"/>
                     </constraints>

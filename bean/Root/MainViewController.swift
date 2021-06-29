@@ -11,8 +11,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func onPressLogout(_ sender: Any) {
@@ -26,5 +24,9 @@ class MainViewController: UIViewController {
     @IBAction func onPressWeather(_ sender: Any) {
         let weatherVC = WeatherViewController.init(nibName: "WeatherViewController", bundle: nil)
         navigationController?.pushViewController(weatherVC, animated: true)
+    }
+    @IBAction func onPressPhoto(_ sender: Any) {
+        let postingPhotoVC = PostingPhotoViewController.init(nibName: "PostingPhotoViewController", bundle: nil)
+        navigationController?.pushViewController(postingPhotoVC, animated: true)
     }
 }
