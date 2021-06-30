@@ -45,6 +45,7 @@
 		585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF9C267928B300CADE6B /* LoginViewController.xib */; };
 		5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5897DABF26882AE300F288F4 /* SignUpViewController.swift */; };
 		5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5897DAC026882AE300F288F4 /* SignUpViewController.xib */; };
+		58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */; };
 		589C4D912686115600E7A019 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C4D902686115600E7A019 /* UserService.swift */; };
 		58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803B2684452900E75801 /* MusicApiRouter.swift */; };
 		58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */; };
@@ -93,6 +94,7 @@
 		585DFF9C267928B300CADE6B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		5897DABF26882AE300F288F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5897DAC026882AE300F288F4 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserve.swift; sourceTree = "<group>"; };
 		589C4D902686115600E7A019 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		58C2803B2684452900E75801 /* MusicApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApiRouter.swift; sourceTree = "<group>"; };
 		58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultModel.swift; sourceTree = "<group>"; };
@@ -164,9 +166,9 @@
 			children = (
 				58C2803F2684646200E75801 /* MusicSearchViewController */,
 				5859E328267F1EA60080BEDC /* WeatherViewController.swift */,
+				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
 				5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */,
 				5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */,
-				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +203,8 @@
 		585DFF7A2679189500CADE6B /* bean */ = {
 			isa = PBXGroup;
 			children = (
+				58987E5D268C109C00C0C74E /* CommonUI */,
+				58987E5A268C0AEF00C0C74E /* Utils */,
 				58C280402684647F00E75801 /* Views */,
 				5859E307267DAD500080BEDC /* ViewControllers */,
 				5859E306267DAD3E0080BEDC /* Tabs */,
@@ -242,6 +246,21 @@
 				5859E324267EF8800080BEDC /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		58987E5A268C0AEF00C0C74E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		58987E5D268C109C00C0C74E /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonUI;
 			sourceTree = "<group>";
 		};
 		58C2803F2684646200E75801 /* MusicSearchViewController */ = {
@@ -456,6 +475,7 @@
 				58431831268B7EAB00EED39B /* FeedModel.swift in Sources */,
 				5859E315267E219B0080BEDC /* ApiService.swift in Sources */,
 				5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */,
+				58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */,
 				58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */,
 				5843183F268B7F1A00EED39B /* StoreService.swift in Sources */,
 			);

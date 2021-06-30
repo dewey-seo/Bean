@@ -8,22 +8,31 @@
 import UIKit
 
 class PostingPhotoViewController: UIViewController {
-
+    
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    let imagePicker = UIImagePickerController.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        imagePicker.delegate = self
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onPressSelectImage(_ sender: Any) {
+        self.present(imagePicker, animated: true, completion: nil)
     }
-    */
+    @IBAction func onPressPosting(_ sender: Any) {
+    }
+}
 
+extension PostingPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    }
 }
