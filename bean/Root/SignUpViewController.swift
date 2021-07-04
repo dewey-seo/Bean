@@ -52,6 +52,7 @@ class SignUpViewController: UIViewController {
         guard let user = user else {
             return
         }
+        
         UserService.shared.registerUser(user: user) { result in
             print(result)
         }

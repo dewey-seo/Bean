@@ -20,6 +20,11 @@ class AuthManager: NSObject {
     static let shared = AuthManager()
     let firebaseAuth = Auth.auth()
     var user = BehaviorSubject<FirebaseAuth.User?>(value: Auth.auth().currentUser)
+    var userId: String? {
+        get {
+            return try? self.user.value()?.uid
+        }
+    }
     
     var userStateHandler: AuthStateDidChangeListenerHandle?
     let disposBag = DisposeBag()

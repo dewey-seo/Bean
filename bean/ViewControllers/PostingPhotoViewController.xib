@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="commentTextView" destination="N6d-Zi-b9j" id="Rh9-k1-Xd2"/>
                 <outlet property="postImageView" destination="5uA-bF-xkd" id="Mqm-qI-mV2"/>
+                <outlet property="postingButton" destination="i9g-TO-pGt" id="csJ-li-8vJ"/>
                 <outlet property="scrollView" destination="M0I-zz-1JH" id="hFA-tA-rig"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
