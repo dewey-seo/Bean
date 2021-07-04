@@ -8,5 +8,5 @@
 import Foundation
 
 class Feed: Codable {
-    var posts: [Post]?
+//    var posts: [Post]?
 }

@@ -14,13 +14,12 @@
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
 		58431831268B7EAB00EED39B /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431830268B7EAB00EED39B /* FeedModel.swift */; };
-		58431835268B7EC400EED39B /* PostPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431832268B7EC400EED39B /* PostPhotoModel.swift */; };
-		58431836268B7EC400EED39B /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431833268B7EC400EED39B /* PostModel.swift */; };
+		58431835268B7EC400EED39B /* PhotoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431832268B7EC400EED39B /* PhotoPost.swift */; };
+		58431836268B7EC400EED39B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431833268B7EC400EED39B /* Post.swift */; };
 		58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431834268B7EC400EED39B /* PostPlaceModel.swift */; };
 		58431839268B7EF000EED39B /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431838268B7EF000EED39B /* ApiResponse.swift */; };
 		5843183C268B7F0600EED39B /* PostingPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */; };
 		5843183D268B7F0600EED39B /* PostingPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */; };
-		5843183F268B7F1A00EED39B /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843183E268B7F1A00EED39B /* StoreService.swift */; };
 		5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E2F5267DA27C0080BEDC /* ApiRouter.swift */; };
 		5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E302267DAD330080BEDC /* MusicSearchViewController.swift */; };
 		5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5859E303267DAD330080BEDC /* MusicSearchViewController.xib */; };
@@ -43,9 +42,20 @@
 		585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF992679263E00CADE6B /* SignInManager.swift */; };
 		585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF9B267928B300CADE6B /* LoginViewController.swift */; };
 		585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF9C267928B300CADE6B /* LoginViewController.xib */; };
+		58709AAB2690781400CD6BB8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAA2690781400CD6BB8 /* Time.swift */; };
+		58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAC26909F8600CD6BB8 /* BeanImage.swift */; };
+		58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */; };
+		58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AB22690D07200CD6BB8 /* BeanDictionary.swift */; };
+		587F58B0268E201800577D62 /* BeanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587F58AF268E201800577D62 /* BeanViewController.swift */; };
 		5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5897DABF26882AE300F288F4 /* SignUpViewController.swift */; };
 		5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5897DAC026882AE300F288F4 /* SignUpViewController.xib */; };
+		58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */; };
 		589C4D912686115600E7A019 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C4D902686115600E7A019 /* UserService.swift */; };
+		58B70785268EA931002F385D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B70784268EA931002F385D /* StorageService.swift */; };
+		58B70798268F0835002F385D /* BeanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B70797268F0835002F385D /* BeanButton.swift */; };
+		58B7079A268F0A28002F385D /* BeanColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B70799268F0A28002F385D /* BeanColor.swift */; };
+		58B7079D268F1815002F385D /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7079C268F1815002F385D /* PostComment.swift */; };
+		58B7079F268F2231002F385D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7079E268F2231002F385D /* PostService.swift */; };
 		58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803B2684452900E75801 /* MusicApiRouter.swift */; };
 		58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */; };
 		58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */; };
@@ -60,13 +70,12 @@
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		58431830268B7EAB00EED39B /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		58431832268B7EC400EED39B /* PostPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPhotoModel.swift; sourceTree = "<group>"; };
-		58431833268B7EC400EED39B /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		58431832268B7EC400EED39B /* PhotoPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPost.swift; sourceTree = "<group>"; };
+		58431833268B7EC400EED39B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		58431834268B7EC400EED39B /* PostPlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPlaceModel.swift; sourceTree = "<group>"; };
 		58431838268B7EF000EED39B /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingPhotoViewController.swift; sourceTree = "<group>"; };
 		5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingPhotoViewController.xib; sourceTree = "<group>"; };
-		5843183E268B7F1A00EED39B /* StoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		5859E2F5267DA27C0080BEDC /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		5859E302267DAD330080BEDC /* MusicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		5859E303267DAD330080BEDC /* MusicSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchViewController.xib; sourceTree = "<group>"; };
@@ -91,9 +100,20 @@
 		585DFF992679263E00CADE6B /* SignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
 		585DFF9B267928B300CADE6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		585DFF9C267928B300CADE6B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		58709AAA2690781400CD6BB8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		58709AAC26909F8600CD6BB8 /* BeanImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanImage.swift; sourceTree = "<group>"; };
+		58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanEncodable.swift; sourceTree = "<group>"; };
+		58709AB22690D07200CD6BB8 /* BeanDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDictionary.swift; sourceTree = "<group>"; };
+		587F58AF268E201800577D62 /* BeanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanViewController.swift; sourceTree = "<group>"; };
 		5897DABF26882AE300F288F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5897DAC026882AE300F288F4 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserve.swift; sourceTree = "<group>"; };
 		589C4D902686115600E7A019 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		58B70784268EA931002F385D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		58B70797268F0835002F385D /* BeanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanButton.swift; sourceTree = "<group>"; };
+		58B70799268F0A28002F385D /* BeanColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanColor.swift; sourceTree = "<group>"; };
+		58B7079C268F1815002F385D /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
+		58B7079E268F2231002F385D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		58C2803B2684452900E75801 /* MusicApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApiRouter.swift; sourceTree = "<group>"; };
 		58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultModel.swift; sourceTree = "<group>"; };
 		58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultItemCell.swift; sourceTree = "<group>"; };
@@ -118,8 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				5806F7A826857DB8001117C6 /* FirebaseService.swift */,
-				5843183E268B7F1A00EED39B /* StoreService.swift */,
 				589C4D902686115600E7A019 /* UserService.swift */,
+				58B70784268EA931002F385D /* StorageService.swift */,
+				58B7079E268F2231002F385D /* PostService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -141,13 +162,14 @@
 		5859E2FD267DA8350080BEDC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58431833268B7EC400EED39B /* PostModel.swift */,
-				58431832268B7EC400EED39B /* PostPhotoModel.swift */,
+				58431833268B7EC400EED39B /* Post.swift */,
+				58431832268B7EC400EED39B /* PhotoPost.swift */,
 				58431834268B7EC400EED39B /* PostPlaceModel.swift */,
 				58431830268B7EAB00EED39B /* FeedModel.swift */,
 				5859E312267DDA0A0080BEDC /* WeatherModel.swift */,
 				58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */,
 				5806F7A526857CC7001117C6 /* UserModel.swift */,
+				58B7079C268F1815002F385D /* PostComment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,9 +186,9 @@
 			children = (
 				58C2803F2684646200E75801 /* MusicSearchViewController */,
 				5859E328267F1EA60080BEDC /* WeatherViewController.swift */,
+				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
 				5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */,
 				5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */,
-				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +223,8 @@
 		585DFF7A2679189500CADE6B /* bean */ = {
 			isa = PBXGroup;
 			children = (
+				58987E5D268C109C00C0C74E /* CommonUI */,
+				58987E5A268C0AEF00C0C74E /* Utils */,
 				58C280402684647F00E75801 /* Views */,
 				5859E307267DAD500080BEDC /* ViewControllers */,
 				5859E306267DAD3E0080BEDC /* Tabs */,
@@ -242,6 +266,28 @@
 				5859E324267EF8800080BEDC /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		58987E5A268C0AEF00C0C74E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */,
+				587F58AF268E201800577D62 /* BeanViewController.swift */,
+				58B70797268F0835002F385D /* BeanButton.swift */,
+				58B70799268F0A28002F385D /* BeanColor.swift */,
+				58709AAA2690781400CD6BB8 /* Time.swift */,
+				58709AAC26909F8600CD6BB8 /* BeanImage.swift */,
+				58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */,
+				58709AB22690D07200CD6BB8 /* BeanDictionary.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		58987E5D268C109C00C0C74E /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonUI;
 			sourceTree = "<group>";
 		};
 		58C2803F2684646200E75801 /* MusicSearchViewController */ = {
@@ -435,20 +481,29 @@
 				5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */,
 				58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */,
 				5843183C268B7F0600EED39B /* PostingPhotoViewController.swift in Sources */,
+				58B7079F268F2231002F385D /* PostService.swift in Sources */,
+				58B7079D268F1815002F385D /* PostComment.swift in Sources */,
 				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
+				587F58B0268E201800577D62 /* BeanViewController.swift in Sources */,
+				58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */,
+				58B70798268F0835002F385D /* BeanButton.swift in Sources */,
 				589C4D912686115600E7A019 /* UserService.swift in Sources */,
 				585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */,
 				58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */,
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
 				5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */,
+				58709AAB2690781400CD6BB8 /* Time.swift in Sources */,
 				585DFF7C2679189500CADE6B /* AppDelegate.swift in Sources */,
+				58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */,
 				5825559F2679D23E00416A6C /* MainViewController.swift in Sources */,
+				58B7079A268F0A28002F385D /* BeanColor.swift in Sources */,
+				58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */,
 				5859E320267E3EC80080BEDC /* ApiLogger.swift in Sources */,
 				5859E31E267E35C70080BEDC /* BaseInterceptor.swift in Sources */,
 				585DFF9626791EC800CADE6B /* RootViewController.swift in Sources */,
 				58431839268B7EF000EED39B /* ApiResponse.swift in Sources */,
-				58431835268B7EC400EED39B /* PostPhotoModel.swift in Sources */,
-				58431836268B7EC400EED39B /* PostModel.swift in Sources */,
+				58431835268B7EC400EED39B /* PhotoPost.swift in Sources */,
+				58431836268B7EC400EED39B /* Post.swift in Sources */,
 				5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */,
 				582D46622679925300A1B908 /* AuthManager.swift in Sources */,
 				5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */,
@@ -456,8 +511,9 @@
 				58431831268B7EAB00EED39B /* FeedModel.swift in Sources */,
 				5859E315267E219B0080BEDC /* ApiService.swift in Sources */,
 				5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */,
+				58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */,
 				58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */,
-				5843183F268B7F1A00EED39B /* StoreService.swift in Sources */,
+				58B70785268EA931002F385D /* StorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,9 @@ enum PostType: String, Codable {
     case inhouse = "inhouse"
 }
 
-class Post: Codable {
-    var id: String?
-    var type: PostType?
+protocol PostModel: Codable {
+    var id: String { get }
+    var customId: String { set get }
+    var postType: PostType { set get }
+    var createdAt: Date { set get }
 }

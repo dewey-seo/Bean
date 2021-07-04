@@ -5,7 +5,6 @@
 //  Created by dewey seo on 25/06/2021.
 //
 
-import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
