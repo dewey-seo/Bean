@@ -23,24 +23,24 @@ class RootViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if(self.isMounted == false) {
-            AuthManager.shared.user.subscribe(onNext: { [weak self] firebaseUser in
-                if let firebaseUser = firebaseUser {
-                    UserService.shared.getUser(firebaseUser) { user in
-                        guard let _ = user else {
-                            self?.switchViewController(status: .Register(user: firebaseUser))
-                            return
-                        }
-                        self?.switchViewController(status: .Login)
-                    }
-                } else {
-                    self?.switchViewController(status: .Logout)
-                }
-            })
-            .disposed(by: disposeBag)
-        }
-        
-        self.isMounted = true
+//        if(self.isMounted == false) {
+//            AuthManager.shared.user.subscribe(onNext: { [weak self] firebaseUser in
+//                if let firebaseUser = firebaseUser {
+//                    UserService.shared.getUser(firebaseUser) { user in
+//                        guard let _ = user else {
+//                            self?.switchViewController(status: .Register(user: firebaseUser))
+//                            return
+//                        }
+//                        self?.switchViewController(status: .Login)
+//                    }
+//                } else {
+//                    self?.switchViewController(status: .Logout)
+//                }
+//            })
+//            .disposed(by: disposeBag)
+//        }
+//
+//        self.isMounted = true
     }
     
     func switchViewController(status: AuthStatus) {

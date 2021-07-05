@@ -12,21 +12,19 @@ import GoogleSignIn
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let window: UIWindow = UIWindow()
+    lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    var appCoordinator: AppCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = SignInManager.shared
         
-        let rootVC = RootViewController(nibName: "RootViewController", bundle: nil)
-        let navC = UINavigationController.init(rootViewController: rootVC)
-        navC.setNavigationBarHidden(true, animated: false)
+        appCoordinator = AppCoordinator(window: window!)
+        appCoordinator?.present(animated: false, parent: nil, onDismissed: nil)
         
-        window.bounds = UIScreen.main.bounds
-        window.rootViewController = navC
-        window.makeKeyAndVisible()
         return true
     }
     
