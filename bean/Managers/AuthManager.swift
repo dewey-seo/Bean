@@ -85,7 +85,7 @@ class AuthManager: NSObject {
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
+            console("Error signing out: %@", signOutError)
         }
     }
 }

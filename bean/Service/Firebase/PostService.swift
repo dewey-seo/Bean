@@ -48,7 +48,7 @@ class PostService: FirebaseService {
                 
                 // Posting
                 self?.uploadPost(post, completion: { result in
-                    print("posting \(result ? "success" : "failed")")
+                    console("posting \(result ? "success" : "failed")")
                 })
             case .failure(let error):
                 completion(.failure(error))

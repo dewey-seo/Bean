@@ -41,10 +41,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//        print("🔴: \(manager.authorizationStatus.rawValue)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print("🔴: \(error.localizedDescription)")
     }
 }
