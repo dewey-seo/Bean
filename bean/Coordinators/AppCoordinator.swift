@@ -23,12 +23,17 @@ class AppCoordinator: Coordinator {
         self.window = window
         self.rootVC = RootViewController.init(nibName: "RootViewController", bundle: nil)
         self.navC = UINavigationController(rootViewController: rootVC)
+        self.navC.modalPresentationStyle = .fullScreen
         self.router = NavigationRouter(navigationController: self.navC)
         
         navC.setNavigationBarHidden(true, animated: false)
     }
     
-    func present(animated: Bool, parent: Coordinator?, onDismissed: (() -> Void)?) {
+    deinit {
+        console("deinit - AppCoordinator")
+    }
+    
+    func start(animated: Bool, parent: Coordinator?) {
         window.rootViewController = navC
         window.makeKeyAndVisible()
         
@@ -53,13 +58,20 @@ class AppCoordinator: Coordinator {
     }
     
     func onChangeLoginStatus(status: AuthStatus) {
-//        switch status {
-//        case .Login:
-//            let router = ModalNavigationRouter(parentViewController: viewController)
-//            let coordinator = PetAppointmentBuilderCoordinator(router: router)
-//            presentChild(<#T##child: Coordinator##Coordinator#>, animated: <#T##Bool#>)
-//        case .Logout:
-//        case .Register(let user)
-//        }
+        if let child = children.first {
+            child.close(animated: true)
+        }
+        
+        switch status {
+        case .Login:
+            let coordinator = MainCoordinator(router: router)
+            presentChild(coordinator, animated: true)
+        case .Logout:
+            let coordinator = SignInCoordinator(router: router)
+            presentChild(coordinator, animated: true)
+        case .Register(let user):
+            let coordinator = SignInCoordinator(router: router, user: user)
+            presentChild(coordinator, animated: true)
+        }
     }
 }

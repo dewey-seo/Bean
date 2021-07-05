@@ -26,6 +26,6 @@ extension SignInManager: GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        print("log out")
+        console("log out")
     }
 }

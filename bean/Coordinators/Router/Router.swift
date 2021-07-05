@@ -8,14 +8,27 @@
 import UIKit
 
 public protocol Router {
-  func present(_ viewController: UIViewController, animated: Bool)
-  func present(_ viewController: UIViewController, animated: Bool, onDismissed: (()->Void)?)
-  func dismiss(animated: Bool)
+    var onDismiss: (() -> Void)? { get set }
+    
+    // When Start Coordinator, should be called.
+    func present(_ viewController: UIViewController, animated: Bool)
+    func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
+    
+    // Only use inside coordinator
+    func push(_ viewController: UIViewController, animated: Bool)
+    
+    // Weh Close Coordinator, should be called.
+    func dismiss(animated: Bool)
+    func dismiss(animated: Bool, completion:(() -> Void)?)
 }
 
 extension Router {
-  public func present(_ viewController: UIViewController, animated: Bool) {
-    present(viewController, animated: animated, onDismissed: nil)
-  }
+    public func present(_ viewController: UIViewController, animated: Bool) {
+        present(viewController, animated: animated, completion: nil)
+    }
+    
+    public func dismiss(animated: Bool) {
+        dismiss(animated: animated, completion: nil)
+    }
 }
 

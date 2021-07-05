@@ -17,7 +17,7 @@ class NAMECoordinator: NSObject, Coordinator {
         self.router = router
     }
     
-    func present(animated: Bool, parent: Coordinator?, onDismissed: (() -> Void)?) {
+    func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
     }
 }

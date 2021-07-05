@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
         }
         
         UserService.shared.registerUser(user: user) { result in
-            print(result)
+            console(result)
         }
     }
 }

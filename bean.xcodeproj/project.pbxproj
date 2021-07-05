@@ -10,6 +10,7 @@
 		3CDF975ADC8ED477EE3B78C7 /* Pods_bean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */; };
 		5806F7A626857CC7001117C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A526857CC7001117C6 /* UserModel.swift */; };
 		5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A826857DB8001117C6 /* FirebaseService.swift */; };
+		581232E026934EBD008BDB67 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232DF26934EBD008BDB67 /* Common.swift */; };
 		5825559F2679D23E00416A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825559D2679D23E00416A6C /* MainViewController.swift */; };
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
@@ -57,7 +58,6 @@
 		585FEDF42692095200E95219 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDF22692095200E95219 /* HomeViewController.xib */; };
 		585FEDF72692099900E95219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDF52692099900E95219 /* ProfileViewController.swift */; };
 		585FEDF82692099900E95219 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDF62692099900E95219 /* ProfileViewController.xib */; };
-		585FEDFA26929D0900E95219 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDF926929D0900E95219 /* ModalNavigationRouter.swift */; };
 		58709AAB2690781400CD6BB8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAA2690781400CD6BB8 /* Time.swift */; };
 		58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAC26909F8600CD6BB8 /* BeanImage.swift */; };
 		58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */; };
@@ -82,6 +82,7 @@
 		0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5806F7A526857CC7001117C6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5806F7A826857DB8001117C6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		581232DF26934EBD008BDB67 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5825559D2679D23E00416A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		585FEDF22692095200E95219 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		585FEDF52692099900E95219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		585FEDF62692099900E95219 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		585FEDF926929D0900E95219 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
 		58709AAA2690781400CD6BB8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		58709AAC26909F8600CD6BB8 /* BeanImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanImage.swift; sourceTree = "<group>"; };
 		58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanEncodable.swift; sourceTree = "<group>"; };
@@ -325,7 +325,6 @@
 			children = (
 				585FEDD82691828F00E95219 /* Router.swift */,
 				585FEDDA269182EA00E95219 /* NavigationRouter.swift */,
-				585FEDF926929D0900E95219 /* ModalNavigationRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -351,6 +350,7 @@
 				58709AAC26909F8600CD6BB8 /* BeanImage.swift */,
 				58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */,
 				58709AB22690D07200CD6BB8 /* BeanDictionary.swift */,
+				581232DF26934EBD008BDB67 /* Common.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -590,7 +590,6 @@
 				58431839268B7EF000EED39B /* ApiResponse.swift in Sources */,
 				58431835268B7EC400EED39B /* PhotoPost.swift in Sources */,
 				58431836268B7EC400EED39B /* Post.swift in Sources */,
-				585FEDFA26929D0900E95219 /* ModalNavigationRouter.swift in Sources */,
 				5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */,
 				582D46622679925300A1B908 /* AuthManager.swift in Sources */,
 				5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */,
@@ -601,6 +600,7 @@
 				5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */,
 				58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */,
 				58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */,
+				581232E026934EBD008BDB67 /* Common.swift in Sources */,
 				58B70785268EA931002F385D /* StorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

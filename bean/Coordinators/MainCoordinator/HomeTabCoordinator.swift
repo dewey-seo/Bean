@@ -14,10 +14,15 @@ class HomeTabCoordinator: NSObject, Coordinator {
     
     // MARK: -
     init(router: Router) {
+        console("init - HomeTabCoordinator")
         self.router = router
     }
     
-    func present(animated: Bool, parent: Coordinator?, onDismissed: (() -> Void)?) {
+    deinit {
+        console("deinit - HomeTabCoordinator")
+    }
+    
+    func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
     }
 }

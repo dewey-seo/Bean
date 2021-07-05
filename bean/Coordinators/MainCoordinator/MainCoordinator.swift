@@ -16,10 +16,15 @@ class MainCoordinator: NSObject, Coordinator {
     let tabBarController = MainTabBarViewController(nibName: "MainTabBarViewController", bundle: nil)
     
     init(router: Router) {
+        console("init - MainCoordinator")
         self.router = router
     }
     
-    func present(animated: Bool, parent: Coordinator?, onDismissed: (() -> Void)?) {
+    deinit {
+        console("deinit - MainCoordinator")
+    }
+    
+    func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
         
         let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
@@ -36,10 +41,10 @@ class MainCoordinator: NSObject, Coordinator {
         
         tabBarController.viewControllers = [homeTabNavigationController, profileTabNavigationController]
         tabBarController.modalPresentationStyle = .fullScreen
-        
-        homeTabCoordinator.present(animated: false, parent: nil, onDismissed: nil)
-        profileTabCoordinator.present(animated: false, parent: nil, onDismissed: nil)
-        
+
         router.present(tabBarController, animated: animated)
+        
+        self.presentChild(homeTabCoordinator, animated: false)
+        self.presentChild(profileTabCoordinator, animated: false)
     }
 }

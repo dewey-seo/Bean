@@ -31,10 +31,10 @@ class WeatherViewController: UIViewController {
     
     func getLocation() {
         LocationManager.shared.getCurrentLocation { [weak self] location in
-            print("🔴 - location: \(location)")
+            console("🔴 - location: \(location)")
             let lat = String(location.coordinate.latitude)
             let lon = String(location.coordinate.longitude)
-            print("🔴 - in: \(lat), \(lon)")
+            console("🔴 - in: \(lat), \(lon)")
             self?.getWeather(lat, lon)
         }
     }

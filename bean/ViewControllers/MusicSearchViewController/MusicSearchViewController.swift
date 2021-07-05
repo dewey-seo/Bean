@@ -62,7 +62,6 @@ class MusicSearchViewController: UIViewController, UITableViewDelegate, UITableV
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
-        
+        console("You tapped cell number \(indexPath.row).")
     }
 }

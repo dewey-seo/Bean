@@ -8,9 +8,9 @@
 import UIKit
 
 public class NavigationRouter: NSObject {
-    private let navigationController: UINavigationController
-    private let routerRootController: UIViewController?
-    private var onDismissForViewController: [UIViewController: (() -> Void)] = [:]
+    public let navigationController: UINavigationController
+    public let routerRootController: UIViewController?
+    public var onDismiss: (() -> Void)?
     
     public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -20,36 +20,20 @@ public class NavigationRouter: NSObject {
 }
 
 extension NavigationRouter: Router {
-    public func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
-        onDismissForViewController[viewController] = onDismissed
+    public func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        navigationController.present(viewController, animated: animated, completion: completion)
+    }
+    
+    public func push(_ viewController: UIViewController, animated: Bool) {
         navigationController.pushViewController(viewController, animated: animated)
     }
     
-    public func dismiss(animated: Bool) {
-        guard let routerRootController = routerRootController else {
-            navigationController.popToRootViewController(animated: animated)
-            return
-        }
-        performOnDismissed(for: routerRootController)
-        navigationController.popToViewController(routerRootController, animated: animated)
-    }
-    
-    private func performOnDismissed(for viewController: UIViewController) {
-        guard let onDismiss = onDismissForViewController[viewController] else {
-            return
-        }
-        onDismiss()
-        onDismissForViewController[viewController] = nil
+    public func dismiss(animated: Bool, completion:(() -> Void)?) {
+        self.onDismiss?()
+        self.navigationController.dismiss(animated: animated, completion: completion)
     }
 }
 
 // MARK: - UINavigationControllerDelegate
 extension NavigationRouter: UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let dismissedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-              !navigationController.viewControllers.contains(dismissedViewController) else {
-            return
-        }
-        performOnDismissed(for: dismissedViewController)
-    }
 }

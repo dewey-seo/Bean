@@ -58,7 +58,7 @@ class StorageService {
         // observing // TODO:- rx return
         uploadTask.observe(.progress) { snapshot in
             let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
-            print("upload - \(percentComplete)%")
+            console("upload - \(percentComplete)%")
         }
         
         uploadTask.observe(.success) { snapshot in

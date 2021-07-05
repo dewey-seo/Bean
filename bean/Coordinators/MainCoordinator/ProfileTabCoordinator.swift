@@ -14,10 +14,15 @@ class ProfileTabCoordinator: NSObject, Coordinator {
     
     // MARK: -
     init(router: Router) {
+        console("init - ProfileTabCoordinator")
         self.router = router
     }
     
-    func present(animated: Bool, parent: Coordinator?, onDismissed: (() -> Void)?) {
+    deinit {
+        console("deinit - ProfileTabCoordinator")
+    }
+    
+    func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
     }
 }

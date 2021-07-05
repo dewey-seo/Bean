@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().delegate = SignInManager.shared
         
         appCoordinator = AppCoordinator(window: window!)
-        appCoordinator?.present(animated: false, parent: nil, onDismissed: nil)
+        appCoordinator?.start(animated: true, parent: nil)
         
         return true
     }
