@@ -23,11 +23,11 @@ class UserService: FirebaseService {
     }
     
     func registerUser(user: User, _ completion: @escaping (_ result: Bool) -> Void) {
-        guard let id = user.id, let userData = user.registUserData else {
+        guard let userData = user.registUserData else {
             return completion(false)
         }
         
-        self.store.collection(COLLECTION_PATH).document(id).setData(userData) { error in
+        self.store.collection(COLLECTION_PATH).document(user.id).setData(userData) { error in
             completion(error == nil)
         }
     }

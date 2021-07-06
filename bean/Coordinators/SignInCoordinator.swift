@@ -22,7 +22,6 @@ class SignInCoordinator: NSObject, Coordinator {
         console("init - SignInCoordinator")
         self.router = router
         self.user = user
-        super.init()
     }
     
     deinit {
@@ -37,7 +36,7 @@ class SignInCoordinator: NSObject, Coordinator {
 
 // MARK: - LoginViewControllerDelegate
 extension SignInCoordinator: LoginViewControllerDelegate {
-    func registerUser(with firebaseUser: User?) {
-        
+    func registerUser(with firebaseUser: FirebaseAuth.User?) {
+        router.push(signUpVC, animated: true)
     }
 }

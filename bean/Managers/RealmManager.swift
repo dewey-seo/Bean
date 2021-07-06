@@ -24,11 +24,10 @@ class RealmManager: NSObject {
     }
     
     func observeIsLogin() -> Observable<Bool> {
-        return Observable.just(false)
-//        let users = realm.objects(User.self)
-//        return Observable.arrayWithChangeset(from: users).map { (array, changes) -> Bool in
-//            return array.count > 0
-//        }
+        let users = realm.objects(User.self)
+        return Observable.arrayWithChangeset(from: users).map { (array, changes) -> Bool in
+            return array.count > 0
+        }
     }
     
     func saveUser(user: User) {

@@ -10,11 +10,11 @@ import Firebase
 import GoogleSignIn
 
 public protocol LoginViewControllerDelegate: AnyObject {
-    func registerUser(with firebaseUser:FirebaseAuth.User?)
+    func registerUser(with firebaseUser: FirebaseAuth.User?)
 }
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var googleSignInButton: UIButton!
     weak var delegate: LoginViewControllerDelegate?
     
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
     }
-
+    
     func onFinishedLoginToFirebase(user: FirebaseAuth.User?) {
         guard let user = user else { return }
         

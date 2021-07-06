@@ -12,16 +12,21 @@ public class NavigationRouter: NSObject {
     public let routerRootController: UIViewController?
     public var onDismiss: (() -> Void)?
     
-    public init(navigationController: UINavigationController) {
+    weak var fromViewController: UIViewController?
+    
+    public init(navigationController: UINavigationController, fromViewController: UIViewController?) {
         self.navigationController = navigationController
         self.routerRootController = navigationController.viewControllers.first
+        self.fromViewController = fromViewController
         super.init()
     }
 }
 
 extension NavigationRouter: Router {
     public func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        navigationController.present(viewController, animated: animated, completion: completion)
+        guard let from = fromViewController else { return }
+        navigationController.viewControllers = [viewController]
+        from.present(navigationController, animated: true, completion: completion)
     }
     
     public func push(_ viewController: UIViewController, animated: Bool) {

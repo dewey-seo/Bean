@@ -29,13 +29,13 @@ class MainCoordinator: NSObject, Coordinator {
         
         let HomeTabViewController = HomeTabViewController(nibName: "HomeTabViewController", bundle: nil)
         let homeTabNavigationController = UINavigationController(rootViewController: HomeTabViewController)
-        let homeTabNavigationRouter = NavigationRouter(navigationController: homeTabNavigationController)
+        let homeTabNavigationRouter = NavigationRouter(navigationController: homeTabNavigationController, fromViewController: nil)
         homeTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         let homeTabCoordinator = HomeTabCoordinator(router: homeTabNavigationRouter)
         
         let MyTabViewController = MyTabViewController(nibName: "MyTabViewController", bundle: nil)
         let profileTabNavigationController = UINavigationController(rootViewController: MyTabViewController)
-        let profileTabNavigationRouter = NavigationRouter(navigationController: profileTabNavigationController)
+        let profileTabNavigationRouter = NavigationRouter(navigationController: profileTabNavigationController, fromViewController: nil)
         profileTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
         let profileTabCoordinator = ProfileTabCoordinator(router: profileTabNavigationRouter)
         

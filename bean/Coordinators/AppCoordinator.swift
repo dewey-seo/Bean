@@ -24,7 +24,7 @@ class AppCoordinator: Coordinator {
         self.rootVC = RootViewController.init(nibName: "RootViewController", bundle: nil)
         self.navC = UINavigationController(rootViewController: rootVC)
         self.navC.modalPresentationStyle = .fullScreen
-        self.router = NavigationRouter(navigationController: self.navC)
+        self.router = NavigationRouter(navigationController: self.navC, fromViewController: nil)
         
         navC.setNavigationBarHidden(true, animated: false)
     }
@@ -50,6 +50,7 @@ class AppCoordinator: Coordinator {
     
     func onChangeLoginStatus(_ isLogin: Bool) {
         console("isLogin -> \(isLogin)")
+        
         if let child = children.first {
             child.close(animated: true)
         }
