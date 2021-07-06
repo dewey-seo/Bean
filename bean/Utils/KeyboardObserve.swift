@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class KeyboardObserve {
-    let shared = KeyboardObserve()
+    static let shared = KeyboardObserve()
     
     func keyboardHeightChange() -> Observable<CGFloat> {
         return Observable.from([

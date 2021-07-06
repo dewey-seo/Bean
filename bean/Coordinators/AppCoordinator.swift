@@ -37,40 +37,28 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navC
         window.makeKeyAndVisible()
         
-        ovserveLoginStatusChange()
+        checkIsLogin()
     }
     
-    func ovserveLoginStatusChange() {
-        AuthManager.shared.user.subscribe(onNext: { [weak self] firebaseUser in
-            if let firebaseUser = firebaseUser {
-                UserService.shared.getUser(firebaseUser) { user in
-                    guard let _ = user else {
-                        self?.onChangeLoginStatus(status: .Register(user: firebaseUser))
-                        return
-                    }
-                    self?.onChangeLoginStatus(status: .Login)
-                }
-            } else {
-                self?.onChangeLoginStatus(status: .Logout)
+    func checkIsLogin() {
+        RealmManager.shared.observeIsLogin()
+            .subscribe { [weak self] isLogin in
+                self?.onChangeLoginStatus(isLogin)
             }
-        })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
-    func onChangeLoginStatus(status: AuthStatus) {
+    func onChangeLoginStatus(_ isLogin: Bool) {
+        console("isLogin -> \(isLogin)")
         if let child = children.first {
             child.close(animated: true)
         }
         
-        switch status {
-        case .Login:
+        if(isLogin) {
             let coordinator = MainCoordinator(router: router)
             presentChild(coordinator, animated: true)
-        case .Logout:
+        } else {
             let coordinator = SignInCoordinator(router: router)
-            presentChild(coordinator, animated: true)
-        case .Register(let user):
-            let coordinator = SignInCoordinator(router: router, user: user)
             presentChild(coordinator, animated: true)
         }
     }

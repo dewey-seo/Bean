@@ -1,5 +1,5 @@
 //
-//  MainTabBarViewController.swift
+//  RootTabBarViewController.swift
 //  bean
 //
 //  Created by dewey seo on 04/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarViewController: UITabBarController {
+class RootTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

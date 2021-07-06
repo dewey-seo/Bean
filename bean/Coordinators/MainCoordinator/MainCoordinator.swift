@@ -13,7 +13,7 @@ class MainCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    let tabBarController = MainTabBarViewController(nibName: "MainTabBarViewController", bundle: nil)
+    let tabBarController = RootTabBarViewController(nibName: "RootTabBarViewController", bundle: nil)
     
     init(router: Router) {
         console("init - MainCoordinator")
@@ -27,14 +27,14 @@ class MainCoordinator: NSObject, Coordinator {
     func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
         
-        let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        let homeTabNavigationController = UINavigationController(rootViewController: homeViewController)
+        let HomeTabViewController = HomeTabViewController(nibName: "HomeTabViewController", bundle: nil)
+        let homeTabNavigationController = UINavigationController(rootViewController: HomeTabViewController)
         let homeTabNavigationRouter = NavigationRouter(navigationController: homeTabNavigationController)
         homeTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         let homeTabCoordinator = HomeTabCoordinator(router: homeTabNavigationRouter)
         
-        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        let profileTabNavigationController = UINavigationController(rootViewController: profileViewController)
+        let MyTabViewController = MyTabViewController(nibName: "MyTabViewController", bundle: nil)
+        let profileTabNavigationController = UINavigationController(rootViewController: MyTabViewController)
         let profileTabNavigationRouter = NavigationRouter(navigationController: profileTabNavigationController)
         profileTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
         let profileTabCoordinator = ProfileTabCoordinator(router: profileTabNavigationRouter)

@@ -11,9 +11,8 @@ import FirebaseAuth
 import GoogleSignIn
 
 enum AuthStatus {
-    case Logout
+    case Logout(_ user: FirebaseAuth.User?)
     case Login
-    case Register(user: FirebaseAuth.User)
 }
 
 class AuthManager: NSObject {
@@ -31,62 +30,36 @@ class AuthManager: NSObject {
     
     override init() {
         super.init()
-        userStateHandler = firebaseAuth.addStateDidChangeListener { [weak self] auth, user in
-            self?.userStateChangeListener(auth, user)
-        }
+//        userStateHandler = firebaseAuth.addStateDidChangeListener { [weak self] auth, user in
+//            self?.userStateChangeListener(auth, user)
+//        }
     }
     
     deinit {
         firebaseAuth.removeStateDidChangeListener(userStateHandler!)
     }
     
-    func userStateChangeListener(_ auth: Auth, _ user: FirebaseAuth.User?) {
-        let currentUser = try? self.user.value()
-        if currentUser != user {
-            self.user.onNext(user)
-        }
-    }
-    
-//    func isLogin() -> Observable<AuthStatus> {
-//        return user.flatMapLatest { firebaseUser in
-//            return Observable.create { observer in
-//
-//                return Disposables.create()
-//            }
-//        }
-//        return Observable<AuthStatus>.combineLatest(user).flatMap { firebaseUser in
-//
-//        }
-//        return user.flatMapLatest { (firebaseUser: FirebaseAuth.User?) -> Observable<AuthStatus> in
-//            return Observable.create { observer in
-//                if let firebaseUser = firebaseUser {
-//                    UserService.shared.getUser(firebaseUser) { user in
-//                        observer.onNext(.Login(isRegsterd: user != nil))
-//                    }
-//                } else {
-//                    observer.onNext(.Logout)
-//                }
-//                return Disposables.create()
-//            }
+//    func userStateChangeListener(_ auth: Auth, _ user: FirebaseAuth.User?) {
+//        let currentUser = try? self.user.value()
+//        if currentUser != user {
+//            self.user.onNext(user)
 //        }
 //    }
     
-    func finishedGoogleSignIn(with credential: AuthCredential) {
+    func finishedGoogleSignIn(with credential: AuthCredential, completion: @escaping (_ user: FirebaseAuth.User?) -> Void) {
         firebaseAuth.signIn(with: credential) { [weak self] (result, error) in
             guard let firebaseUser = result?.user, error == nil else {
                 self?.signOut()
+                completion(nil)
                 return
             }
-            let user = User(user: firebaseUser)
+            completion(firebaseUser)
         }
     }
     
     func signOut() {
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            console("Error signing out: %@", signOutError)
-        }
+        try? firebaseAuth.signOut()
+        RealmManager.shared.deleteUser()
     }
 }
 

@@ -7,29 +7,23 @@
 
 import Foundation
 import FirebaseAuth
+import RealmSwift
 
-enum UserSNSType: String, Codable {
-    case unknown = ""
-    case google = "google.com"
-}
 
-struct User: Codable {
-    var id: String?
-    var sns: UserSNSType?
-    var name: String?
-    var email: String?
-    var description: String?
-    var profileUrl: URL?
-    var thumbnailUrl: String?
-    var phone: String?
+class User: Object, Codable {
+    @objc dynamic var id: String?
+    @objc dynamic var name: String?
+    @objc dynamic var email: String?
+    @objc dynamic var introduce: String?
+    @objc dynamic var profileUrl: String?
+    @objc dynamic var thumbnailUrl: String?
     
-    init(user: FirebaseAuth.User) {
+    convenience init(user: FirebaseAuth.User) {
+        self.init()
         id = user.uid
         name = user.displayName
         email = user.email
-        profileUrl = user.photoURL
-        phone = user.phoneNumber
-        sns = UserSNSType(rawValue: user.providerID) ?? UserSNSType.unknown
+        profileUrl = user.photoURL?.absoluteString
     }
     
     var registUserData: [String: Any]? {
@@ -39,10 +33,9 @@ struct User: Codable {
                     "id": id,
                     "name": name,
                     "email": email,
-                    "description": description ?? "",
-                    "profileUrl": profileUrl?.absoluteString ?? "",
+                    "introduce": introduce ?? "",
+                    "profileUrl": profileUrl ?? "",
                     "thumbnailUrl": thumbnailUrl ?? "",
-                    "phone": phone ?? ""
                 ]
             }
             return nil
