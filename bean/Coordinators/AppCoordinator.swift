@@ -9,24 +9,23 @@ import UIKit
 import RxSwift
 import FirebaseAuth
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator{
     var children = [Coordinator]()
     var router: Router
     
     let window: UIWindow
-    let navC: UINavigationController
-    let rootVC: RootViewController
+    let rootVC: RootViewController = RootViewController.init(nibName: "RootViewController", bundle: nil)
     
     let disposeBag: DisposeBag = DisposeBag()
     
     public init(window: UIWindow) {
+        console("init - AppCoordinator")
         self.window = window
-        self.rootVC = RootViewController.init(nibName: "RootViewController", bundle: nil)
-        self.navC = UINavigationController(rootViewController: rootVC)
-        self.navC.modalPresentationStyle = .fullScreen
-        self.router = NavigationRouter(navigationController: self.navC, fromViewController: nil)
+        self.router = Router(fromViewController: nil)
         
-        navC.setNavigationBarHidden(true, animated: false)
+        router.navigationController.viewControllers = [rootVC]
+        router.navigationController.setNavigationBarHidden(true, animated: false)
+        router.navigationController.modalPresentationStyle = .fullScreen
     }
     
     deinit {
@@ -34,13 +33,13 @@ class AppCoordinator: Coordinator {
     }
     
     func start(animated: Bool, parent: Coordinator?) {
-        window.rootViewController = navC
+        window.rootViewController = router.navigationController
         window.makeKeyAndVisible()
         
-        checkIsLogin()
+        observingIsLogin()
     }
     
-    func checkIsLogin() {
+    func observingIsLogin() {
         RealmManager.shared.observeIsLogin()
             .subscribe { [weak self] isLogin in
                 self?.onChangeLoginStatus(isLogin)
@@ -56,10 +55,10 @@ class AppCoordinator: Coordinator {
         }
         
         if(isLogin) {
-            let coordinator = MainCoordinator(router: router)
+            let coordinator = MainCoordinator(from: self.router)
             presentChild(coordinator, animated: true)
         } else {
-            let coordinator = SignInCoordinator(router: router)
+            let coordinator = SignInCoordinator(from: self.router)
             presentChild(coordinator, animated: true)
         }
     }

@@ -44,9 +44,11 @@
 		585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF992679263E00CADE6B /* SignInManager.swift */; };
 		585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF9B267928B300CADE6B /* LoginViewController.swift */; };
 		585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF9C267928B300CADE6B /* LoginViewController.xib */; };
+		585E41E7269559F300EFD025 /* BeanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41E6269559F300EFD025 /* BeanString.swift */; };
+		585E41EB269565C500EFD025 /* BeanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41EA269565C500EFD025 /* BeanView.swift */; };
+		585E41ED2695676900EFD025 /* BeanScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41EC2695676900EFD025 /* BeanScrollView.swift */; };
 		585FEDD62691824B00E95219 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDD52691824B00E95219 /* Coordinator.swift */; };
 		585FEDD92691828F00E95219 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDD82691828F00E95219 /* Router.swift */; };
-		585FEDDB269182EA00E95219 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDDA269182EA00E95219 /* NavigationRouter.swift */; };
 		585FEDDE2691856300E95219 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDDC2691856300E95219 /* RootTabBarViewController.swift */; };
 		585FEDDF2691856300E95219 /* RootTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDDD2691856300E95219 /* RootTabBarViewController.xib */; };
 		585FEDE12691858600E95219 /* HomeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDE02691858600E95219 /* HomeTabCoordinator.swift */; };
@@ -122,9 +124,11 @@
 		585DFF992679263E00CADE6B /* SignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
 		585DFF9B267928B300CADE6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		585DFF9C267928B300CADE6B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		585E41E6269559F300EFD025 /* BeanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanString.swift; sourceTree = "<group>"; };
+		585E41EA269565C500EFD025 /* BeanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanView.swift; sourceTree = "<group>"; };
+		585E41EC2695676900EFD025 /* BeanScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanScrollView.swift; sourceTree = "<group>"; };
 		585FEDD52691824B00E95219 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		585FEDD82691828F00E95219 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		585FEDDA269182EA00E95219 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		585FEDDC2691856300E95219 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		585FEDDD2691856300E95219 /* RootTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootTabBarViewController.xib; sourceTree = "<group>"; };
 		585FEDE02691858600E95219 /* HomeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCoordinator.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		5859E307267DAD500080BEDC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				585E41EE2695A13000EFD025 /* SignUp */,
 				58685D8826940F7400962AA3 /* Tabs */,
 				585DFF9326791E2400CADE6B /* Root */,
 				58C2803F2684646200E75801 /* MusicSearchViewController */,
@@ -260,6 +265,7 @@
 		585DFF7A2679189500CADE6B /* bean */ = {
 			isa = PBXGroup;
 			children = (
+				585E41E826955A4F00EFD025 /* Extension */,
 				58987E5A268C0AEF00C0C74E /* Utils */,
 				5859E2F4267DA0BE0080BEDC /* Service */,
 				5859E2FD267DA8350080BEDC /* Model */,
@@ -285,8 +291,6 @@
 				585DFF9526791EC800CADE6B /* RootViewController.xib */,
 				585DFF9B267928B300CADE6B /* LoginViewController.swift */,
 				585DFF9C267928B300CADE6B /* LoginViewController.xib */,
-				5897DABF26882AE300F288F4 /* SignUpViewController.swift */,
-				5897DAC026882AE300F288F4 /* SignUpViewController.xib */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -301,6 +305,32 @@
 				581232E22693614E008BDB67 /* RealmManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		585E41E826955A4F00EFD025 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				587F58AF268E201800577D62 /* BeanViewController.swift */,
+				58B70797268F0835002F385D /* BeanButton.swift */,
+				585E41E6269559F300EFD025 /* BeanString.swift */,
+				58709AAC26909F8600CD6BB8 /* BeanImage.swift */,
+				58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */,
+				58709AB22690D07200CD6BB8 /* BeanDictionary.swift */,
+				58B70799268F0A28002F385D /* BeanColor.swift */,
+				58685D86269407B100962AA3 /* BeanFont.swift */,
+				585E41EA269565C500EFD025 /* BeanView.swift */,
+				585E41EC2695676900EFD025 /* BeanScrollView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		585E41EE2695A13000EFD025 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				5897DABF26882AE300F288F4 /* SignUpViewController.swift */,
+				5897DAC026882AE300F288F4 /* SignUpViewController.xib */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		585FEDD42691823D00E95219 /* Coordinators */ = {
@@ -320,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				585FEDD82691828F00E95219 /* Router.swift */,
-				585FEDDA269182EA00E95219 /* NavigationRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -352,14 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */,
-				587F58AF268E201800577D62 /* BeanViewController.swift */,
-				58B70797268F0835002F385D /* BeanButton.swift */,
-				58B70799268F0A28002F385D /* BeanColor.swift */,
-				58685D86269407B100962AA3 /* BeanFont.swift */,
 				58709AAA2690781400CD6BB8 /* Time.swift */,
-				58709AAC26909F8600CD6BB8 /* BeanImage.swift */,
-				58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */,
-				58709AB22690D07200CD6BB8 /* BeanDictionary.swift */,
 				581232DF26934EBD008BDB67 /* Common.swift */,
 				58685D8B2694167900962AA3 /* Device.swift */,
 			);
@@ -566,6 +588,7 @@
 				585FEDE12691858600E95219 /* HomeTabCoordinator.swift in Sources */,
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				5859E325267EF8800080BEDC /* LocationManager.swift in Sources */,
+				585E41E7269559F300EFD025 /* BeanString.swift in Sources */,
 				5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */,
 				58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */,
 				5843183C268B7F0600EED39B /* PostingPhotoViewController.swift in Sources */,
@@ -574,9 +597,11 @@
 				585FEDF72692099900E95219 /* MyTabViewController.swift in Sources */,
 				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
 				585FEDD92691828F00E95219 /* Router.swift in Sources */,
+				585E41EB269565C500EFD025 /* BeanView.swift in Sources */,
 				587F58B0268E201800577D62 /* BeanViewController.swift in Sources */,
 				58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */,
 				58B70798268F0835002F385D /* BeanButton.swift in Sources */,
+				585E41ED2695676900EFD025 /* BeanScrollView.swift in Sources */,
 				589C4D912686115600E7A019 /* UserService.swift in Sources */,
 				585FEDE3269185A300E95219 /* SignInCoordinator.swift in Sources */,
 				585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */,
@@ -599,7 +624,6 @@
 				58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */,
 				5859E320267E3EC80080BEDC /* ApiLogger.swift in Sources */,
 				5859E31E267E35C70080BEDC /* BaseInterceptor.swift in Sources */,
-				585FEDDB269182EA00E95219 /* NavigationRouter.swift in Sources */,
 				585DFF9626791EC800CADE6B /* RootViewController.swift in Sources */,
 				58431839268B7EF000EED39B /* ApiResponse.swift in Sources */,
 				58431835268B7EC400EED39B /* PhotoPost.swift in Sources */,

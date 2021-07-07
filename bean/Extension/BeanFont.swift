@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum FontsStyle {
-    
-}
-
 extension UIFont {
     static var title1: UIFont {
         return UIFont.systemFont(ofSize: 28, weight: .bold)
@@ -23,6 +19,18 @@ extension UIFont {
     }
     static var title2Bold: UIFont {
         return UIFont.systemFont(ofSize: 21, weight: .bold)
+    }
+    static var title3: UIFont {
+        return UIFont.systemFont(ofSize: 19, weight: .regular)
+    }
+    static var title3Bold: UIFont {
+        return UIFont.systemFont(ofSize: 19, weight: .bold)
+    }
+    static var title4: UIFont {
+        return UIFont.systemFont(ofSize: 17, weight: .regular)
+    }
+    static var title4Bold: UIFont {
+        return UIFont.systemFont(ofSize: 17, weight: .bold)
     }
     static var headline1: UIFont {
         return UIFont.systemFont(ofSize: 16, weight: .regular)

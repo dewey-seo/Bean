@@ -13,15 +13,13 @@ class SignInCoordinator: NSObject, Coordinator {
     weak var parent: Coordinator?
     var children = [Coordinator]()
     var router: Router
-    var user: FirebaseAuth.User?
     
     lazy var loginVC: LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
     lazy var signUpVC: SignUpViewController = SignUpViewController(nibName: "SignUpViewController", bundle: nil)
 
-    init(router: Router, user: FirebaseAuth.User? = nil) {
-        console("init - SignInCoordinator")
-        self.router = router
-        self.user = user
+    init(from: Router?) {
+        self.router = Router.init(fromViewController: from?.navigationController)
+        router.navigationController.modalPresentationStyle = .fullScreen
     }
     
     deinit {
@@ -37,6 +35,7 @@ class SignInCoordinator: NSObject, Coordinator {
 // MARK: - LoginViewControllerDelegate
 extension SignInCoordinator: LoginViewControllerDelegate {
     func registerUser(with firebaseUser: FirebaseAuth.User?) {
+        signUpVC.user = firebaseUser
         router.push(signUpVC, animated: true)
     }
 }

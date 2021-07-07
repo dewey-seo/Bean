@@ -12,9 +12,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="bean" customModuleProvider="target">
             <connections>
-                <outlet property="bottomMargin" destination="396-oL-y4O" id="Sld-qd-SXR"/>
-                <outlet property="buttomButton" destination="DWo-0r-TCd" id="aaV-Z7-c9f"/>
-                <outlet property="buttonHeight" destination="azQ-yc-Njt" id="Vko-jF-ely"/>
+                <outlet property="emailBottomLine" destination="G6c-Sd-WE5" id="Err-mf-6pw"/>
+                <outlet property="emailInputContainer" destination="jlI-fl-fVr" id="PRN-mW-fra"/>
+                <outlet property="emailLabel" destination="cNp-QN-xfN" id="JO5-fA-qgk"/>
+                <outlet property="emailTextField" destination="8T6-8M-S1N" id="tWg-tH-Yaq"/>
+                <outlet property="introduceBottomLine" destination="NbZ-Xz-PbC" id="n6z-V0-wr1"/>
+                <outlet property="introduceInputContainer" destination="pWH-7q-EPQ" id="UEy-d3-mx8"/>
+                <outlet property="introduceLabel" destination="4YR-3e-Z9K" id="Igl-oK-hdV"/>
+                <outlet property="introduceTextView" destination="j0T-ti-y53" id="h4w-Ih-ugt"/>
+                <outlet property="marginB" destination="21H-gM-QaP" id="FzG-9y-69W"/>
+                <outlet property="nameBottomLine" destination="PzU-5s-pdN" id="kE1-xy-nak"/>
+                <outlet property="nameInputContainer" destination="o07-H2-L9f" id="Yff-co-nAj"/>
+                <outlet property="nameLabel" destination="uw3-4l-ukP" id="7kX-Fh-vi2"/>
+                <outlet property="nameTextField" destination="UMB-TW-qDh" id="ab7-De-W8U"/>
+                <outlet property="profileImageView" destination="YTS-n8-m2n" id="OBE-l0-ass"/>
+                <outlet property="scrollView" destination="efV-LA-vQO" id="eME-YC-xBf"/>
+                <outlet property="signUpButton" destination="DWo-0r-TCd" id="xD3-et-Dcu"/>
+                <outlet property="signUpButtonHeight" destination="azQ-yc-Njt" id="vZm-bd-dOX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +41,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="782"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-2E-udX" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="507"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YTS-n8-m2n">
                                     <rect key="frame" x="147" y="20" width="120" height="120"/>
@@ -146,25 +160,40 @@
                                         <constraint firstItem="4YR-3e-Z9K" firstAttribute="leading" secondItem="pWH-7q-EPQ" secondAttribute="leading" id="rVS-zQ-Mgk"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIa-4j-vOS">
+                                    <rect key="frame" x="167" y="40" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="AKJ-XL-cGz"/>
+                                        <constraint firstAttribute="height" constant="100" id="GiQ-5t-Dwd"/>
+                                    </constraints>
+                                    <inset key="contentEdgeInsets" minX="62" minY="62" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="icon_album"/>
+                                    <connections>
+                                        <action selector="onPressChangeProfile:" destination="-1" eventType="touchUpInside" id="9Kq-mX-abk"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="o07-H2-L9f" firstAttribute="leading" secondItem="s8a-2E-udX" secondAttribute="leading" constant="16" id="4ta-ih-sru"/>
                                 <constraint firstAttribute="trailing" secondItem="o07-H2-L9f" secondAttribute="trailing" constant="16" id="5dM-mb-4m8"/>
                                 <constraint firstItem="o07-H2-L9f" firstAttribute="top" secondItem="jlI-fl-fVr" secondAttribute="bottom" constant="16" id="9ra-jt-kzE"/>
+                                <constraint firstItem="kIa-4j-vOS" firstAttribute="trailing" secondItem="YTS-n8-m2n" secondAttribute="trailing" id="GnD-kX-QXd"/>
                                 <constraint firstItem="YTS-n8-m2n" firstAttribute="top" secondItem="s8a-2E-udX" secondAttribute="top" constant="20" id="MWH-qS-a6U"/>
                                 <constraint firstItem="jlI-fl-fVr" firstAttribute="top" secondItem="YTS-n8-m2n" secondAttribute="bottom" constant="32" id="ONa-2M-7fI"/>
                                 <constraint firstItem="YTS-n8-m2n" firstAttribute="centerX" secondItem="s8a-2E-udX" secondAttribute="centerX" id="QPH-yx-BmO"/>
                                 <constraint firstItem="pWH-7q-EPQ" firstAttribute="leading" secondItem="s8a-2E-udX" secondAttribute="leading" constant="16" id="SDy-uC-TV4"/>
                                 <constraint firstAttribute="trailing" secondItem="pWH-7q-EPQ" secondAttribute="trailing" constant="16" id="Syi-pQ-y5f"/>
                                 <constraint firstItem="pWH-7q-EPQ" firstAttribute="top" secondItem="o07-H2-L9f" secondAttribute="bottom" constant="16" id="U3V-7x-5mc"/>
+                                <constraint firstAttribute="bottom" secondItem="pWH-7q-EPQ" secondAttribute="bottom" constant="50" id="adp-9m-SOh"/>
                                 <constraint firstItem="jlI-fl-fVr" firstAttribute="leading" secondItem="s8a-2E-udX" secondAttribute="leading" constant="16" id="fgs-IS-c8k"/>
+                                <constraint firstItem="kIa-4j-vOS" firstAttribute="bottom" secondItem="YTS-n8-m2n" secondAttribute="bottom" id="nAl-dv-uWE"/>
                                 <constraint firstAttribute="trailing" secondItem="jlI-fl-fVr" secondAttribute="trailing" constant="16" id="ued-se-gyk"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <gestureRecognizers/>
                     <constraints>
-                        <constraint firstItem="s8a-2E-udX" firstAttribute="height" secondItem="FBb-1t-aqs" secondAttribute="height" priority="750" id="LUp-Xa-e5q"/>
                         <constraint firstItem="s8a-2E-udX" firstAttribute="width" secondItem="FBb-1t-aqs" secondAttribute="width" id="ReW-yq-srg"/>
                         <constraint firstItem="s8a-2E-udX" firstAttribute="trailing" secondItem="GFX-eg-NFa" secondAttribute="trailing" id="Umd-sH-lai"/>
                         <constraint firstItem="s8a-2E-udX" firstAttribute="bottom" secondItem="GFX-eg-NFa" secondAttribute="bottom" id="ty9-eM-iiM"/>
@@ -173,46 +202,46 @@
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="GFX-eg-NFa"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="FBb-1t-aqs"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="vjV-QQ-l93" appends="YES" id="jFo-QQ-EFK"/>
+                    </connections>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngg-NQ-F0x">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-0r-TCd">
                     <rect key="frame" x="0.0" y="826" width="414" height="70"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-0r-TCd">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                            <color key="backgroundColor" name="AccentColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="70" id="azQ-yc-Njt"/>
-                            </constraints>
-                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
-                            <state key="normal" title="Button">
-                                <color key="titleColor" red="0.93162347850000005" green="0.80513999410000003" blue="0.0073471080279999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" name="AccentColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="DWo-0r-TCd" secondAttribute="trailing" id="0N2-jR-DUD"/>
-                        <constraint firstItem="DWo-0r-TCd" firstAttribute="leading" secondItem="ngg-NQ-F0x" secondAttribute="leading" id="4fu-h5-ufF"/>
-                        <constraint firstItem="DWo-0r-TCd" firstAttribute="top" secondItem="ngg-NQ-F0x" secondAttribute="top" id="XpB-G6-JQW"/>
-                        <constraint firstAttribute="bottom" secondItem="DWo-0r-TCd" secondAttribute="bottom" id="mW9-Ot-6EW"/>
+                        <constraint firstAttribute="height" constant="70" id="azQ-yc-Njt"/>
                     </constraints>
-                </view>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <state key="normal" title="Sign up">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onPressSignUp:" destination="-1" eventType="touchUpInside" id="l6b-Y1-26H"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ngg-NQ-F0x" secondAttribute="bottom" id="396-oL-y4O"/>
+                <constraint firstAttribute="bottom" secondItem="DWo-0r-TCd" secondAttribute="bottom" id="21H-gM-QaP"/>
+                <constraint firstItem="DWo-0r-TCd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9d4-SX-gE4"/>
                 <constraint firstItem="efV-LA-vQO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DzT-4U-brr"/>
+                <constraint firstItem="DWo-0r-TCd" firstAttribute="top" secondItem="efV-LA-vQO" secondAttribute="bottom" id="FlQ-bF-Fh5"/>
+                <constraint firstAttribute="trailing" secondItem="DWo-0r-TCd" secondAttribute="trailing" id="HM7-rz-mcU"/>
                 <constraint firstAttribute="trailing" secondItem="efV-LA-vQO" secondAttribute="trailing" id="JOm-Oy-iBB"/>
-                <constraint firstAttribute="trailing" secondItem="ngg-NQ-F0x" secondAttribute="trailing" id="NcL-hN-Vdw"/>
                 <constraint firstItem="efV-LA-vQO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ORk-OO-8R9"/>
-                <constraint firstItem="ngg-NQ-F0x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YWh-nn-9bD"/>
-                <constraint firstItem="ngg-NQ-F0x" firstAttribute="top" secondItem="efV-LA-vQO" secondAttribute="bottom" id="z91-n3-52F"/>
             </constraints>
             <point key="canvasLocation" x="-146.37681159420291" y="-23.4375"/>
         </view>
+        <tapGestureRecognizer id="vjV-QQ-l93">
+            <connections>
+                <action selector="dismissKeyboard:" destination="-1" id="jWP-0i-6Yk"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="icon_album" width="48" height="48"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

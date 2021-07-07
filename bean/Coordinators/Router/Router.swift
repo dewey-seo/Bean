@@ -7,28 +7,42 @@
 
 import UIKit
 
-public protocol Router {
-    var onDismiss: (() -> Void)? { get set }
+public class Router: NSObject {
+    public let navigationController: UINavigationController
+    public var onDismiss: (() -> Void)?
     
-    // When Start Coordinator, should be called.
-    func present(_ viewController: UIViewController, animated: Bool)
-    func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?)
+    weak var fromViewController: UIViewController?
     
-    // Only use inside coordinator
-    func push(_ viewController: UIViewController, animated: Bool)
-    
-    // Weh Close Coordinator, should be called.
-    func dismiss(animated: Bool)
-    func dismiss(animated: Bool, completion:(() -> Void)?)
+    init(fromViewController: UIViewController?) {
+        self.navigationController = UINavigationController()
+        self.fromViewController = fromViewController
+    }
 }
 
 extension Router {
-    public func present(_ viewController: UIViewController, animated: Bool) {
+    func present(_ viewController: UIViewController, animated: Bool) {
         present(viewController, animated: animated, completion: nil)
     }
     
-    public func dismiss(animated: Bool) {
+    func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        guard let from = fromViewController else { return }
+        navigationController.viewControllers = [viewController]
+        from.present(navigationController, animated: true, completion: completion)
+    }
+    
+    func push(_ viewController: UIViewController, animated: Bool) {
+        navigationController.pushViewController(viewController, animated: animated)
+    }
+    
+    func dismiss(animated: Bool) {
         dismiss(animated: animated, completion: nil)
+    }
+    func dismiss(animated: Bool, completion:(() -> Void)?) {
+        onDismiss?()
+        navigationController.dismiss(animated: animated, completion: completion)
     }
 }
 
+// MARK: - UINavigationControllerDelegate
+extension Router: UINavigationControllerDelegate {
+}
