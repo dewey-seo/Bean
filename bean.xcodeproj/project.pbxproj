@@ -11,6 +11,7 @@
 		5806F7A626857CC7001117C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A526857CC7001117C6 /* UserModel.swift */; };
 		5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A826857DB8001117C6 /* FirebaseService.swift */; };
 		581232E026934EBD008BDB67 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232DF26934EBD008BDB67 /* Common.swift */; };
+		581232E32693614E008BDB67 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232E22693614E008BDB67 /* RealmManager.swift */; };
 		5825559F2679D23E00416A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825559D2679D23E00416A6C /* MainViewController.swift */; };
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
@@ -43,21 +44,26 @@
 		585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF992679263E00CADE6B /* SignInManager.swift */; };
 		585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF9B267928B300CADE6B /* LoginViewController.swift */; };
 		585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF9C267928B300CADE6B /* LoginViewController.xib */; };
+		585E41E7269559F300EFD025 /* BeanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41E6269559F300EFD025 /* BeanString.swift */; };
+		585E41EB269565C500EFD025 /* BeanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41EA269565C500EFD025 /* BeanView.swift */; };
+		585E41ED2695676900EFD025 /* BeanScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41EC2695676900EFD025 /* BeanScrollView.swift */; };
 		585FEDD62691824B00E95219 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDD52691824B00E95219 /* Coordinator.swift */; };
 		585FEDD92691828F00E95219 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDD82691828F00E95219 /* Router.swift */; };
-		585FEDDB269182EA00E95219 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDDA269182EA00E95219 /* NavigationRouter.swift */; };
-		585FEDDE2691856300E95219 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDDC2691856300E95219 /* MainTabBarViewController.swift */; };
-		585FEDDF2691856300E95219 /* MainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDDD2691856300E95219 /* MainTabBarViewController.xib */; };
+		585FEDDE2691856300E95219 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDDC2691856300E95219 /* RootTabBarViewController.swift */; };
+		585FEDDF2691856300E95219 /* RootTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDDD2691856300E95219 /* RootTabBarViewController.xib */; };
 		585FEDE12691858600E95219 /* HomeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDE02691858600E95219 /* HomeTabCoordinator.swift */; };
 		585FEDE3269185A300E95219 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDE2269185A300E95219 /* SignInCoordinator.swift */; };
 		585FEDE5269185D100E95219 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDE4269185D100E95219 /* ProfileTabCoordinator.swift */; };
 		585FEDE92691878600E95219 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDE82691878600E95219 /* AppCoordinator.swift */; };
 		585FEDED269187C200E95219 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDEC269187C200E95219 /* MainCoordinator.swift */; };
 		585FEDF02691B7E400E95219 /* CopyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDEF2691B7E400E95219 /* CopyCoordinator.swift */; };
-		585FEDF32692095200E95219 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDF12692095200E95219 /* HomeViewController.swift */; };
-		585FEDF42692095200E95219 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDF22692095200E95219 /* HomeViewController.xib */; };
-		585FEDF72692099900E95219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDF52692099900E95219 /* ProfileViewController.swift */; };
-		585FEDF82692099900E95219 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDF62692099900E95219 /* ProfileViewController.xib */; };
+		585FEDF32692095200E95219 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDF12692095200E95219 /* HomeTabViewController.swift */; };
+		585FEDF42692095200E95219 /* HomeTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDF22692095200E95219 /* HomeTabViewController.xib */; };
+		585FEDF72692099900E95219 /* MyTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDF52692099900E95219 /* MyTabViewController.swift */; };
+		585FEDF82692099900E95219 /* MyTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585FEDF62692099900E95219 /* MyTabViewController.xib */; };
+		58685D87269407B100962AA3 /* BeanFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58685D86269407B100962AA3 /* BeanFont.swift */; };
+		58685D8A2694118D00962AA3 /* bottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58685D892694118D00962AA3 /* bottomButton.swift */; };
+		58685D8C2694167900962AA3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58685D8B2694167900962AA3 /* Device.swift */; };
 		58709AAB2690781400CD6BB8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAA2690781400CD6BB8 /* Time.swift */; };
 		58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAC26909F8600CD6BB8 /* BeanImage.swift */; };
 		58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */; };
@@ -83,6 +89,7 @@
 		5806F7A526857CC7001117C6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5806F7A826857DB8001117C6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		581232DF26934EBD008BDB67 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		581232E22693614E008BDB67 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5825559D2679D23E00416A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -117,21 +124,26 @@
 		585DFF992679263E00CADE6B /* SignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
 		585DFF9B267928B300CADE6B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		585DFF9C267928B300CADE6B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		585E41E6269559F300EFD025 /* BeanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanString.swift; sourceTree = "<group>"; };
+		585E41EA269565C500EFD025 /* BeanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanView.swift; sourceTree = "<group>"; };
+		585E41EC2695676900EFD025 /* BeanScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanScrollView.swift; sourceTree = "<group>"; };
 		585FEDD52691824B00E95219 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		585FEDD82691828F00E95219 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		585FEDDA269182EA00E95219 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		585FEDDC2691856300E95219 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		585FEDDD2691856300E95219 /* MainTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarViewController.xib; sourceTree = "<group>"; };
+		585FEDDC2691856300E95219 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		585FEDDD2691856300E95219 /* RootTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootTabBarViewController.xib; sourceTree = "<group>"; };
 		585FEDE02691858600E95219 /* HomeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCoordinator.swift; sourceTree = "<group>"; };
 		585FEDE2269185A300E95219 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		585FEDE4269185D100E95219 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
 		585FEDE82691878600E95219 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		585FEDEC269187C200E95219 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		585FEDEF2691B7E400E95219 /* CopyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyCoordinator.swift; sourceTree = "<group>"; };
-		585FEDF12692095200E95219 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		585FEDF22692095200E95219 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		585FEDF52692099900E95219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		585FEDF62692099900E95219 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		585FEDF12692095200E95219 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
+		585FEDF22692095200E95219 /* HomeTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTabViewController.xib; sourceTree = "<group>"; };
+		585FEDF52692099900E95219 /* MyTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabViewController.swift; sourceTree = "<group>"; };
+		585FEDF62692099900E95219 /* MyTabViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTabViewController.xib; sourceTree = "<group>"; };
+		58685D86269407B100962AA3 /* BeanFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanFont.swift; sourceTree = "<group>"; };
+		58685D892694118D00962AA3 /* bottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bottomButton.swift; sourceTree = "<group>"; };
+		58685D8B2694167900962AA3 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		58709AAA2690781400CD6BB8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		58709AAC26909F8600CD6BB8 /* BeanImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanImage.swift; sourceTree = "<group>"; };
 		58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanEncodable.swift; sourceTree = "<group>"; };
@@ -206,19 +218,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5859E306267DAD3E0080BEDC /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
 		5859E307267DAD500080BEDC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				585E41EE2695A13000EFD025 /* SignUp */,
+				58685D8826940F7400962AA3 /* Tabs */,
+				585DFF9326791E2400CADE6B /* Root */,
 				58C2803F2684646200E75801 /* MusicSearchViewController */,
 				5859E328267F1EA60080BEDC /* WeatherViewController.swift */,
 				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
+				5825559D2679D23E00416A6C /* MainViewController.swift */,
+				5825559E2679D23E00416A6C /* MainViewController.xib */,
 				5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */,
 				5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */,
 			);
@@ -255,16 +265,15 @@
 		585DFF7A2679189500CADE6B /* bean */ = {
 			isa = PBXGroup;
 			children = (
+				585E41E826955A4F00EFD025 /* Extension */,
+				58987E5A268C0AEF00C0C74E /* Utils */,
+				5859E2F4267DA0BE0080BEDC /* Service */,
+				5859E2FD267DA8350080BEDC /* Model */,
+				585DFF982679260500CADE6B /* Managers */,
 				585FEDD42691823D00E95219 /* Coordinators */,
 				58987E5D268C109C00C0C74E /* CommonUI */,
-				58987E5A268C0AEF00C0C74E /* Utils */,
 				58C280402684647F00E75801 /* Views */,
 				5859E307267DAD500080BEDC /* ViewControllers */,
-				5859E306267DAD3E0080BEDC /* Tabs */,
-				5859E2FD267DA8350080BEDC /* Model */,
-				5859E2F4267DA0BE0080BEDC /* Service */,
-				585DFF982679260500CADE6B /* Managers */,
-				585DFF9326791E2400CADE6B /* Root */,
 				585DFF7B2679189500CADE6B /* AppDelegate.swift */,
 				585DFF842679189600CADE6B /* Assets.xcassets */,
 				585DFF862679189600CADE6B /* LaunchScreen.storyboard */,
@@ -282,16 +291,6 @@
 				585DFF9526791EC800CADE6B /* RootViewController.xib */,
 				585DFF9B267928B300CADE6B /* LoginViewController.swift */,
 				585DFF9C267928B300CADE6B /* LoginViewController.xib */,
-				5825559D2679D23E00416A6C /* MainViewController.swift */,
-				5825559E2679D23E00416A6C /* MainViewController.xib */,
-				5897DABF26882AE300F288F4 /* SignUpViewController.swift */,
-				5897DAC026882AE300F288F4 /* SignUpViewController.xib */,
-				585FEDDC2691856300E95219 /* MainTabBarViewController.swift */,
-				585FEDDD2691856300E95219 /* MainTabBarViewController.xib */,
-				585FEDF12692095200E95219 /* HomeViewController.swift */,
-				585FEDF22692095200E95219 /* HomeViewController.xib */,
-				585FEDF52692099900E95219 /* ProfileViewController.swift */,
-				585FEDF62692099900E95219 /* ProfileViewController.xib */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -303,8 +302,35 @@
 				582D46612679925300A1B908 /* AuthManager.swift */,
 				5859E31A267E29620080BEDC /* KeyManager.swift */,
 				5859E324267EF8800080BEDC /* LocationManager.swift */,
+				581232E22693614E008BDB67 /* RealmManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		585E41E826955A4F00EFD025 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				587F58AF268E201800577D62 /* BeanViewController.swift */,
+				58B70797268F0835002F385D /* BeanButton.swift */,
+				585E41E6269559F300EFD025 /* BeanString.swift */,
+				58709AAC26909F8600CD6BB8 /* BeanImage.swift */,
+				58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */,
+				58709AB22690D07200CD6BB8 /* BeanDictionary.swift */,
+				58B70799268F0A28002F385D /* BeanColor.swift */,
+				58685D86269407B100962AA3 /* BeanFont.swift */,
+				585E41EA269565C500EFD025 /* BeanView.swift */,
+				585E41EC2695676900EFD025 /* BeanScrollView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		585E41EE2695A13000EFD025 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				5897DABF26882AE300F288F4 /* SignUpViewController.swift */,
+				5897DAC026882AE300F288F4 /* SignUpViewController.xib */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		585FEDD42691823D00E95219 /* Coordinators */ = {
@@ -324,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				585FEDD82691828F00E95219 /* Router.swift */,
-				585FEDDA269182EA00E95219 /* NavigationRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -339,18 +364,26 @@
 			path = MainCoordinator;
 			sourceTree = "<group>";
 		};
+		58685D8826940F7400962AA3 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				585FEDF12692095200E95219 /* HomeTabViewController.swift */,
+				585FEDF22692095200E95219 /* HomeTabViewController.xib */,
+				585FEDF52692099900E95219 /* MyTabViewController.swift */,
+				585FEDF62692099900E95219 /* MyTabViewController.xib */,
+				585FEDDC2691856300E95219 /* RootTabBarViewController.swift */,
+				585FEDDD2691856300E95219 /* RootTabBarViewController.xib */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		58987E5A268C0AEF00C0C74E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				58987E5B268C0B0E00C0C74E /* KeyboardObserve.swift */,
-				587F58AF268E201800577D62 /* BeanViewController.swift */,
-				58B70797268F0835002F385D /* BeanButton.swift */,
-				58B70799268F0A28002F385D /* BeanColor.swift */,
 				58709AAA2690781400CD6BB8 /* Time.swift */,
-				58709AAC26909F8600CD6BB8 /* BeanImage.swift */,
-				58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */,
-				58709AB22690D07200CD6BB8 /* BeanDictionary.swift */,
 				581232DF26934EBD008BDB67 /* Common.swift */,
+				58685D8B2694167900962AA3 /* Device.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -358,6 +391,7 @@
 		58987E5D268C109C00C0C74E /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				58685D892694118D00962AA3 /* bottomButton.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -468,17 +502,17 @@
 				585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */,
 				582555A02679D23E00416A6C /* MainViewController.xib in Resources */,
 				585DFF882679189600CADE6B /* LaunchScreen.storyboard in Resources */,
-				585FEDF82692099900E95219 /* ProfileViewController.xib in Resources */,
+				585FEDF82692099900E95219 /* MyTabViewController.xib in Resources */,
 				58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */,
 				585DFF9026791B9D00CADE6B /* GoogleService-Info.plist in Resources */,
-				585FEDF42692095200E95219 /* HomeViewController.xib in Resources */,
+				585FEDF42692095200E95219 /* HomeTabViewController.xib in Resources */,
 				5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */,
 				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
 				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
 				5843183D268B7F0600EED39B /* PostingPhotoViewController.xib in Resources */,
 				585DFF9726791EC800CADE6B /* RootViewController.xib in Resources */,
 				5859E30D267DD8350080BEDC /* keys-Info.plist in Resources */,
-				585FEDDF2691856300E95219 /* MainTabBarViewController.xib in Resources */,
+				585FEDDF2691856300E95219 /* RootTabBarViewController.xib in Resources */,
 				585DFF852679189600CADE6B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,23 +588,26 @@
 				585FEDE12691858600E95219 /* HomeTabCoordinator.swift in Sources */,
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				5859E325267EF8800080BEDC /* LocationManager.swift in Sources */,
+				585E41E7269559F300EFD025 /* BeanString.swift in Sources */,
 				5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */,
 				58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */,
 				5843183C268B7F0600EED39B /* PostingPhotoViewController.swift in Sources */,
 				58B7079F268F2231002F385D /* PostService.swift in Sources */,
 				58B7079D268F1815002F385D /* PostComment.swift in Sources */,
-				585FEDF72692099900E95219 /* ProfileViewController.swift in Sources */,
+				585FEDF72692099900E95219 /* MyTabViewController.swift in Sources */,
 				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
 				585FEDD92691828F00E95219 /* Router.swift in Sources */,
+				585E41EB269565C500EFD025 /* BeanView.swift in Sources */,
 				587F58B0268E201800577D62 /* BeanViewController.swift in Sources */,
 				58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */,
 				58B70798268F0835002F385D /* BeanButton.swift in Sources */,
+				585E41ED2695676900EFD025 /* BeanScrollView.swift in Sources */,
 				589C4D912686115600E7A019 /* UserService.swift in Sources */,
 				585FEDE3269185A300E95219 /* SignInCoordinator.swift in Sources */,
 				585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */,
 				585FEDE5269185D100E95219 /* ProfileTabCoordinator.swift in Sources */,
 				58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */,
-				585FEDF32692095200E95219 /* HomeViewController.swift in Sources */,
+				585FEDF32692095200E95219 /* HomeTabViewController.swift in Sources */,
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
 				5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */,
 				58709AAB2690781400CD6BB8 /* Time.swift in Sources */,
@@ -579,17 +616,19 @@
 				585FEDF02691B7E400E95219 /* CopyCoordinator.swift in Sources */,
 				5825559F2679D23E00416A6C /* MainViewController.swift in Sources */,
 				585FEDD62691824B00E95219 /* Coordinator.swift in Sources */,
+				58685D8A2694118D00962AA3 /* bottomButton.swift in Sources */,
+				58685D87269407B100962AA3 /* BeanFont.swift in Sources */,
 				58B7079A268F0A28002F385D /* BeanColor.swift in Sources */,
-				585FEDDE2691856300E95219 /* MainTabBarViewController.swift in Sources */,
+				585FEDDE2691856300E95219 /* RootTabBarViewController.swift in Sources */,
 				585FEDED269187C200E95219 /* MainCoordinator.swift in Sources */,
 				58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */,
 				5859E320267E3EC80080BEDC /* ApiLogger.swift in Sources */,
 				5859E31E267E35C70080BEDC /* BaseInterceptor.swift in Sources */,
-				585FEDDB269182EA00E95219 /* NavigationRouter.swift in Sources */,
 				585DFF9626791EC800CADE6B /* RootViewController.swift in Sources */,
 				58431839268B7EF000EED39B /* ApiResponse.swift in Sources */,
 				58431835268B7EC400EED39B /* PhotoPost.swift in Sources */,
 				58431836268B7EC400EED39B /* Post.swift in Sources */,
+				581232E32693614E008BDB67 /* RealmManager.swift in Sources */,
 				5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */,
 				582D46622679925300A1B908 /* AuthManager.swift in Sources */,
 				5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */,
@@ -597,6 +636,7 @@
 				5859E31B267E29620080BEDC /* KeyManager.swift in Sources */,
 				58431831268B7EAB00EED39B /* FeedModel.swift in Sources */,
 				5859E315267E219B0080BEDC /* ApiService.swift in Sources */,
+				58685D8C2694167900962AA3 /* Device.swift in Sources */,
 				5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */,
 				58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */,
 				58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */,

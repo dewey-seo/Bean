@@ -9,24 +9,23 @@ import UIKit
 import RxSwift
 import FirebaseAuth
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: Coordinator{
     var children = [Coordinator]()
     var router: Router
     
     let window: UIWindow
-    let navC: UINavigationController
-    let rootVC: RootViewController
+    let rootVC: RootViewController = RootViewController.init(nibName: "RootViewController", bundle: nil)
     
     let disposeBag: DisposeBag = DisposeBag()
     
     public init(window: UIWindow) {
+        console("init - AppCoordinator")
         self.window = window
-        self.rootVC = RootViewController.init(nibName: "RootViewController", bundle: nil)
-        self.navC = UINavigationController(rootViewController: rootVC)
-        self.navC.modalPresentationStyle = .fullScreen
-        self.router = NavigationRouter(navigationController: self.navC)
+        self.router = Router(fromViewController: nil)
         
-        navC.setNavigationBarHidden(true, animated: false)
+        router.navigationController.viewControllers = [rootVC]
+        router.navigationController.setNavigationBarHidden(true, animated: false)
+        router.navigationController.modalPresentationStyle = .fullScreen
     }
     
     deinit {
@@ -34,43 +33,32 @@ class AppCoordinator: Coordinator {
     }
     
     func start(animated: Bool, parent: Coordinator?) {
-        window.rootViewController = navC
+        window.rootViewController = router.navigationController
         window.makeKeyAndVisible()
         
-        ovserveLoginStatusChange()
+        observingIsLogin()
     }
     
-    func ovserveLoginStatusChange() {
-        AuthManager.shared.user.subscribe(onNext: { [weak self] firebaseUser in
-            if let firebaseUser = firebaseUser {
-                UserService.shared.getUser(firebaseUser) { user in
-                    guard let _ = user else {
-                        self?.onChangeLoginStatus(status: .Register(user: firebaseUser))
-                        return
-                    }
-                    self?.onChangeLoginStatus(status: .Login)
-                }
-            } else {
-                self?.onChangeLoginStatus(status: .Logout)
+    func observingIsLogin() {
+        RealmManager.shared.observeIsLogin()
+            .subscribe { [weak self] isLogin in
+                self?.onChangeLoginStatus(isLogin)
             }
-        })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
     
-    func onChangeLoginStatus(status: AuthStatus) {
+    func onChangeLoginStatus(_ isLogin: Bool) {
+        console("isLogin -> \(isLogin)")
+        
         if let child = children.first {
             child.close(animated: true)
         }
         
-        switch status {
-        case .Login:
-            let coordinator = MainCoordinator(router: router)
+        if(isLogin) {
+            let coordinator = MainCoordinator(from: self.router)
             presentChild(coordinator, animated: true)
-        case .Logout:
-            let coordinator = SignInCoordinator(router: router)
-            presentChild(coordinator, animated: true)
-        case .Register(let user):
-            let coordinator = SignInCoordinator(router: router, user: user)
+        } else {
+            let coordinator = SignInCoordinator(from: self.router)
             presentChild(coordinator, animated: true)
         }
     }

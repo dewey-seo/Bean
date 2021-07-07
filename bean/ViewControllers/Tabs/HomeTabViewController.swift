@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeTabViewController.swift
 //  bean
 //
 //  Created by dewey seo on 04/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeTabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

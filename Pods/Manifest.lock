@@ -355,12 +355,23 @@ PODS:
   - nanopb/encode (2.30908.0)
   - ObjectMapper (3.5.3)
   - PromisesObjC (1.2.12)
+  - Realm (10.9.0):
+    - Realm/Headers (= 10.9.0)
+  - Realm/Headers (10.9.0)
+  - RealmSwift (10.9.0):
+    - Realm (= 10.9.0)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
+  - RxRealm (5.0.1):
+    - Realm (~> 10.5)
+    - RealmSwift (~> 10.5)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.2.0):
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
@@ -372,8 +383,12 @@ DEPENDENCIES:
   - GoogleSignIn
   - Kingfisher
   - ObjectMapper (~> 3.5)
+  - Realm
+  - RealmSwift
   - RxCocoa (= 6.2.0)
+  - RxRealm
   - RxSwift (= 6.2.0)
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -403,9 +418,13 @@ SPEC REPOS:
     - nanopb
     - ObjectMapper
     - PromisesObjC
+    - Realm
+    - RealmSwift
     - RxCocoa
+    - RxRealm
     - RxRelay
     - RxSwift
+    - SnapKit
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -434,10 +453,14 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Realm: 9feef41ab8230ed706c4dc503fc292594915bf9a
+  RealmSwift: 91246183b772e0ea1bf777116c4b8d9939f983b3
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRealm: bd7c601e78cfebe48c24d4550db83c31e1ab2c33
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 498119cdc9f905fb46d83440b742b2428eab53f6
+PODFILE CHECKSUM: f7d676856f985cf7c8dc63f53a889faa4d258b20
 
 COCOAPODS: 1.10.1

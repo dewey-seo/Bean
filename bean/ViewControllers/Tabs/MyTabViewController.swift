@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  MyTabViewController.swift
 //  bean
 //
 //  Created by dewey seo on 04/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class MyTabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

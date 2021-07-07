@@ -13,8 +13,12 @@ class NAMECoordinator: NSObject, Coordinator {
     var router: Router
     
     // MARK: -
-    init(router: Router) {
-        self.router = router
+    init(from: Router?) {
+        console("init - NAMECoordinator")
+        self.router = Router.init(fromViewController: from?.navigationController)
+    }
+    deinit {
+        console("deinit - NAMECoordinator")
     }
     
     func start(animated: Bool, parent: Coordinator?) {

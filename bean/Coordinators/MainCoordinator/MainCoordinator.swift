@@ -13,11 +13,13 @@ class MainCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    let tabBarController = MainTabBarViewController(nibName: "MainTabBarViewController", bundle: nil)
+    let tabBarController = RootTabBarViewController(nibName: "RootTabBarViewController", bundle: nil)
     
-    init(router: Router) {
+    init(from: Router?) {
         console("init - MainCoordinator")
-        self.router = router
+        self.router = Router(fromViewController: from?.navigationController.viewControllers.first)
+        self.router.navigationController.setNavigationBarHidden(true, animated: false)
+        self.router.navigationController.modalPresentationStyle = .fullScreen
     }
     
     deinit {
@@ -27,15 +29,15 @@ class MainCoordinator: NSObject, Coordinator {
     func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
         
-        let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        let homeTabNavigationController = UINavigationController(rootViewController: homeViewController)
-        let homeTabNavigationRouter = NavigationRouter(navigationController: homeTabNavigationController)
+        let HomeTabViewController = HomeTabViewController(nibName: "HomeTabViewController", bundle: nil)
+        let homeTabNavigationController = UINavigationController(rootViewController: HomeTabViewController)
+        let homeTabNavigationRouter = Router(fromViewController: nil)
         homeTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         let homeTabCoordinator = HomeTabCoordinator(router: homeTabNavigationRouter)
         
-        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        let profileTabNavigationController = UINavigationController(rootViewController: profileViewController)
-        let profileTabNavigationRouter = NavigationRouter(navigationController: profileTabNavigationController)
+        let MyTabViewController = MyTabViewController(nibName: "MyTabViewController", bundle: nil)
+        let profileTabNavigationController = UINavigationController(rootViewController: MyTabViewController)
+        let profileTabNavigationRouter = Router(fromViewController: nil)
         profileTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
         let profileTabCoordinator = ProfileTabCoordinator(router: profileTabNavigationRouter)
         
