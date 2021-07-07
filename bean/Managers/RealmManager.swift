@@ -19,7 +19,7 @@ class RealmManager: NSObject {
         do {
             try self.realm = Realm()
         } catch let error {
-            debugPrint(error.localizedDescription)
+            console("ERROR: init realm", error)
         }
     }
     
@@ -31,13 +31,16 @@ class RealmManager: NSObject {
     }
     
     func saveUser(user: User) {
-//        try! realm.write {
-//            realm.add(user)
-//        }
+        deleteUser()
+        
+        try! realm.write {
+            realm.add(user)
+        }
     }
+    
     func deleteUser() {
-//        try! realm.write{
-//            realm.delete(realm.objects(User.self))
-//        }
+        try! realm.write{
+            realm.delete(realm.objects(User.self))
+        }
     }
 }

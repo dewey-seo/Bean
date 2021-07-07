@@ -18,6 +18,8 @@ class MainCoordinator: NSObject, Coordinator {
     init(from: Router?) {
         console("init - MainCoordinator")
         self.router = Router(fromViewController: from?.navigationController.viewControllers.first)
+        self.router.navigationController.setNavigationBarHidden(true, animated: false)
+        self.router.navigationController.modalPresentationStyle = .fullScreen
     }
     
     deinit {

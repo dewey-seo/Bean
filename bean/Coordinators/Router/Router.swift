@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum RouterType {
+    case base
+}
+
 public class Router: NSObject {
     public let navigationController: UINavigationController
     public var onDismiss: (() -> Void)?

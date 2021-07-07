@@ -16,14 +16,20 @@ class User: Object, Codable {
     @objc dynamic var email: String = ""
     @objc dynamic var introduce: String = ""
     @objc dynamic var profileUrl: String = ""
-    @objc dynamic var thumbnailUrl: String = ""
     
-    convenience init(user: FirebaseAuth.User) {
+//    convenience init(user: FirebaseAuth.User) {
+//        self.init()
+//        id = user.uid
+//        name = user.displayName ?? ""
+//        email = user.email ?? ""
+//        profileUrl = user.photoURL?.absoluteString ?? ""
+//    }
+    convenience init(_ id: String, _ name: String, _ email: String, _ introduce: String, _ profileUrl: String) {
         self.init()
-        id = user.uid
-        name = user.displayName ?? ""
-        email = user.email ?? ""
-        profileUrl = user.photoURL?.absoluteString ?? ""
+        self.id = id
+        self.name = name
+        self.email = email
+        self.profileUrl = profileUrl
     }
     
     var registUserData: [String: Any]? {
@@ -33,8 +39,7 @@ class User: Object, Codable {
                 "name": name,
                 "email": email,
                 "introduce": introduce,
-                "profileUrl": profileUrl,
-                "thumbnailUrl": thumbnailUrl,
+                "profileUrl": profileUrl
             ]
         }
     }

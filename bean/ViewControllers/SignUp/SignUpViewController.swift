@@ -10,9 +10,14 @@ import FirebaseAuth
 import RxSwift
 import Kingfisher
 
+protocol SignUpViewControllerDelegate: AnyObject {
+    func didFinishSignUp(user: User)
+}
+
 class SignUpViewController: UIViewController {
     let BOTTOM_BTN_HEIGHT: CGFloat = 50
     let disposeBag: DisposeBag = DisposeBag()
+    weak var delegate: SignUpViewControllerDelegate?
     
     @IBOutlet weak var marginB: NSLayoutConstraint!
     @IBOutlet weak var signUpButtonHeight: NSLayoutConstraint!
@@ -43,7 +48,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    var user: FirebaseAuth.User?
+    var firebaseUser: FirebaseAuth.User?
     let imagePicker = UIImagePickerController.init()
     
     override func viewDidLoad() {
@@ -62,7 +67,26 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onPressSignUp(_ sender: Any) {
+        // Upload Image
+        guard let image = profileImageView.image,
+              let id = firebaseUser?.uid,
+              let name = nameTextField.text,
+              let email = emailTextField.text,
+              let introduce = introduceTextView.text
+        else {
+            return
+        }
         
+        StorageService.uploadImage(type: .profileImage, image: image) { [weak self] result in
+            guard let self = self else { return }
+            switch(result) {
+            case .success(let url):
+                let user = User(id, name, email, introduce, url.absoluteString)
+                self.signUp(user)
+            case .failure(_):
+                self.showAlert(message: "failed upload image")
+            }
+        }
     }
     
     @IBAction func onPressChangeProfile(_ sender: Any) {
@@ -78,6 +102,11 @@ class SignUpViewController: UIViewController {
             self.present(self.imagePicker, animated: true, completion: nil)
         }))
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func signUp(_ user: User) {
+        UserService.shared.registerUser(user: user) { result in
+        }
     }
     
     func setLayout() {
@@ -103,11 +132,11 @@ class SignUpViewController: UIViewController {
     }
     
     func setUserInfo() {
-        guard let user = user else { return }
+        guard let firebaseUser = firebaseUser else { return }
         
-        profileImageView.kf.setImage(with: user.photoURL)
-        emailTextField.text = user.email
-        nameTextField.text = user.displayName
+        profileImageView.kf.setImage(with: firebaseUser.photoURL)
+        emailTextField.text = firebaseUser.email
+        nameTextField.text = firebaseUser.displayName
     }
     
     func onSelectProfileImage(_ image: UIImage) {

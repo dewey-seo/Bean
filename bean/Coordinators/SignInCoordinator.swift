@@ -35,7 +35,15 @@ class SignInCoordinator: NSObject, Coordinator {
 // MARK: - LoginViewControllerDelegate
 extension SignInCoordinator: LoginViewControllerDelegate {
     func registerUser(with firebaseUser: FirebaseAuth.User?) {
-        signUpVC.user = firebaseUser
+        signUpVC.firebaseUser = firebaseUser
+        signUpVC.delegate = self
         router.push(signUpVC, animated: true)
+    }
+}
+
+// MARK: - SignUpViewControllerDelegate
+extension SignInCoordinator: SignUpViewControllerDelegate {
+    func didFinishSignUp(user: User) {
+        RealmManager.shared.saveUser(user: user)
     }
 }
