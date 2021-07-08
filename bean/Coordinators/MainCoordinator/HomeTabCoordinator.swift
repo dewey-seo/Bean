@@ -24,5 +24,48 @@ class HomeTabCoordinator: NSObject, Coordinator {
     
     func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
+        guard let homeTabVC = self.router.navigationController.viewControllers.first as? HomeTabViewController else {
+            return
+        }
+        homeTabVC.delegate = self
     }
 }
+
+extension HomeTabCoordinator: HomeTabViewControllerDelegate {
+    func onPressWirte(type: PostType) {
+        var coordinator: Coordinator? = nil
+        switch type {
+        case .place:
+            coordinator = PostingMusicCoordinator(from: self.router)
+        case .music:
+            coordinator = PostingMusicCoordinator(from: self.router)
+        case .photo:
+            coordinator = PostingPhotoCoordinator(from: self.router)
+        case .thought:
+            coordinator = PostingThoughtCoordinator(from: self.router)
+        case .weather:
+            coordinator = PostingWeatherCoordinator(from: self.router)
+        default: break
+        }
+        
+        if let coordinator = coordinator {
+            self.presentChild(coordinator, animated: true)
+        }
+    }
+}
+
+//extension HomeTabCoordinator: ImagePickerCoordinatorDelegate {
+//    func didFinishPickingImage(_ image: UIImage, target: ImagePickerCoordinatorTarget) {
+//        switch target {
+//        case .posting:
+//            let coordinator = PostingPhotoCoordinator(from: self.router)
+//            self.presentChild(coordinator, animated: true)
+//        default:
+//            break
+//        }
+//    }
+//
+//    func pickerControllerDidCancel(_ target: ImagePickerCoordinatorTarget) {
+//        self.router.navigationController.showAlert(message: "picker canceled")
+//    }
+//}

@@ -9,31 +9,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeTabViewController" customModule="bean" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSlideViewController" customModule="bean" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="LsW-UY-hXo" id="2ac-sy-W2f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LsW-UY-hXo">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-v5-17e">
+                    <rect key="frame" x="177" y="16" width="60" height="6"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="6" id="A6Z-Qx-DI4"/>
+                        <constraint firstAttribute="width" constant="60" id="qcF-bZ-7Ou"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LsW-UY-hXo" secondAttribute="bottom" id="3hQ-Rc-AHI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LsW-UY-hXo" secondAttribute="trailing" id="822-rh-zXL"/>
-                <constraint firstItem="LsW-UY-hXo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XAi-cN-D0k"/>
-                <constraint firstItem="LsW-UY-hXo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e0t-5u-DhV"/>
+                <constraint firstItem="4uu-v5-17e" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LSr-SG-xKI"/>
+                <constraint firstItem="4uu-v5-17e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="t8J-G0-8it"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="123"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="22" y="-153"/>
         </view>
     </objects>
     <resources>

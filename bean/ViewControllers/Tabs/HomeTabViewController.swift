@@ -7,23 +7,58 @@
 
 import UIKit
 
-class HomeTabViewController: UIViewController {
+protocol HomeTabViewControllerDelegate: AnyObject {
+    func onPressWirte(type: PostType)
+}
 
+class HomeTabViewController: UIViewController {
+    
+    weak var delegate: HomeTabViewControllerDelegate?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setNavigation()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - Navigation
+extension HomeTabViewController {
+    func setNavigation() {
+        let writeButton = UIBarButtonItem("nav_write", target: self, action: #selector(onPressWrite), for: .touchUpInside)
+        self.navigationItem.setRightBarButton(writeButton, animated: true)
+        self.navigationItem.title = "Home"
     }
-    */
-
+    
+    @objc func onPressWrite() {
+        let testView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 300))
+        testView.backgroundColor = .red
+        
+        PopupViewController.shared.showPopupView(popupView: testView, animate: true)
+        return
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        // Weather
+        actionSheet.addAction(UIAlertAction(title: "Weather", style: .default, handler: { _ in
+            self.delegate?.onPressWirte(type: .weather)
+        }))
+        // Music
+        actionSheet.addAction(UIAlertAction(title: "Music", style: .default, handler: { _ in
+            self.delegate?.onPressWirte(type: .music)
+        }))
+        // Thougth
+        actionSheet.addAction(UIAlertAction(title: "Thougth", style: .default, handler: { _ in
+            self.delegate?.onPressWirte(type: .thought)
+        }))
+        // Photo
+        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { _ in
+            self.delegate?.onPressWirte(type: .photo)
+        }))
+        // Book
+//        actionSheet.addAction(UIAlertAction(title: "Book", style: .default, handler: { _ in
+//            self.delegate?.onPressWirte(type: .book)
+//        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
 }

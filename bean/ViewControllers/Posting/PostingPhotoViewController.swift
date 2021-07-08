@@ -8,7 +8,14 @@
 import UIKit
 import RxSwift
 
+protocol PostingPhotoViewControllerDelegate: AnyObject {
+    func didFinishedPosting()
+    func cancelPosting()
+}
+
 class PostingPhotoViewController: UIViewController {
+    weak var delegate: PostingPhotoViewControllerDelegate?
+    var presetImage: UIImage?
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var commentTextView: UITextView!

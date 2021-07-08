@@ -14,8 +14,8 @@ class SignInCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    lazy var loginVC: LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-    lazy var signUpVC: SignUpViewController = SignUpViewController(nibName: "SignUpViewController", bundle: nil)
+    lazy var loginVC: LoginViewController = LoginViewController.loadFromNib()
+    lazy var signUpVC: SignUpViewController = SignUpViewController.loadFromNib()
 
     init(from: Router?) {
         self.router = Router.init(fromViewController: from?.navigationController)
