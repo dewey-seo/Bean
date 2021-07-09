@@ -41,7 +41,7 @@ class BottomSlideViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         topHandleView.backgroundColor = .grey5
-        topHandleView.roundCorenrs()
+        topHandleView.roundCorenrs(6)
     }
     
     override func viewDidLayoutSubviews() {

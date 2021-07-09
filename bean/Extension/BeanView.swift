@@ -22,7 +22,7 @@ extension UIView {
         layer.borderColor = color.cgColor
     }
     
-    func roundCorenrs(_ radius: CGFloat = 4) {
+    func roundCorenrs(_ radius: CGFloat) {
         layer.cornerRadius = radius
         layer.masksToBounds = true
     }
@@ -38,5 +38,17 @@ extension UIView {
         layer.masksToBounds = false
         layer.cornerRadius = self.frame.height * 0.5
         clipsToBounds = true
+    }
+    
+    func addShadow(cornerRadius: CGFloat = 16,
+                   shadowColor: UIColor = UIColor(white: 0.0, alpha: 0.5),
+                   shadowOffset: CGSize = CGSize(width: 0.0, height: 3.0),
+                   shadowOpacity: Float = 0.3,
+                   shadowRadius: CGFloat = 5) {
+        layer.cornerRadius = cornerRadius
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowOffset = shadowOffset
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowRadius = shadowRadius
     }
 }
