@@ -62,7 +62,6 @@
 		585E41E7269559F300EFD025 /* BeanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41E6269559F300EFD025 /* BeanString.swift */; };
 		585E41EB269565C500EFD025 /* BeanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41EA269565C500EFD025 /* BeanView.swift */; };
 		585E41ED2695676900EFD025 /* BeanScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41EC2695676900EFD025 /* BeanScrollView.swift */; };
-		585E41F12695BD0800EFD025 /* BeanTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E41F02695BD0800EFD025 /* BeanTabbar.swift */; };
 		585FEDD62691824B00E95219 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDD52691824B00E95219 /* Coordinator.swift */; };
 		585FEDD92691828F00E95219 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDD82691828F00E95219 /* Router.swift */; };
 		585FEDDE2691856300E95219 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FEDDC2691856300E95219 /* RootTabBarViewController.swift */; };
@@ -83,6 +82,10 @@
 		58709AAD26909F8600CD6BB8 /* BeanImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAC26909F8600CD6BB8 /* BeanImage.swift */; };
 		58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */; };
 		58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58709AB22690D07200CD6BB8 /* BeanDictionary.swift */; };
+		587536332697E42700C20E62 /* PostingChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587536312697E42700C20E62 /* PostingChooserViewController.swift */; };
+		587536342697E42700C20E62 /* PostingChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587536322697E42700C20E62 /* PostingChooserViewController.xib */; };
+		587536362697F56B00C20E62 /* BeanDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587536352697F56B00C20E62 /* BeanDate.swift */; };
+		58753639269802AF00C20E62 /* ChooserButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58753638269802AF00C20E62 /* ChooserButton.swift */; };
 		587F58B0268E201800577D62 /* BeanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587F58AF268E201800577D62 /* BeanViewController.swift */; };
 		5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5897DABF26882AE300F288F4 /* SignUpViewController.swift */; };
 		5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5897DAC026882AE300F288F4 /* SignUpViewController.xib */; };
@@ -99,7 +102,6 @@
 		58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */; };
 		58E310D22696AAE000D56377 /* BottomSlidePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310D12696AAE000D56377 /* BottomSlidePresentationController.swift */; };
 		58E310EB2696FE6F00D56377 /* BottomSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310E92696FE6F00D56377 /* BottomSlideViewController.swift */; };
-		58E310EC2696FE6F00D56377 /* BottomSlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E310EA2696FE6F00D56377 /* BottomSlideViewController.xib */; };
 		58E310EF269753EA00D56377 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310EE269753EA00D56377 /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -161,7 +163,6 @@
 		585E41E6269559F300EFD025 /* BeanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanString.swift; sourceTree = "<group>"; };
 		585E41EA269565C500EFD025 /* BeanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanView.swift; sourceTree = "<group>"; };
 		585E41EC2695676900EFD025 /* BeanScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanScrollView.swift; sourceTree = "<group>"; };
-		585E41F02695BD0800EFD025 /* BeanTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanTabbar.swift; sourceTree = "<group>"; };
 		585FEDD52691824B00E95219 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		585FEDD82691828F00E95219 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		585FEDDC2691856300E95219 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +183,10 @@
 		58709AAC26909F8600CD6BB8 /* BeanImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanImage.swift; sourceTree = "<group>"; };
 		58709AAE2690C61100CD6BB8 /* BeanEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanEncodable.swift; sourceTree = "<group>"; };
 		58709AB22690D07200CD6BB8 /* BeanDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDictionary.swift; sourceTree = "<group>"; };
+		587536312697E42700C20E62 /* PostingChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingChooserViewController.swift; sourceTree = "<group>"; };
+		587536322697E42700C20E62 /* PostingChooserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostingChooserViewController.xib; sourceTree = "<group>"; };
+		587536352697F56B00C20E62 /* BeanDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDate.swift; sourceTree = "<group>"; };
+		58753638269802AF00C20E62 /* ChooserButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooserButton.swift; sourceTree = "<group>"; };
 		587F58AF268E201800577D62 /* BeanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanViewController.swift; sourceTree = "<group>"; };
 		5897DABF26882AE300F288F4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5897DAC026882AE300F288F4 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
@@ -198,7 +203,6 @@
 		58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchResultItemCell.xib; sourceTree = "<group>"; };
 		58E310D12696AAE000D56377 /* BottomSlidePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlidePresentationController.swift; sourceTree = "<group>"; };
 		58E310E92696FE6F00D56377 /* BottomSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlideViewController.swift; sourceTree = "<group>"; };
-		58E310EA2696FE6F00D56377 /* BottomSlideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSlideViewController.xib; sourceTree = "<group>"; };
 		58E310EE269753EA00D56377 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		7F55D6943F7C44B36893FD55 /* Pods-bean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bean.release.xcconfig"; path = "Target Support Files/Pods-bean/Pods-bean.release.xcconfig"; sourceTree = "<group>"; };
 		FAA2F8C4177623A6B5C73394 /* Pods-bean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bean.debug.xcconfig"; path = "Target Support Files/Pods-bean/Pods-bean.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 		58426E912695F793006FF23E /* Posting */ = {
 			isa = PBXGroup;
 			children = (
+				587536372698025D00C20E62 /* Chooser */,
 				5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */,
 				5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */,
 				58426E922695F7AD006FF23E /* PostingMusicViewController.swift */,
@@ -252,6 +257,8 @@
 				58426E9D2695FD75006FF23E /* PostingThoughtViewController.xib */,
 				58426EA226960064006FF23E /* PostingPlaceViewController.swift */,
 				58426EA326960064006FF23E /* PostingPlaceViewController.xib */,
+				587536312697E42700C20E62 /* PostingChooserViewController.swift */,
+				587536322697E42700C20E62 /* PostingChooserViewController.xib */,
 			);
 			path = Posting;
 			sourceTree = "<group>";
@@ -340,7 +347,6 @@
 				585FEDD72691827200E95219 /* Router */,
 				585FEDD42691823D00E95219 /* Coordinators */,
 				58987E5D268C109C00C0C74E /* CommonUI */,
-				58C280402684647F00E75801 /* Views */,
 				5859E307267DAD500080BEDC /* ViewControllers */,
 				585DFF7B2679189500CADE6B /* AppDelegate.swift */,
 				585DFF842679189600CADE6B /* Assets.xcassets */,
@@ -389,6 +395,7 @@
 				585E41EA269565C500EFD025 /* BeanView.swift */,
 				585E41EC2695676900EFD025 /* BeanScrollView.swift */,
 				58426E882695F216006FF23E /* BeanBarButtonItem.swift */,
+				587536352697F56B00C20E62 /* BeanDate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -400,14 +407,6 @@
 				5897DAC026882AE300F288F4 /* SignUpViewController.xib */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		585E41EF2695BCE500EFD025 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				585E41F02695BD0800EFD025 /* BeanTabbar.swift */,
-			);
-			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		585FEDD42691823D00E95219 /* Coordinators */ = {
@@ -455,6 +454,14 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
+		587536372698025D00C20E62 /* Chooser */ = {
+			isa = PBXGroup;
+			children = (
+				58753638269802AF00C20E62 /* ChooserButton.swift */,
+			);
+			path = Chooser;
+			sourceTree = "<group>";
+		};
 		58987E5A268C0AEF00C0C74E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,14 +492,6 @@
 			path = MusicSearchViewController;
 			sourceTree = "<group>";
 		};
-		58C280402684647F00E75801 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				585E41EF2695BCE500EFD025 /* Tabbar */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		58C280412684649900E75801 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,7 +505,6 @@
 			isa = PBXGroup;
 			children = (
 				58E310E92696FE6F00D56377 /* BottomSlideViewController.swift */,
-				58E310EA2696FE6F00D56377 /* BottomSlideViewController.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -589,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */,
+				587536342697E42700C20E62 /* PostingChooserViewController.xib in Resources */,
 				582555A02679D23E00416A6C /* MainViewController.xib in Resources */,
 				58426E9F2695FD75006FF23E /* PostingThoughtViewController.xib in Resources */,
 				585DFF882679189600CADE6B /* LaunchScreen.storyboard in Resources */,
@@ -603,7 +602,6 @@
 				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
 				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
 				5843183D268B7F0600EED39B /* PostingPhotoViewController.xib in Resources */,
-				58E310EC2696FE6F00D56377 /* BottomSlideViewController.xib in Resources */,
 				585DFF9726791EC800CADE6B /* RootViewController.xib in Resources */,
 				5859E30D267DD8350080BEDC /* keys-Info.plist in Resources */,
 				585FEDDF2691856300E95219 /* RootTabBarViewController.xib in Resources */,
@@ -685,6 +683,7 @@
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				58E310EF269753EA00D56377 /* PopupViewController.swift in Sources */,
 				5859E325267EF8800080BEDC /* LocationManager.swift in Sources */,
+				587536362697F56B00C20E62 /* BeanDate.swift in Sources */,
 				585E41E7269559F300EFD025 /* BeanString.swift in Sources */,
 				5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */,
 				58426E8C2695F469006FF23E /* PostingPhotoCoordinator.swift in Sources */,
@@ -696,6 +695,7 @@
 				585FEDF72692099900E95219 /* MyTabViewController.swift in Sources */,
 				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
 				585FEDD92691828F00E95219 /* Router.swift in Sources */,
+				587536332697E42700C20E62 /* PostingChooserViewController.swift in Sources */,
 				585E41EB269565C500EFD025 /* BeanView.swift in Sources */,
 				587F58B0268E201800577D62 /* BeanViewController.swift in Sources */,
 				58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */,
@@ -716,6 +716,7 @@
 				585FEDF02691B7E400E95219 /* CopyCoordinator.swift in Sources */,
 				58426E902695F4A2006FF23E /* PostingMusicCoordinator.swift in Sources */,
 				58426E9E2695FD75006FF23E /* PostingThoughtViewController.swift in Sources */,
+				58753639269802AF00C20E62 /* ChooserButton.swift in Sources */,
 				5825559F2679D23E00416A6C /* MainViewController.swift in Sources */,
 				585FEDD62691824B00E95219 /* Coordinator.swift in Sources */,
 				58685D87269407B100962AA3 /* BeanFont.swift in Sources */,
@@ -742,7 +743,6 @@
 				5859E31B267E29620080BEDC /* KeyManager.swift in Sources */,
 				58431831268B7EAB00EED39B /* FeedModel.swift in Sources */,
 				5859E315267E219B0080BEDC /* ApiService.swift in Sources */,
-				585E41F12695BD0800EFD025 /* BeanTabbar.swift in Sources */,
 				58685D8C2694167900962AA3 /* Device.swift in Sources */,
 				5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */,
 				58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */,

@@ -12,7 +12,7 @@ class PostingMusicCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    lazy var postingVC: PostingMusicViewController = PostingMusicViewController.loadFromNib()
+    lazy var postingVC: PostingMusicViewController = PostingMusicViewController(nibName: "PostingMusicViewController", bundle: nil)
     
     // MARK: -
     init(from: Router?) {

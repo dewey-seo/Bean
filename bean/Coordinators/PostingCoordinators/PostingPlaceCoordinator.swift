@@ -12,7 +12,7 @@ class PostingPlaceCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    lazy var postingVC: PostingPlaceViewController = PostingPlaceViewController.loadFromNib()
+    lazy var postingVC: PostingPlaceViewController = PostingPlaceViewController(nibName: "PostingPlaceViewController", bundle: nil)
     
     // MARK: -
     init(from: Router?) {

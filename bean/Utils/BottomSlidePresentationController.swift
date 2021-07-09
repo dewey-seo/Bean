@@ -25,15 +25,33 @@ class BottomSlidePresentationController: UIPresentationController {
             self.blurEffectView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
-    
+     
     override var frameOfPresentedViewInContainerView: CGRect {
-        guard let containerView = self.containerView else {
+        guard let containerView = self.containerView, let presentedView = self.presentedView else {
             return CGRect.zero
         }
-        let origin = CGPoint(x: 0, y: containerView.frame.height * 0.4)
-        let size = CGSize(width: containerView.frame.width, height: containerView.frame.height)
+        presentedView.autoresizingMask = [.flexibleWidth]
         
+        let bounds = UIScreen.main.bounds
+        let presentedRect = presentedView.bounds
+        let origin = CGPoint(x: 0, y: bounds.height - presentedRect.height)
+        let size = CGSize(width: containerView.frame.width, height: presentedRect.height)
+
         return CGRect(origin: origin, size: size)
+    }
+    
+    override func presentationTransitionWillBegin() {
+        blurEffectView.alpha = 0
+        containerView?.addSubview(blurEffectView)
+        presentedViewController.transitionCoordinator?.animate(alongsideTransition: { context in
+            self.blurEffectView.alpha = 0.3
+        }, completion: nil)
+    }
+    
+    override func dismissalTransitionWillBegin() {
+        presentedViewController.transitionCoordinator?.animate(alongsideTransition: { context in
+            self.blurEffectView.alpha = 0
+        }, completion: nil)
     }
     
     override func containerViewWillLayoutSubviews() {

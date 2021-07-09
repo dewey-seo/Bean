@@ -13,7 +13,7 @@ class PostingPhotoCoordinator: NSObject, Coordinator {
     var router: Router
     var presetImage: UIImage?
     
-    lazy var postingVC: PostingPhotoViewController = PostingPhotoViewController.loadFromNib()
+    lazy var postingVC: PostingPhotoViewController = PostingPhotoViewController(nibName: "PostingPhotoViewController", bundle: nil)
     
     // MARK: -
     init(from: Router?) {

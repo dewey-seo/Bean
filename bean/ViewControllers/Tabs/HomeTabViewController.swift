@@ -32,10 +32,9 @@ extension HomeTabViewController {
     }
     
     @objc func onPressWrite() {
-        let testView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 300))
-        testView.backgroundColor = .red
+        let testVC = PostingChooserViewController.init(nibName: "PostingChooserViewController", bundle: nil)
+        self.present(testVC, animated: true, completion: nil)
         
-        PopupViewController.shared.showPopupView(popupView: testView, animate: true)
         return
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         // Weather

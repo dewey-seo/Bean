@@ -12,7 +12,7 @@ class PostingWeatherCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    lazy var postingVC: PostingWeatherViewController = PostingWeatherViewController.loadFromNib()
+    lazy var postingVC: PostingWeatherViewController = PostingWeatherViewController(nibName: "PostingWeatherViewController", bundle: nil)
     
     // MARK: -
     init(from: Router?) {

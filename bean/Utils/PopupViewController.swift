@@ -122,7 +122,6 @@ class PopupViewController: NSObject {
 extension PopupViewController {
     func showPopupView(popupView: UIView, animate: Bool) {
         self.prepareLayouts()
-        
         if self.baseWindow.isHidden { self.showWindow() }
         
         willShowPopupView = popupView
