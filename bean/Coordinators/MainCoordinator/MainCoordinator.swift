@@ -20,6 +20,9 @@ class MainCoordinator: NSObject, Coordinator {
         self.router = Router(fromViewController: from?.navigationController.viewControllers.first)
         self.router.navigationController.setNavigationBarHidden(true, animated: false)
         self.router.navigationController.modalPresentationStyle = .fullScreen
+        
+        let tabbar = UITabBar()
+//        object_setClass(tabbar, <#T##cls: AnyClass##AnyClass#>)
     }
     
     deinit {
@@ -30,23 +33,29 @@ class MainCoordinator: NSObject, Coordinator {
         self.parent = parent
         
         let HomeTabViewController = HomeTabViewController(nibName: "HomeTabViewController", bundle: nil)
-        let homeTabNavigationController = UINavigationController(rootViewController: HomeTabViewController)
         let homeTabNavigationRouter = Router(fromViewController: nil)
-        homeTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        homeTabNavigationRouter.navigationController.viewControllers = [HomeTabViewController]
+        
+        let homeTabBarItem = UITabBarItem(title: nil, image: UIImage(named: "tab_home"), selectedImage: UIImage(named: "tab_home_selected"))
         let homeTabCoordinator = HomeTabCoordinator(router: homeTabNavigationRouter)
+        homeTabNavigationRouter.navigationController.tabBarItem = homeTabBarItem
         
-        let MyTabViewController = MyTabViewController(nibName: "MyTabViewController", bundle: nil)
-        let profileTabNavigationController = UINavigationController(rootViewController: MyTabViewController)
-        let profileTabNavigationRouter = Router(fromViewController: nil)
-        profileTabNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        let profileTabCoordinator = ProfileTabCoordinator(router: profileTabNavigationRouter)
+        let myTabViewController = MyTabViewController(nibName: "MyTabViewController", bundle: nil)
+        let myTabNavigationRouter = Router(fromViewController: nil)
+        myTabNavigationRouter.navigationController.viewControllers = [myTabViewController]
+        let myTabBarItem = UITabBarItem(title: nil, image: UIImage(named: "tab_user"), selectedImage: UIImage(named: "tab_user_selected"))
+        let myTabCoordinator = MyTabCoordinator(router: myTabNavigationRouter)
+        myTabNavigationRouter.navigationController.tabBarItem = myTabBarItem
         
-        tabBarController.viewControllers = [homeTabNavigationController, profileTabNavigationController]
+        
+        tabBarController.viewControllers = [homeTabNavigationRouter.navigationController, myTabNavigationRouter.navigationController]
         tabBarController.modalPresentationStyle = .fullScreen
-
+        tabBarController.tabBar.tintColor = .primary6
+        
         router.present(tabBarController, animated: animated)
         
         self.presentChild(homeTabCoordinator, animated: false)
-        self.presentChild(profileTabCoordinator, animated: false)
+        self.presentChild(myTabCoordinator, animated: false)
+
     }
 }

@@ -81,6 +81,7 @@ class SignUpViewController: UIViewController {
             guard let self = self else { return }
             switch(result) {
             case .success(let url):
+                console("uplaod profile done", url)
                 let user = User(id, name, email, introduce, url.absoluteString)
                 self.signUp(user)
             case .failure(_):
@@ -105,7 +106,13 @@ class SignUpViewController: UIViewController {
     }
     
     func signUp(_ user: User) {
-        UserService.shared.registerUser(user: user) { result in
+        UserService.shared.registerUser(user: user) { [weak self] result in
+            if(result) {
+                self?.delegate?.didFinishSignUp(user: user)
+            } else {
+                self?.showAlert(message: "failed to signUp to firebase")
+            }
+            
         }
     }
     

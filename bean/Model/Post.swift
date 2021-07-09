@@ -8,6 +8,7 @@
 import Foundation
 
 enum PostType: String, Codable {
+    case place = "place"
     case photo = "photo"
     case video = "video"
     case music = "music"

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeTabViewController" customModule="bean" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="LsW-UY-hXo" id="2ac-sy-W2f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +19,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LsW-UY-hXo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LsW-UY-hXo" secondAttribute="bottom" id="3hQ-Rc-AHI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LsW-UY-hXo" secondAttribute="trailing" id="822-rh-zXL"/>
+                <constraint firstItem="LsW-UY-hXo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XAi-cN-D0k"/>
+                <constraint firstItem="LsW-UY-hXo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e0t-5u-DhV"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="123"/>
         </view>
     </objects>
