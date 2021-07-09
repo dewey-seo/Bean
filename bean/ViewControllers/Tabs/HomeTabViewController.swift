@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeTabViewControllerDelegate: AnyObject {
-    func onPressWirte(type: PostType)
+    func onPressWirte(type: ChooserType)
 }
 
 class HomeTabViewController: UIViewController {
@@ -32,32 +32,15 @@ extension HomeTabViewController {
     }
     
     @objc func onPressWrite() {
-        let testVC = PostingChooserViewController.init(nibName: "PostingChooserViewController", bundle: nil)
-        self.present(testVC, animated: true, completion: nil)
-        
-        return
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        // Weather
-        actionSheet.addAction(UIAlertAction(title: "Weather", style: .default, handler: { _ in
-            self.delegate?.onPressWirte(type: .weather)
-        }))
-        // Music
-        actionSheet.addAction(UIAlertAction(title: "Music", style: .default, handler: { _ in
-            self.delegate?.onPressWirte(type: .music)
-        }))
-        // Thougth
-        actionSheet.addAction(UIAlertAction(title: "Thougth", style: .default, handler: { _ in
-            self.delegate?.onPressWirte(type: .thought)
-        }))
-        // Photo
-        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { _ in
-            self.delegate?.onPressWirte(type: .photo)
-        }))
-        // Book
-//        actionSheet.addAction(UIAlertAction(title: "Book", style: .default, handler: { _ in
-//            self.delegate?.onPressWirte(type: .book)
-//        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(actionSheet, animated: true, completion: nil)
+        let chooserVC = PostingChooserViewController.init(nibName: "PostingChooserViewController", bundle: nil)
+        chooserVC.delegate = self
+        self.present(chooserVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - PostingChooserDelegate
+extension HomeTabViewController: PostingChooserDelegate {
+    func didSelectChooser(type: ChooserType) {
+        self.delegate?.onPressWirte(type: type)
     }
 }

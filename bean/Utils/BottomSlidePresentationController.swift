@@ -37,6 +37,7 @@ class BottomSlidePresentationController: UIPresentationController {
         let origin = CGPoint(x: 0, y: bounds.height - presentedRect.height)
         let size = CGSize(width: containerView.frame.width, height: presentedRect.height)
 
+        console("heihgt", presentedView.frame.height)
         return CGRect(origin: origin, size: size)
     }
     

@@ -32,7 +32,7 @@ class HomeTabCoordinator: NSObject, Coordinator {
 }
 
 extension HomeTabCoordinator: HomeTabViewControllerDelegate {
-    func onPressWirte(type: PostType) {
+    func onPressWirte(type: ChooserType) {
         var coordinator: Coordinator? = nil
         switch type {
         case .place:
@@ -45,7 +45,6 @@ extension HomeTabCoordinator: HomeTabViewControllerDelegate {
             coordinator = PostingThoughtCoordinator(from: self.router)
         case .weather:
             coordinator = PostingWeatherCoordinator(from: self.router)
-        default: break
         }
         
         if let coordinator = coordinator {

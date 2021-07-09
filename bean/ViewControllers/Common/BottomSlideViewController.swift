@@ -35,13 +35,13 @@ class BottomSlideViewController: UIViewController {
         self.view.addSubview(topHandleView)
         
         topHandleView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
+            make.top.equalToSuperview().offset(12)
             make.width.equalTo(60)
             make.height.equalTo(6)
             make.centerX.equalToSuperview()
         }
-        topHandleView.backgroundColor = .grey5
-        topHandleView.roundCorenrs()
+        topHandleView.backgroundColor = .grey3
+        topHandleView.roundCorenrs(3)
     }
     
     override func viewDidLayoutSubviews() {

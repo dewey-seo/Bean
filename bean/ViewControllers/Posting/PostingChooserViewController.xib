@@ -10,21 +10,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostingChooserViewController" customModule="bean" customModuleProvider="target">
             <connections>
+                <outlet property="marginB" destination="50a-xd-esz" id="7Yt-11-URF"/>
+                <outlet property="stackView" destination="vP7-It-PP8" id="GBR-Pf-NFX"/>
+                <outlet property="titleLabel" destination="Ka9-2c-INV" id="wvd-On-VkF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="617" height="392"/>
+            <rect key="frame" x="0.0" y="0.0" width="501" height="311"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemGreenColor"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-2c-INV">
+                    <rect key="frame" x="230" y="30" width="41.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-It-PP8">
+                    <rect key="frame" x="16" y="78.5" width="469" height="184.5"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vP7-It-PP8" secondAttribute="bottom" constant="48" id="50a-xd-esz"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ka9-2c-INV" secondAttribute="trailing" constant="16" id="IF9-bm-roz"/>
+                <constraint firstItem="vP7-It-PP8" firstAttribute="top" secondItem="Ka9-2c-INV" secondAttribute="bottom" constant="28" id="MJN-td-cad"/>
+                <constraint firstAttribute="trailing" secondItem="vP7-It-PP8" secondAttribute="trailing" constant="16" id="OAX-TF-eYp"/>
+                <constraint firstItem="vP7-It-PP8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="QS0-kA-Epy"/>
+                <constraint firstItem="Ka9-2c-INV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Quq-Yh-4KR"/>
+                <constraint firstItem="Ka9-2c-INV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UXX-y3-T2R"/>
+                <constraint firstItem="Ka9-2c-INV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="cPW-Od-LkX"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-136" y="137"/>
+            <point key="canvasLocation" x="-83.333333333333343" y="134.26339285714286"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
