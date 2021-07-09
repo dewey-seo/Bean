@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CDF975ADC8ED477EE3B78C7 /* Pods_bean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */; };
+		3FEF9D43269806AF00D6518E /* XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF9D42269806AF00D6518E /* XibLoadable.swift */; };
 		5806F7A626857CC7001117C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A526857CC7001117C6 /* UserModel.swift */; };
 		5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A826857DB8001117C6 /* FirebaseService.swift */; };
 		581232E026934EBD008BDB67 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232DF26934EBD008BDB67 /* Common.swift */; };
@@ -107,6 +108,7 @@
 
 /* Begin PBXFileReference section */
 		0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEF9D42269806AF00D6518E /* XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibLoadable.swift; sourceTree = "<group>"; };
 		5806F7A526857CC7001117C6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5806F7A826857DB8001117C6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		581232DF26934EBD008BDB67 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				585E41EC2695676900EFD025 /* BeanScrollView.swift */,
 				58426E882695F216006FF23E /* BeanBarButtonItem.swift */,
 				587536352697F56B00C20E62 /* BeanDate.swift */,
+				3FEF9D42269806AF00D6518E /* XibLoadable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
 				5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */,
 				58E310EB2696FE6F00D56377 /* BottomSlideViewController.swift in Sources */,
+				3FEF9D43269806AF00D6518E /* XibLoadable.swift in Sources */,
 				58709AAB2690781400CD6BB8 /* Time.swift in Sources */,
 				585DFF7C2679189500CADE6B /* AppDelegate.swift in Sources */,
 				58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */,
