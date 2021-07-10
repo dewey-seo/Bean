@@ -13,7 +13,7 @@ class MusicSearchViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    let disposBag = DisposeBag()
+    let disposeBag = DisposeBag()
     var searchResult: [Music] = []
     
     override func viewDidLoad() {
@@ -28,11 +28,12 @@ class MusicSearchViewController: UIViewController, UITableViewDelegate, UITableV
                     onSuccess: { [weak self] response in
                         self?.searchResult = response.data?.results ?? []
                         self?.tableView.reloadData()
+                        
                     },
                     onFailure: { [weak self] error in
                         self?.searchResult = []
                     })
-                .disposed(by: disposBag)
+                .disposed(by: disposeBag)
         }
     }
     
@@ -45,7 +46,7 @@ class MusicSearchViewController: UIViewController, UITableViewDelegate, UITableV
         //                                                 cellType: MusicSearchResultItemCell.self)) { (_, model: Music, cell: MusicSearchResultItemCell) in
         //            cell.setModel(model)
         //        }
-        //        .disposed(by: disposBag)
+        //        .disposed(by: disposeBag)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

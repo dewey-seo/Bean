@@ -56,6 +56,16 @@ class MainCoordinator: NSObject, Coordinator {
         
         self.presentChild(homeTabCoordinator, animated: false)
         self.presentChild(myTabCoordinator, animated: false)
-
+    }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
     }
 }

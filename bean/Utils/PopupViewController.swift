@@ -38,7 +38,7 @@ class PopupViewController: NSObject {
     private var showedPopupView: UIView?
     private var willHidePopupView: UIView?
     
-    let disposBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     override init() {
         super.init()
@@ -140,7 +140,7 @@ extension PopupViewController {
         willHidePopupView = showedPopupView
         showedPopupView = nil
         startHidePopupView(animate: animate) { [weak self] in
-            if self?.willShowPopupView != nil { // show call twice case
+            if self?.willShowPopupView == nil { // show call twice case
                 self?.hideWindow()
             }
             completion?()
@@ -291,7 +291,7 @@ extension PopupViewController {
             .subscribe { result in
                 
             }
-            .disposed(by: disposBag)
+            .disposed(by: disposeBag)
     }
     
     private func willShowKeyboard(height: CGFloat) {

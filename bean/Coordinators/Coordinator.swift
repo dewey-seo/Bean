@@ -15,6 +15,7 @@ protocol Coordinator: AnyObject {
     func start(animated: Bool, parent: Coordinator?)
     func close(animated: Bool)
     func presentChild(_ child: Coordinator, animated: Bool, onDismissed: (() -> Void)?)
+    func findParent<T: Coordinator>(_ type: T.Type) -> T?
 }
 
 // MARK: - Children manage - Coordinator life cycle control.

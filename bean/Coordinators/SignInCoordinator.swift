@@ -30,6 +30,17 @@ class SignInCoordinator: NSObject, Coordinator {
         loginVC.delegate = self
         router.present(loginVC, animated: true)
     }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
+    }
 }
 
 // MARK: - LoginViewControllerDelegate

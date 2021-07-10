@@ -17,13 +17,17 @@ class MusicSearchResultItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        thumbnail.roundCorenrs(8)
+        titleLabel.font = .headline1
+        titleLabel.textColor = .black
+        descriptionLabel.font = .caption1
+        descriptionLabel.textColor = .grey7
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     func setModel(_ model: Music) {

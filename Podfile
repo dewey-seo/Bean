@@ -26,4 +26,6 @@ target 'bean' do
   pod 'Realm'
   pod 'RealmSwift'
   pod 'RxRealm'
+  
+  pod 'YPImagePicker'
 end
