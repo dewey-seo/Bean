@@ -19,10 +19,10 @@ class PostService: FirebaseService {
     let COLLECTION_PATH_D2 = "Posts"
     
     func reloadFeed(_ completion: @escaping (_ result: Bool) -> Void) {
-        guard let userId = AuthManager.shared.userId else {
+        guard let user = RealmManager.shared.getUser() else {
             return completion(false)
         }
-        self.store.collection(COLLECTION_PATH_D1).document(userId).collection(COLLECTION_PATH_D2).getDocuments { snap, error in
+        self.store.collection(COLLECTION_PATH_D1).document(user.id).collection(COLLECTION_PATH_D2).getDocuments { snap, error in
             guard let documents = snap?.documents else {
                 completion(false)
                 return
@@ -50,11 +50,11 @@ class PostService: FirebaseService {
     }
     
     func uploadPost(_ post: Post, completion: @escaping (_ result: Bool) -> Void) {
-        guard let userId = AuthManager.shared.userId else {
+        guard let user = RealmManager.shared.getUser() else {
             return completion(false)
         }
         
-        let document = self.store.collection(COLLECTION_PATH_D1).document(userId).collection(COLLECTION_PATH_D2).document()
+        let document = self.store.collection(COLLECTION_PATH_D1).document(user.id).collection(COLLECTION_PATH_D2).document()
         let id = document.documentID
         
         guard let data = post.asDictionary(["id": id]) else {

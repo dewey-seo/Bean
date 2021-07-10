@@ -24,9 +24,11 @@ public class Router: NSObject {
 }
 
 extension Router {
-    func present(_ viewController: UIViewController, animated: Bool) {
+    func present(_ viewController: UIViewController, animated: Bool, withCloseButton: Bool = true) {
         present(viewController, animated: animated, completion: nil)
-        addCloseButton(to: viewController)
+        if(withCloseButton) {
+            addCloseButton(to: viewController)
+        }
     }
     
     func present(_ viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {

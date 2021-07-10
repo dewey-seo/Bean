@@ -273,9 +273,9 @@ extension SignUpViewController {
         let source1 = profileImageView.rx.observe(Optional<UIImage>.self, "image").map { $0 != nil }
         let source2 = emailTextField.rx.text.orEmpty.map { $0.isValidEmail() }
         let source3 = nameTextField.rx.text.orEmpty.map { $0.count > 0 }
-        let source4 = introduceTextView.rx.text.orEmpty.map { $0.count > 0}
+//        let source4 = introduceTextView.rx.text.orEmpty.map { $0.count > 0}
         
-        Observable.combineLatest(source1, source2, source3, source4).map { $0 && $1 && $2 && $3 }
+        Observable.combineLatest(source1, source2, source3).map { $0 && $1 && $2 }
             .subscribe { [weak self] isEnabled in
                 self?.signUpButton.setIsEnabled(isEnabled, withColor: UIColor.buttonColor(withIsEnabled: isEnabled))
             }

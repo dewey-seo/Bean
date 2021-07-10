@@ -43,7 +43,7 @@ extension MusicApiRouter: ApiRouter {
         var parameters = Parameters()
         switch self {
         case .searchMusic(let keyword):
-            parameters["attribute"] = "songTerm"
+            parameters["attribute"] = "artistTerm"
             parameters["limit"] = 50
             parameters["term"] = keyword
         }

@@ -21,7 +21,8 @@ class AuthManager: NSObject {
     var user = BehaviorSubject<FirebaseAuth.User?>(value: Auth.auth().currentUser)
     var userId: String? {
         get {
-            return try? self.user.value()?.uid
+            // TODO: - fix bug. first login, can not get value
+            return try? self.user.value()?.uid ?? Auth.auth().currentUser?.uid
         }
     }
     

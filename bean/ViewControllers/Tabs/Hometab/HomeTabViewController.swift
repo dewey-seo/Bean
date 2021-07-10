@@ -25,6 +25,7 @@ class HomeTabViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MusicPostTableViewCell", bundle: nil), forCellReuseIdentifier: MusicPostTableViewCell.reuseIdentifier)
         tableView.register(UINib(nibName: "PhotoPostTableViewCell", bundle: nil), forCellReuseIdentifier: PhotoPostTableViewCell.reuseIdentifier)
         

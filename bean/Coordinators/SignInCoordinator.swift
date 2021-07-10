@@ -14,8 +14,8 @@ class SignInCoordinator: NSObject, Coordinator {
     var children = [Coordinator]()
     var router: Router
     
-    lazy var loginVC: LoginViewController = LoginViewController(nibName: "PostingPlaceViewController", bundle: nil)
-    lazy var signUpVC: SignUpViewController = SignUpViewController(nibName: "PostingPlaceViewController", bundle: nil)
+    lazy var loginVC: LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+    lazy var signUpVC: SignUpViewController = SignUpViewController(nibName: "SignUpViewController", bundle: nil)
 
     init(from: Router?) {
         self.router = Router.init(fromViewController: from?.navigationController)
@@ -28,7 +28,7 @@ class SignInCoordinator: NSObject, Coordinator {
     
     func start(animated: Bool, parent: Coordinator?) {
         loginVC.delegate = self
-        router.present(loginVC, animated: true)
+        router.present(loginVC, animated: true, withCloseButton: false)
     }
     
     func findParent<T: Coordinator>(_ type: T.Type) -> T? {

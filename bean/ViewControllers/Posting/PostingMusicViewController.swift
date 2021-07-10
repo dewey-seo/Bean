@@ -63,6 +63,7 @@ class PostingMusicViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MusicSearchResultItemCell", bundle: nil), forCellReuseIdentifier: MusicSearchResultItemCell.cellIdentifier)
         tableView.separatorColor = .grey2
         tableView.separatorInset = .init(top: 0, left: 0, bottom: 16, right: 16)

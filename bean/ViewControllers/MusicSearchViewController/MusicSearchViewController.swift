@@ -40,6 +40,7 @@ class MusicSearchViewController: UIViewController, UITableViewDelegate, UITableV
     func bindTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MusicSearchResultItemCell", bundle: nil), forCellReuseIdentifier: MusicSearchResultItemCell.cellIdentifier)
         
         //        searchResult.bind(to: tableView.rx.items(cellIdentifier:MusicSearchResultItemCell.cellIdentifier,
