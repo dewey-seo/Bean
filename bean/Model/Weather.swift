@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Coordinate: Codable {
+class Coordinate: Codable {
     var longitude: Double
     var latitude: Double
     
@@ -18,7 +18,7 @@ struct Coordinate: Codable {
     }
 }
 
-struct WeatherDisplay: Codable {
+class WeatherDisplay: Codable {
     var title: String
     var description: String
     var icon: String
@@ -30,7 +30,7 @@ struct WeatherDisplay: Codable {
     }
 }
 
-struct WeatherDetail: Codable {
+class WeatherDetail: Codable {
     var temperature: Double
     var humidity: Int
     var feelLike: Double
@@ -42,12 +42,12 @@ struct WeatherDetail: Codable {
     }
 }
 
-struct WeatherWind: Codable {
+class WeatherWind: Codable {
     var speed: Double?
     var deg: Int?
 }
 
-struct Weather: Codable {
+class Weather: Codable {
     var coordinate: Coordinate
     var display: [WeatherDisplay]
     var detail: WeatherDetail
@@ -61,7 +61,6 @@ struct Weather: Codable {
         case wind
         case name
     }
-    
     
     var weatherIcon: String {
         get {

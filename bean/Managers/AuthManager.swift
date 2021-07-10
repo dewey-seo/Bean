@@ -26,7 +26,7 @@ class AuthManager: NSObject {
     }
     
     var userStateHandler: AuthStateDidChangeListenerHandle?
-    let disposBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     override init() {
         super.init()

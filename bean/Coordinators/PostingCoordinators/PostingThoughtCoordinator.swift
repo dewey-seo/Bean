@@ -28,6 +28,17 @@ class PostingThoughtCoordinator: NSObject, Coordinator {
         router.present(postingVC, animated: true)
         postingVC.delegate = self
     }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
+    }
 }
 
 extension PostingThoughtCoordinator: PostingThoughtViewControllerDelegate {

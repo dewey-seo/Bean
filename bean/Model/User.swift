@@ -17,13 +17,6 @@ class User: Object, Codable {
     @objc dynamic var introduce: String = ""
     @objc dynamic var profileUrl: String = ""
     
-//    convenience init(user: FirebaseAuth.User) {
-//        self.init()
-//        id = user.uid
-//        name = user.displayName ?? ""
-//        email = user.email ?? ""
-//        profileUrl = user.photoURL?.absoluteString ?? ""
-//    }
     convenience init(_ id: String, _ name: String, _ email: String, _ introduce: String, _ profileUrl: String) {
         self.init()
         self.id = id

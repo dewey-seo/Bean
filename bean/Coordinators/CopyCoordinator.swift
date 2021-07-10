@@ -24,5 +24,16 @@ class NAMECoordinator: NSObject, Coordinator {
     func start(animated: Bool, parent: Coordinator?) {
         self.parent = parent
     }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
+    }
 }
 

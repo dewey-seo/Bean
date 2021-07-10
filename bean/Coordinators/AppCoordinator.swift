@@ -62,4 +62,8 @@ class AppCoordinator: Coordinator{
             presentChild(coordinator, animated: true)
         }
     }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        return nil
+    }
 }

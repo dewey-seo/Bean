@@ -30,11 +30,25 @@ class PostingPhotoCoordinator: NSObject, Coordinator {
         postingVC.delegate = self
         postingVC.presetImage = presetImage
     }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
+    }
 }
 
 extension PostingPhotoCoordinator: PostingPhotoViewControllerDelegate {
     func didFinishedPosting() {
-        
+        if let coordinator = self.findParent(HomeTabCoordinator.self) {
+            coordinator.reloadFeed()
+        }
+        self.router.dismiss(animated: true)
     }
     
     func cancelPosting() {

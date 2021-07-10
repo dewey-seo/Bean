@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CDF975ADC8ED477EE3B78C7 /* Pods_bean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */; };
-		3FEF9D43269806AF00D6518E /* XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF9D42269806AF00D6518E /* XibLoadable.swift */; };
-		5806F7A626857CC7001117C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A526857CC7001117C6 /* UserModel.swift */; };
+		3FEF9D43269806AF00D6518E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF9D42269806AF00D6518E /* NibLoadable.swift */; };
+		5806F7A626857CC7001117C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A526857CC7001117C6 /* User.swift */; };
 		5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A826857DB8001117C6 /* FirebaseService.swift */; };
 		581232E026934EBD008BDB67 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232DF26934EBD008BDB67 /* Common.swift */; };
 		581232E32693614E008BDB67 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232E22693614E008BDB67 /* RealmManager.swift */; };
@@ -31,18 +31,32 @@
 		58426EA426960064006FF23E /* PostingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426EA226960064006FF23E /* PostingPlaceViewController.swift */; };
 		58426EA526960064006FF23E /* PostingPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58426EA326960064006FF23E /* PostingPlaceViewController.xib */; };
 		58426EA7269604B3006FF23E /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426EA6269604B3006FF23E /* ImagePickerCoordinator.swift */; };
-		58431831268B7EAB00EED39B /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431830268B7EAB00EED39B /* FeedModel.swift */; };
-		58431835268B7EC400EED39B /* PhotoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431832268B7EC400EED39B /* PhotoPost.swift */; };
+		58431831268B7EAB00EED39B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431830268B7EAB00EED39B /* Feed.swift */; };
+		58431835268B7EC400EED39B /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431832268B7EC400EED39B /* Photo.swift */; };
 		58431836268B7EC400EED39B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431833268B7EC400EED39B /* Post.swift */; };
-		58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431834268B7EC400EED39B /* PostPlaceModel.swift */; };
+		58431837268B7EC400EED39B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431834268B7EC400EED39B /* Place.swift */; };
 		58431839268B7EF000EED39B /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58431838268B7EF000EED39B /* ApiResponse.swift */; };
 		5843183C268B7F0600EED39B /* PostingPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */; };
 		5843183D268B7F0600EED39B /* PostingPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */; };
+		585063CE26994F5E00ECD483 /* MusicPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063CD26994F5E00ECD483 /* MusicPopupView.swift */; };
+		585063D126994F7200ECD483 /* MusicPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063D026994F7200ECD483 /* MusicPopupView.xib */; };
+		585063D52699B1E000ECD483 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063D42699B1E000ECD483 /* DataManager.swift */; };
+		585063E22699B30C00ECD483 /* PhotoPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063E02699B30C00ECD483 /* PhotoPostTableViewCell.swift */; };
+		585063E32699B30C00ECD483 /* PhotoPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063E12699B30C00ECD483 /* PhotoPostTableViewCell.xib */; };
+		585063E62699B31900ECD483 /* MusicPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063E42699B31900ECD483 /* MusicPostTableViewCell.swift */; };
+		585063E72699B31900ECD483 /* MusicPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063E52699B31900ECD483 /* MusicPostTableViewCell.xib */; };
+		585063EA2699B32A00ECD483 /* WeatherPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063E82699B32A00ECD483 /* WeatherPostTableViewCell.swift */; };
+		585063EB2699B32A00ECD483 /* WeatherPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063E92699B32A00ECD483 /* WeatherPostTableViewCell.xib */; };
+		585063EE2699B33C00ECD483 /* ThoughtPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063EC2699B33C00ECD483 /* ThoughtPostTableViewCell.swift */; };
+		585063EF2699B33C00ECD483 /* ThoughtPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063ED2699B33C00ECD483 /* ThoughtPostTableViewCell.xib */; };
+		585063F22699B35100ECD483 /* PlacePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063F02699B35100ECD483 /* PlacePostTableViewCell.swift */; };
+		585063F32699B35100ECD483 /* PlacePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063F12699B35100ECD483 /* PlacePostTableViewCell.xib */; };
+		585063F52699DEA400ECD483 /* BeanLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063F42699DEA400ECD483 /* BeanLabel.swift */; };
 		5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E2F5267DA27C0080BEDC /* ApiRouter.swift */; };
 		5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E302267DAD330080BEDC /* MusicSearchViewController.swift */; };
 		5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5859E303267DAD330080BEDC /* MusicSearchViewController.xib */; };
 		5859E30D267DD8350080BEDC /* keys-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5859E30C267DD8350080BEDC /* keys-Info.plist */; };
-		5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E312267DDA0A0080BEDC /* WeatherModel.swift */; };
+		5859E313267DDA0A0080BEDC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E312267DDA0A0080BEDC /* Weather.swift */; };
 		5859E315267E219B0080BEDC /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E314267E219B0080BEDC /* ApiService.swift */; };
 		5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E318267E254A0080BEDC /* WeatherApiRouter.swift */; };
 		5859E31B267E29620080BEDC /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E31A267E29620080BEDC /* KeyManager.swift */; };
@@ -93,13 +107,13 @@
 		58A147CD269834C700013816 /* BeanArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A147CC269834C700013816 /* BeanArray.swift */; };
 		58A147D0269860BA00013816 /* PostingChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A147CE269860BA00013816 /* PostingChooserViewController.swift */; };
 		58A147D1269860BA00013816 /* PostingChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A147CF269860BA00013816 /* PostingChooserViewController.xib */; };
+		58A147D32698B07700013816 /* BeanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A147D22698B07700013816 /* BeanImageView.swift */; };
 		58B70785268EA931002F385D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B70784268EA931002F385D /* StorageService.swift */; };
 		58B70798268F0835002F385D /* BeanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B70797268F0835002F385D /* BeanButton.swift */; };
 		58B7079A268F0A28002F385D /* BeanColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B70799268F0A28002F385D /* BeanColor.swift */; };
-		58B7079D268F1815002F385D /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7079C268F1815002F385D /* PostComment.swift */; };
 		58B7079F268F2231002F385D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7079E268F2231002F385D /* PostService.swift */; };
 		58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803B2684452900E75801 /* MusicApiRouter.swift */; };
-		58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */; };
+		58C2803E2684474D00E75801 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* Music.swift */; };
 		58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */; };
 		58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */; };
 		58E310D22696AAE000D56377 /* BottomSlidePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310D12696AAE000D56377 /* BottomSlidePresentationController.swift */; };
@@ -109,8 +123,8 @@
 
 /* Begin PBXFileReference section */
 		0042599A3081C5B8DD69A7B5 /* Pods_bean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FEF9D42269806AF00D6518E /* XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibLoadable.swift; sourceTree = "<group>"; };
-		5806F7A526857CC7001117C6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3FEF9D42269806AF00D6518E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		5806F7A526857CC7001117C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5806F7A826857DB8001117C6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		581232DF26934EBD008BDB67 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		581232E22693614E008BDB67 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -132,18 +146,32 @@
 		58426EA226960064006FF23E /* PostingPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingPlaceViewController.swift; sourceTree = "<group>"; };
 		58426EA326960064006FF23E /* PostingPlaceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostingPlaceViewController.xib; sourceTree = "<group>"; };
 		58426EA6269604B3006FF23E /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
-		58431830268B7EAB00EED39B /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		58431832268B7EC400EED39B /* PhotoPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPost.swift; sourceTree = "<group>"; };
+		58431830268B7EAB00EED39B /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		58431832268B7EC400EED39B /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		58431833268B7EC400EED39B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		58431834268B7EC400EED39B /* PostPlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPlaceModel.swift; sourceTree = "<group>"; };
+		58431834268B7EC400EED39B /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		58431838268B7EF000EED39B /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingPhotoViewController.swift; sourceTree = "<group>"; };
 		5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingPhotoViewController.xib; sourceTree = "<group>"; };
+		585063CD26994F5E00ECD483 /* MusicPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPopupView.swift; sourceTree = "<group>"; };
+		585063D026994F7200ECD483 /* MusicPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicPopupView.xib; sourceTree = "<group>"; };
+		585063D42699B1E000ECD483 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		585063E02699B30C00ECD483 /* PhotoPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPostTableViewCell.swift; sourceTree = "<group>"; };
+		585063E12699B30C00ECD483 /* PhotoPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoPostTableViewCell.xib; sourceTree = "<group>"; };
+		585063E42699B31900ECD483 /* MusicPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPostTableViewCell.swift; sourceTree = "<group>"; };
+		585063E52699B31900ECD483 /* MusicPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicPostTableViewCell.xib; sourceTree = "<group>"; };
+		585063E82699B32A00ECD483 /* WeatherPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPostTableViewCell.swift; sourceTree = "<group>"; };
+		585063E92699B32A00ECD483 /* WeatherPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherPostTableViewCell.xib; sourceTree = "<group>"; };
+		585063EC2699B33C00ECD483 /* ThoughtPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtPostTableViewCell.swift; sourceTree = "<group>"; };
+		585063ED2699B33C00ECD483 /* ThoughtPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThoughtPostTableViewCell.xib; sourceTree = "<group>"; };
+		585063F02699B35100ECD483 /* PlacePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePostTableViewCell.swift; sourceTree = "<group>"; };
+		585063F12699B35100ECD483 /* PlacePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacePostTableViewCell.xib; sourceTree = "<group>"; };
+		585063F42699DEA400ECD483 /* BeanLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanLabel.swift; sourceTree = "<group>"; };
 		5859E2F5267DA27C0080BEDC /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		5859E302267DAD330080BEDC /* MusicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		5859E303267DAD330080BEDC /* MusicSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchViewController.xib; sourceTree = "<group>"; };
 		5859E30C267DD8350080BEDC /* keys-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "keys-Info.plist"; sourceTree = "<group>"; };
-		5859E312267DDA0A0080BEDC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		5859E312267DDA0A0080BEDC /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		5859E314267E219B0080BEDC /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5859E318267E254A0080BEDC /* WeatherApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiRouter.swift; sourceTree = "<group>"; };
 		5859E31A267E29620080BEDC /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
@@ -196,13 +224,13 @@
 		58A147CC269834C700013816 /* BeanArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanArray.swift; sourceTree = "<group>"; };
 		58A147CE269860BA00013816 /* PostingChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingChooserViewController.swift; sourceTree = "<group>"; };
 		58A147CF269860BA00013816 /* PostingChooserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostingChooserViewController.xib; sourceTree = "<group>"; };
+		58A147D22698B07700013816 /* BeanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanImageView.swift; sourceTree = "<group>"; };
 		58B70784268EA931002F385D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		58B70797268F0835002F385D /* BeanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanButton.swift; sourceTree = "<group>"; };
 		58B70799268F0A28002F385D /* BeanColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanColor.swift; sourceTree = "<group>"; };
-		58B7079C268F1815002F385D /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		58B7079E268F2231002F385D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		58C2803B2684452900E75801 /* MusicApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApiRouter.swift; sourceTree = "<group>"; };
-		58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultModel.swift; sourceTree = "<group>"; };
+		58C2803D2684474D00E75801 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultItemCell.swift; sourceTree = "<group>"; };
 		58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchResultItemCell.xib; sourceTree = "<group>"; };
 		58E310D12696AAE000D56377 /* BottomSlidePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlidePresentationController.swift; sourceTree = "<group>"; };
@@ -250,6 +278,7 @@
 		58426E912695F793006FF23E /* Posting */ = {
 			isa = PBXGroup;
 			children = (
+				58C280412684649900E75801 /* Cells */,
 				5843183A268B7F0600EED39B /* PostingPhotoViewController.swift */,
 				5843183B268B7F0600EED39B /* PostingPhotoViewController.xib */,
 				58426E922695F7AD006FF23E /* PostingMusicViewController.swift */,
@@ -264,6 +293,42 @@
 				58A147CF269860BA00013816 /* PostingChooserViewController.xib */,
 			);
 			path = Posting;
+			sourceTree = "<group>";
+		};
+		585063CF26994F6200ECD483 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				585063CD26994F5E00ECD483 /* MusicPopupView.swift */,
+				585063D026994F7200ECD483 /* MusicPopupView.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		585063D62699B2B300ECD483 /* Hometab */ = {
+			isa = PBXGroup;
+			children = (
+				585063DB2699B2DF00ECD483 /* Cells */,
+				585FEDF12692095200E95219 /* HomeTabViewController.swift */,
+				585FEDF22692095200E95219 /* HomeTabViewController.xib */,
+			);
+			path = Hometab;
+			sourceTree = "<group>";
+		};
+		585063DB2699B2DF00ECD483 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				585063E02699B30C00ECD483 /* PhotoPostTableViewCell.swift */,
+				585063E12699B30C00ECD483 /* PhotoPostTableViewCell.xib */,
+				585063E42699B31900ECD483 /* MusicPostTableViewCell.swift */,
+				585063E52699B31900ECD483 /* MusicPostTableViewCell.xib */,
+				585063E82699B32A00ECD483 /* WeatherPostTableViewCell.swift */,
+				585063E92699B32A00ECD483 /* WeatherPostTableViewCell.xib */,
+				585063EC2699B33C00ECD483 /* ThoughtPostTableViewCell.swift */,
+				585063ED2699B33C00ECD483 /* ThoughtPostTableViewCell.xib */,
+				585063F02699B35100ECD483 /* PlacePostTableViewCell.swift */,
+				585063F12699B35100ECD483 /* PlacePostTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5859E2F4267DA0BE0080BEDC /* Service */ = {
@@ -284,13 +349,12 @@
 			isa = PBXGroup;
 			children = (
 				58431833268B7EC400EED39B /* Post.swift */,
-				58431832268B7EC400EED39B /* PhotoPost.swift */,
-				58431834268B7EC400EED39B /* PostPlaceModel.swift */,
-				58431830268B7EAB00EED39B /* FeedModel.swift */,
-				5859E312267DDA0A0080BEDC /* WeatherModel.swift */,
-				58C2803D2684474D00E75801 /* MusicSearchResultModel.swift */,
-				5806F7A526857CC7001117C6 /* UserModel.swift */,
-				58B7079C268F1815002F385D /* PostComment.swift */,
+				58431832268B7EC400EED39B /* Photo.swift */,
+				58431834268B7EC400EED39B /* Place.swift */,
+				58431830268B7EAB00EED39B /* Feed.swift */,
+				5859E312267DDA0A0080BEDC /* Weather.swift */,
+				58C2803D2684474D00E75801 /* Music.swift */,
+				5806F7A526857CC7001117C6 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +444,7 @@
 				5859E31A267E29620080BEDC /* KeyManager.swift */,
 				5859E324267EF8800080BEDC /* LocationManager.swift */,
 				581232E22693614E008BDB67 /* RealmManager.swift */,
+				585063D42699B1E000ECD483 /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -399,8 +464,10 @@
 				585E41EC2695676900EFD025 /* BeanScrollView.swift */,
 				58426E882695F216006FF23E /* BeanBarButtonItem.swift */,
 				587536352697F56B00C20E62 /* BeanDate.swift */,
-				3FEF9D42269806AF00D6518E /* XibLoadable.swift */,
 				58A147CC269834C700013816 /* BeanArray.swift */,
+				58A147D22698B07700013816 /* BeanImageView.swift */,
+				3FEF9D42269806AF00D6518E /* NibLoadable.swift */,
+				585063F42699DEA400ECD483 /* BeanLabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -449,8 +516,7 @@
 		58685D8826940F7400962AA3 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				585FEDF12692095200E95219 /* HomeTabViewController.swift */,
-				585FEDF22692095200E95219 /* HomeTabViewController.xib */,
+				585063D62699B2B300ECD483 /* Hometab */,
 				585FEDF52692099900E95219 /* MyTabViewController.swift */,
 				585FEDF62692099900E95219 /* MyTabViewController.xib */,
 				585FEDDC2691856300E95219 /* RootTabBarViewController.swift */,
@@ -483,6 +549,7 @@
 		58A147CB26981E2B00013816 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				585063CF26994F6200ECD483 /* Popup */,
 				587536372698025D00C20E62 /* Chooser */,
 			);
 			path = Views;
@@ -491,7 +558,6 @@
 		58C2803F2684646200E75801 /* MusicSearchViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58C280412684649900E75801 /* Cells */,
 				5859E302267DAD330080BEDC /* MusicSearchViewController.swift */,
 				5859E303267DAD330080BEDC /* MusicSearchViewController.xib */,
 			);
@@ -603,14 +669,20 @@
 				58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */,
 				58426EA526960064006FF23E /* PostingPlaceViewController.xib in Resources */,
 				585DFF9026791B9D00CADE6B /* GoogleService-Info.plist in Resources */,
+				585063F32699B35100ECD483 /* PlacePostTableViewCell.xib in Resources */,
 				585FEDF42692095200E95219 /* HomeTabViewController.xib in Resources */,
+				585063EF2699B33C00ECD483 /* ThoughtPostTableViewCell.xib in Resources */,
 				5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */,
+				585063D126994F7200ECD483 /* MusicPopupView.xib in Resources */,
 				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
 				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
+				585063E72699B31900ECD483 /* MusicPostTableViewCell.xib in Resources */,
+				585063E32699B30C00ECD483 /* PhotoPostTableViewCell.xib in Resources */,
 				5843183D268B7F0600EED39B /* PostingPhotoViewController.xib in Resources */,
 				585DFF9726791EC800CADE6B /* RootViewController.xib in Resources */,
 				5859E30D267DD8350080BEDC /* keys-Info.plist in Resources */,
 				585FEDDF2691856300E95219 /* RootTabBarViewController.xib in Resources */,
+				585063EB2699B32A00ECD483 /* WeatherPostTableViewCell.xib in Resources */,
 				585DFF852679189600CADE6B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,7 +756,7 @@
 				58426E982695F7F4006FF23E /* PostingWeatherViewController.swift in Sources */,
 				58426E892695F216006FF23E /* BeanBarButtonItem.swift in Sources */,
 				5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */,
-				5806F7A626857CC7001117C6 /* UserModel.swift in Sources */,
+				5806F7A626857CC7001117C6 /* User.swift in Sources */,
 				585FEDE12691858600E95219 /* HomeTabCoordinator.swift in Sources */,
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				58E310EF269753EA00D56377 /* PopupViewController.swift in Sources */,
@@ -695,28 +767,32 @@
 				58426E8C2695F469006FF23E /* PostingPhotoCoordinator.swift in Sources */,
 				58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */,
 				5843183C268B7F0600EED39B /* PostingPhotoViewController.swift in Sources */,
+				585063F52699DEA400ECD483 /* BeanLabel.swift in Sources */,
 				58426EA426960064006FF23E /* PostingPlaceViewController.swift in Sources */,
 				58B7079F268F2231002F385D /* PostService.swift in Sources */,
-				58B7079D268F1815002F385D /* PostComment.swift in Sources */,
 				585FEDF72692099900E95219 /* MyTabViewController.swift in Sources */,
 				58C2803C2684452900E75801 /* MusicApiRouter.swift in Sources */,
 				585FEDD92691828F00E95219 /* Router.swift in Sources */,
 				585E41EB269565C500EFD025 /* BeanView.swift in Sources */,
+				585063CE26994F5E00ECD483 /* MusicPopupView.swift in Sources */,
 				587F58B0268E201800577D62 /* BeanViewController.swift in Sources */,
 				58709AB32690D07200CD6BB8 /* BeanDictionary.swift in Sources */,
 				58A147D0269860BA00013816 /* PostingChooserViewController.swift in Sources */,
 				58B70798268F0835002F385D /* BeanButton.swift in Sources */,
 				585E41ED2695676900EFD025 /* BeanScrollView.swift in Sources */,
+				585063E22699B30C00ECD483 /* PhotoPostTableViewCell.swift in Sources */,
 				589C4D912686115600E7A019 /* UserService.swift in Sources */,
 				585FEDE3269185A300E95219 /* SignInCoordinator.swift in Sources */,
 				585DFF9A2679263E00CADE6B /* SignInManager.swift in Sources */,
 				585FEDE5269185D100E95219 /* MyTabCoordinator.swift in Sources */,
-				58C2803E2684474D00E75801 /* MusicSearchResultModel.swift in Sources */,
+				585063D52699B1E000ECD483 /* DataManager.swift in Sources */,
+				58C2803E2684474D00E75801 /* Music.swift in Sources */,
+				585063F22699B35100ECD483 /* PlacePostTableViewCell.swift in Sources */,
 				585FEDF32692095200E95219 /* HomeTabViewController.swift in Sources */,
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
 				5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */,
 				58E310EB2696FE6F00D56377 /* BottomSlideViewController.swift in Sources */,
-				3FEF9D43269806AF00D6518E /* XibLoadable.swift in Sources */,
+				3FEF9D43269806AF00D6518E /* NibLoadable.swift in Sources */,
 				58709AAB2690781400CD6BB8 /* Time.swift in Sources */,
 				585DFF7C2679189500CADE6B /* AppDelegate.swift in Sources */,
 				58709AAF2690C61100CD6BB8 /* BeanEncodable.swift in Sources */,
@@ -726,6 +802,7 @@
 				58753639269802AF00C20E62 /* ChooserButton.swift in Sources */,
 				5825559F2679D23E00416A6C /* MainViewController.swift in Sources */,
 				585FEDD62691824B00E95219 /* Coordinator.swift in Sources */,
+				585063E62699B31900ECD483 /* MusicPostTableViewCell.swift in Sources */,
 				58685D87269407B100962AA3 /* BeanFont.swift in Sources */,
 				58B7079A268F0A28002F385D /* BeanColor.swift in Sources */,
 				585FEDDE2691856300E95219 /* RootTabBarViewController.swift in Sources */,
@@ -737,25 +814,28 @@
 				585DFF9626791EC800CADE6B /* RootViewController.swift in Sources */,
 				58426E942695F7AD006FF23E /* PostingMusicViewController.swift in Sources */,
 				58431839268B7EF000EED39B /* ApiResponse.swift in Sources */,
-				58431835268B7EC400EED39B /* PhotoPost.swift in Sources */,
+				585063EE2699B33C00ECD483 /* ThoughtPostTableViewCell.swift in Sources */,
+				58A147D32698B07700013816 /* BeanImageView.swift in Sources */,
+				58431835268B7EC400EED39B /* Photo.swift in Sources */,
 				58431836268B7EC400EED39B /* Post.swift in Sources */,
 				581232E32693614E008BDB67 /* RealmManager.swift in Sources */,
 				5897DAC126882AE300F288F4 /* SignUpViewController.swift in Sources */,
 				58426EA12696004B006FF23E /* PostingPlaceCoordinator.swift in Sources */,
 				58426E8E2695F493006FF23E /* PostingWeatherCoordinator.swift in Sources */,
 				582D46622679925300A1B908 /* AuthManager.swift in Sources */,
-				5859E313267DDA0A0080BEDC /* WeatherModel.swift in Sources */,
+				5859E313267DDA0A0080BEDC /* Weather.swift in Sources */,
 				58426EA7269604B3006FF23E /* ImagePickerCoordinator.swift in Sources */,
 				585FEDE92691878600E95219 /* AppCoordinator.swift in Sources */,
 				5859E31B267E29620080BEDC /* KeyManager.swift in Sources */,
-				58431831268B7EAB00EED39B /* FeedModel.swift in Sources */,
+				58431831268B7EAB00EED39B /* Feed.swift in Sources */,
 				5859E315267E219B0080BEDC /* ApiService.swift in Sources */,
 				58685D8C2694167900962AA3 /* Device.swift in Sources */,
 				5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */,
 				58987E5C268C0B0E00C0C74E /* KeyboardObserve.swift in Sources */,
+				585063EA2699B32A00ECD483 /* WeatherPostTableViewCell.swift in Sources */,
 				58A147CD269834C700013816 /* BeanArray.swift in Sources */,
 				58E310D22696AAE000D56377 /* BottomSlidePresentationController.swift in Sources */,
-				58431837268B7EC400EED39B /* PostPlaceModel.swift in Sources */,
+				58431837268B7EC400EED39B /* Place.swift in Sources */,
 				581232E026934EBD008BDB67 /* Common.swift in Sources */,
 				58B70785268EA931002F385D /* StorageService.swift in Sources */,
 			);

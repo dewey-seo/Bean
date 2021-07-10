@@ -28,6 +28,24 @@ class HomeTabCoordinator: NSObject, Coordinator {
             return
         }
         homeTabVC.delegate = self
+        self.reloadFeed()
+    }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
+    }
+    
+    func reloadFeed() {
+        PostService.shared.reloadFeed { isSuccess in
+            console("feed reload done", isSuccess)
+        }
     }
 }
 

@@ -63,6 +63,17 @@ class ImagePickerCoordinator: NSObject, Coordinator {
         
         self.router.present(imagePicker, animated: true, completion: nil)
     }
+    
+    func findParent<T: Coordinator>(_ type: T.Type) -> T? {
+        guard let parent = self.parent else {
+            return nil
+        }
+        if let parent = parent as? T {
+            return parent
+        } else {
+            return parent.findParent(type)
+        }
+    }
 }
 
 extension ImagePickerCoordinator: UIImagePickerControllerDelegate {

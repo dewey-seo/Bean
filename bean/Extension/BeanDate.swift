@@ -8,9 +8,11 @@
 import UIKit
 
 enum DateFormatType {
-    case aaa
+    case post
     var format: String {
         switch self {
+        case .post:
+            return "HH:mm"
         default:
             return "dd/MM/yyyy HH:mm:ss"
         }
@@ -18,7 +20,7 @@ enum DateFormatType {
 }
 
 extension Date {
-    func getCurrentDate(_ type: DateFormatType = .aaa) -> String {
+    func formattedString(_ type: DateFormatType) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = type.format
         dateFormatter.timeZone = .current
