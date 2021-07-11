@@ -63,6 +63,7 @@ extension AuthManager {
     func finishedAppleSignIn(with credential: AuthCredential, completion: @escaping (_ user: FirebaseAuth.User?) -> Void) {
         firebaseAuth.signIn(with: credential) { [weak self] (result, error) in
             guard let firebaseUser = result?.user, error == nil else {
+                console("Error in finishedAppleSignIn", error)
                 self?.signOut()
                 completion(nil)
                 return

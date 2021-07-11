@@ -34,7 +34,10 @@ class LoginViewController: UIViewController {
     }
     
     func onFinishedLoginToFirebase(user: FirebaseAuth.User?) {
-        guard let user = user else { return }
+        guard let user = user else {
+            console("ERROR in onFinishedLoginToFirebase")
+            return
+        }
         
         UserService.shared.getUser(user) { [weak self] registeredUser in
             if let registeredUser = registeredUser {
@@ -115,12 +118,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
-            // Initialize a Firebase credential.
-            guard let bundleId = Bundle.main.bundleIdentifier else {
-                return
-            }
-            
-            let credential = OAuthProvider.credential(withProviderID: bundleId,
+            // Initialize a Firebase credential.            
+            let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
             

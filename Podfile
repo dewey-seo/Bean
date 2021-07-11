@@ -26,10 +26,10 @@ target 'bean' do
     pod 'RxSwift', '6.2.0'
     pod 'RxCocoa', '6.2.0'
     
-    pod 'Realm'
-    pod 'RealmSwift'
-    pod 'RxRealm'
+    pod 'Realm', '10.10.0'
+    pod 'RealmSwift', '10.10.0'
+    pod 'RxRealm', '5.0.1'
     
-    pod 'YPImagePicker'
-    pod 'lottie-ios'
+    pod 'YPImagePicker', '4.5.0'
+    pod 'lottie-ios', '3.2.3'
 end

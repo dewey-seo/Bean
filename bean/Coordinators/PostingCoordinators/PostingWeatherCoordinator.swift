@@ -43,7 +43,10 @@ class PostingWeatherCoordinator: NSObject, Coordinator {
 
 extension PostingWeatherCoordinator: PostingWeatherViewControllerDelegate {
     func didFinishedPosting() {
-        
+        if let coordinator = self.findParent(HomeTabCoordinator.self) {
+            coordinator.reloadFeed()
+        }
+        self.router.dismiss(animated: true)
     }
     
     func cancelPosting() {

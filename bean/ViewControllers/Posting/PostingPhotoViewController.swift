@@ -20,6 +20,7 @@ class PostingPhotoViewController: UIViewController {
     
     weak var delegate: PostingPhotoViewControllerDelegate?
     var presetImage: UIImage?
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var commentTextView: UITextView!
@@ -31,6 +32,7 @@ class PostingPhotoViewController: UIViewController {
     @IBOutlet weak var bottomButtonHeight: NSLayoutConstraint!
     
     let imagePicker = YPImagePicker()
+    var isPosting = BehaviorSubject(value: false)
     var isMounted = false
     
     private let disposeBag = DisposeBag()
@@ -75,6 +77,17 @@ class PostingPhotoViewController: UIViewController {
         textCountLabel.text = "\(0)/\(commentMaxCount)"
         textCountLabel.textColor = .grey6
         textCountLabel.font = .body1
+        
+        indicator.hidesWhenStopped = true
+        self.isPosting.subscribe(onNext: { [weak self] isPosting in
+            if isPosting {
+                self?.indicator.startAnimating()
+                self?.postingButton.setIsEnabled(false, withColor: .primary3)
+            } else {
+                self?.indicator.stopAnimating()
+                self?.postingButton.setIsEnabled(true, withColor: UIColor.buttonColor(withIsEnabled: true))
+            }
+        }).disposed(by: disposeBag)
     }
     
     func bindCheckPostingButtonEnabled() {
@@ -107,12 +120,14 @@ class PostingPhotoViewController: UIViewController {
             return
         }
         
+        self.isPosting.onNext(true)
         PostService.shared.postPhoto(image: image, comment: comment) { [weak self] result in
             if result {
                 self?.delegate?.didFinishedPosting()
             } else {
                 self?.showAlert(message: "ERROR - POST UPLOAD")
             }
+            self?.isPosting.onNext(false)
         }
     }
 }

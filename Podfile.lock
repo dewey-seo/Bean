@@ -412,15 +412,15 @@ DEPENDENCIES:
   - GooglePlaces
   - GoogleSignIn
   - Kingfisher (= 6.3.0)
-  - lottie-ios
+  - lottie-ios (= 3.2.3)
   - ObjectMapper (~> 3.5)
-  - Realm
-  - RealmSwift
+  - Realm (= 10.10.0)
+  - RealmSwift (= 10.10.0)
   - RxCocoa (= 6.2.0)
-  - RxRealm
+  - RxRealm (= 5.0.1)
   - RxSwift (= 6.2.0)
   - SnapKit (~> 5.0.0)
-  - YPImagePicker
+  - YPImagePicker (= 4.5.0)
 
 SPEC REPOS:
   trunk:
@@ -505,6 +505,6 @@ SPEC CHECKSUMS:
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: 6eaca2574b9d137db7b45b8907a8875291c0d8ba
+PODFILE CHECKSUM: daf394ce69c30ac7130959c8e26cef94c50fab06
 
 COCOAPODS: 1.10.1
