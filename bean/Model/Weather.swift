@@ -62,10 +62,31 @@ class Weather: Codable {
         case name
     }
     
+    var localIcon: String? {
+        get {
+            switch display.first?.title ?? "" {
+            case "Thunderstorm":
+                return "weather_thunderstorm"
+            case "Drizzle":
+                return "weather_drizzle"
+            case "Rain":
+                return "weather_rain"
+            case "Snow":
+                return "weather_snow"
+            case "Clear":
+                return "weather_clear"
+            case "Clouds":
+                return "weather_cloud"
+            default:
+                return nil
+            }
+        }
+    }
+    
     var weatherIcon: String {
         get {
             let scale = Int(UIScreen.main.scale)
-            return "http://openweathermap.org/img/wn/" + (display.first?.icon ?? "") + "@\(scale)x" + ".png"
+            return "http://openweathermap.org/img/wn/" + (display.first?.icon ?? "") + "@\(2)x" + ".png"
         }
     }
 }

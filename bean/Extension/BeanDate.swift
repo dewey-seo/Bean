@@ -12,7 +12,7 @@ enum DateFormatType {
     var format: String {
         switch self {
         case .post:
-            return "HH:mm"
+            return "dd/MM/yyyy HH:mm:ss"
         default:
             return "dd/MM/yyyy HH:mm:ss"
         }

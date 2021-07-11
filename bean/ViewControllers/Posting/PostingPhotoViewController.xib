@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="bottomButtonHeight" destination="ws6-G0-9n7" id="4BB-T9-VrU"/>
                 <outlet property="commentTextView" destination="hwT-xt-rjL" id="Ccr-87-TZm"/>
+                <outlet property="indicator" destination="emF-LJ-7XF" id="gxS-D2-7fh"/>
                 <outlet property="marginB" destination="UB4-Hq-hwH" id="OPu-ff-yh5"/>
                 <outlet property="placeholder" destination="Moi-Tc-dhN" id="KfD-Ne-HKv"/>
                 <outlet property="postImageView" destination="3ed-TR-fjP" id="Gnz-NN-jmr"/>
@@ -27,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAH-wY-khd">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="nAH-wY-khd">
                     <rect key="frame" x="0.0" y="44" width="414" height="782"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUe-bB-QgC" userLabel="ContentView">
@@ -114,14 +115,30 @@
                         <action selector="onPressPosting:" destination="-1" eventType="touchUpInside" id="iVp-na-E6C"/>
                     </connections>
                 </button>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufs-eJ-jk0">
+                    <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="emF-LJ-7XF">
+                            <rect key="frame" x="197" y="25" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="emF-LJ-7XF" firstAttribute="centerX" secondItem="Ufs-eJ-jk0" secondAttribute="centerX" id="HDi-QU-R7j"/>
+                        <constraint firstItem="emF-LJ-7XF" firstAttribute="centerY" secondItem="Ufs-eJ-jk0" secondAttribute="centerY" id="zzK-Ut-QWN"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="gy9-eu-bUB" secondAttribute="trailing" id="71H-ih-TYz"/>
+                <constraint firstItem="gy9-eu-bUB" firstAttribute="leading" secondItem="Ufs-eJ-jk0" secondAttribute="leading" id="FVW-2m-HCG"/>
+                <constraint firstItem="gy9-eu-bUB" firstAttribute="top" secondItem="Ufs-eJ-jk0" secondAttribute="top" id="L1g-eu-NhG"/>
                 <constraint firstItem="gy9-eu-bUB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PzB-b1-fY4"/>
                 <constraint firstAttribute="bottom" secondItem="gy9-eu-bUB" secondAttribute="bottom" id="UB4-Hq-hwH"/>
+                <constraint firstItem="gy9-eu-bUB" firstAttribute="trailing" secondItem="Ufs-eJ-jk0" secondAttribute="trailing" id="jgm-rj-IeK"/>
                 <constraint firstItem="nAH-wY-khd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lUf-sg-Bxb"/>
+                <constraint firstItem="gy9-eu-bUB" firstAttribute="bottom" secondItem="Ufs-eJ-jk0" secondAttribute="bottom" id="nfn-GY-O7s"/>
                 <constraint firstItem="nAH-wY-khd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oLZ-Hb-xQq"/>
                 <constraint firstItem="nAH-wY-khd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s2R-zi-tWu"/>
                 <constraint firstItem="gy9-eu-bUB" firstAttribute="top" secondItem="nAH-wY-khd" secondAttribute="bottom" id="xVT-Yj-CCZ"/>

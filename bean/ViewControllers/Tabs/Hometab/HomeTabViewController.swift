@@ -28,6 +28,7 @@ class HomeTabViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MusicPostTableViewCell", bundle: nil), forCellReuseIdentifier: MusicPostTableViewCell.reuseIdentifier)
         tableView.register(UINib(nibName: "PhotoPostTableViewCell", bundle: nil), forCellReuseIdentifier: PhotoPostTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: "WeatherPostTableViewCell", bundle: nil), forCellReuseIdentifier: WeatherPostTableViewCell.reuseIdentifier)
         
         DataManager.shared.obaservableFeed
             .subscribe(onNext: { [weak self] posts in
@@ -76,6 +77,11 @@ extension HomeTabViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case .music:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MusicPostTableViewCell.reuseIdentifier) as? MusicPostTableViewCell {
+                cell.post = post
+                return cell
+            }
+        case .weather:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: WeatherPostTableViewCell.reuseIdentifier) as? WeatherPostTableViewCell {
                 cell.post = post
                 return cell
             }

@@ -95,4 +95,11 @@ class PostService: FirebaseService {
             completion(result)
         })
     }
+    func postWeather(weather: Weather, completion: @escaping (_ result: Bool) -> Void) {
+        let post = Post(type: .weather, data: weather)
+        
+        self.uploadPost(post, completion: { result in
+            completion(result)
+        })
+    }
 }

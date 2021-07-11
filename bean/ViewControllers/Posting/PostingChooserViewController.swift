@@ -47,7 +47,7 @@ class PostingChooserViewController: BottomSlideViewController {
     
     weak var delegate: PostingChooserDelegate?
     
-    let displayChoosers: [ChooserType] = [.place, .music, .photo, .weather, .thought]
+    let displayChoosers: [ChooserType] = [.music, .photo, .weather, .place, .thought]
     
     override func loadView() {
         super.loadView()

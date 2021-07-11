@@ -40,7 +40,7 @@ class AppCoordinator: Coordinator{
     }
     
     func observingIsLogin() {
-        RealmManager.shared.observeIsLogin()
+        RealmManager.shared.observingIsLogin()
             .subscribe { [weak self] isLogin in
                 self?.onChangeLoginStatus(isLogin)
             }
