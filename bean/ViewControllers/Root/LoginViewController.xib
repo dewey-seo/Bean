@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="bean" customModuleProvider="target">
             <connections>
-                <outlet property="googleSignInButton" destination="wwq-r2-rAd" id="bfd-Ff-iMS"/>
+                <outlet property="appleSignInButton" destination="yhY-W6-x4d" id="FAk-DT-AHP"/>
+                <outlet property="googleSignInButton" destination="nkb-5c-GaL" id="BMJ-MM-YWz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,32 +21,72 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-r2-rAd">
-                    <rect key="frame" x="161.5" y="533" width="91" height="30"/>
-                    <state key="normal" title="Google Login"/>
-                    <connections>
-                        <action selector="onPressGoogleSignIn:" destination="-1" eventType="touchUpInside" id="X01-P4-f8V"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuD-1J-quz">
-                    <rect key="frame" x="167.5" y="327.5" width="79" height="41"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W1r-Ev-2c9">
+                    <rect key="frame" x="16" y="710" width="382" height="112"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-5c-GaL">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Bt3-Nr-EyO"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="googleSignInPressed:" destination="-1" eventType="touchUpInside" id="Q9O-3k-jGN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhY-W6-x4d">
+                            <rect key="frame" x="0.0" y="64" width="382" height="48"/>
+                            <color key="backgroundColor" red="0.96848052740000001" green="0.83699308159999997" blue="0.0076377755839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="aHf-yf-92v"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="appleSignInPressed:" destination="-1" eventType="touchUpInside" id="uuP-gZ-DOD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaY-Mh-E6D">
+                    <rect key="frame" x="0.0" y="44" width="414" height="666"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tmp_logo" translatesAutoresizingMaskIntoConstraints="NO" id="KJc-O6-NW7">
+                            <rect key="frame" x="16" y="229" width="382" height="208"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="KJc-O6-NW7" secondAttribute="height" multiplier="160:87" id="Snq-CY-Dbg"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="KJc-O6-NW7" firstAttribute="centerX" secondItem="JaY-Mh-E6D" secondAttribute="centerX" id="TgB-pG-z6I"/>
+                        <constraint firstAttribute="trailing" secondItem="KJc-O6-NW7" secondAttribute="trailing" constant="16" id="Ukg-5I-WQZ"/>
+                        <constraint firstItem="KJc-O6-NW7" firstAttribute="leading" secondItem="JaY-Mh-E6D" secondAttribute="leading" constant="16" id="hLP-jN-NYB"/>
+                        <constraint firstItem="KJc-O6-NW7" firstAttribute="centerY" secondItem="JaY-Mh-E6D" secondAttribute="centerY" id="zAi-7W-3gT"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="ZuD-1J-quz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KOw-As-qNe"/>
-                <constraint firstItem="ZuD-1J-quz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="QGc-Km-k4a"/>
-                <constraint firstItem="wwq-r2-rAd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="100" id="Vb2-69-B8k"/>
-                <constraint firstItem="wwq-r2-rAd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a8k-tc-ifD"/>
+                <constraint firstItem="JaY-Mh-E6D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1he-ki-781"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W1r-Ev-2c9" secondAttribute="bottom" constant="40" id="6Zo-Lr-WFI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W1r-Ev-2c9" secondAttribute="trailing" constant="16" id="NVA-e3-5C5"/>
+                <constraint firstItem="W1r-Ev-2c9" firstAttribute="top" secondItem="JaY-Mh-E6D" secondAttribute="bottom" id="W0Z-IS-w8o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JaY-Mh-E6D" secondAttribute="trailing" id="Wda-1l-7nO"/>
+                <constraint firstItem="JaY-Mh-E6D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tge-Ee-Qst"/>
+                <constraint firstItem="W1r-Ev-2c9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xcf-Tx-fEF"/>
             </constraints>
             <point key="canvasLocation" x="72" y="110"/>
         </view>
     </objects>
     <resources>
+        <image name="tmp_logo" width="645" height="317"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -15,6 +15,7 @@
 		581232E32693614E008BDB67 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232E22693614E008BDB67 /* RealmManager.swift */; };
 		5825559F2679D23E00416A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825559D2679D23E00416A6C /* MainViewController.swift */; };
 		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
+		582CAD8D269B065F004BA28A /* root-coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 582CAD8C269B065F004BA28A /* root-coffee.json */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
 		58426E892695F216006FF23E /* BeanBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426E882695F216006FF23E /* BeanBarButtonItem.swift */; };
 		58426E8C2695F469006FF23E /* PostingPhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426E8B2695F469006FF23E /* PostingPhotoCoordinator.swift */; };
@@ -130,6 +131,8 @@
 		581232E22693614E008BDB67 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5825559D2679D23E00416A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		582CAD8A269B01BB004BA28A /* bean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bean.entitlements; sourceTree = "<group>"; };
+		582CAD8C269B065F004BA28A /* root-coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "root-coffee.json"; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		58426E882695F216006FF23E /* BeanBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanBarButtonItem.swift; sourceTree = "<group>"; };
 		58426E8B2695F469006FF23E /* PostingPhotoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingPhotoCoordinator.swift; sourceTree = "<group>"; };
@@ -261,6 +264,14 @@
 				58B7079E268F2231002F385D /* PostService.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		582CAD8B269B0645004BA28A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				582CAD8C269B065F004BA28A /* root-coffee.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		58426E8A2695F43D006FF23E /* PostingCoordinators */ = {
@@ -406,6 +417,8 @@
 		585DFF7A2679189500CADE6B /* bean */ = {
 			isa = PBXGroup;
 			children = (
+				582CAD8B269B0645004BA28A /* Resource */,
+				582CAD8A269B01BB004BA28A /* bean.entitlements */,
 				585E41E826955A4F00EFD025 /* Extension */,
 				58987E5A268C0AEF00C0C74E /* Utils */,
 				5859E2F4267DA0BE0080BEDC /* Service */,
@@ -673,6 +686,7 @@
 				585FEDF42692095200E95219 /* HomeTabViewController.xib in Resources */,
 				585063EF2699B33C00ECD483 /* ThoughtPostTableViewCell.xib in Resources */,
 				5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */,
+				582CAD8D269B065F004BA28A /* root-coffee.json in Resources */,
 				585063D126994F7200ECD483 /* MusicPopupView.xib in Resources */,
 				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
 				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
@@ -977,6 +991,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bean/bean.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D4Z53MQAF2;
@@ -1003,6 +1018,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bean/bean.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D4Z53MQAF2;

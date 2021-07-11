@@ -12,4 +12,12 @@ extension UIButton {
         self.isEnabled = isEnabled
         self.backgroundColor = color
     }
+    func setStyle(bgColor: UIColor, title: String, font: UIFont, titleColor: UIColor, radius: CGFloat? = 1) {
+        self.backgroundColor = bgColor
+        self.setTitle(title, for: .normal)
+        self.titleLabel?.font = font
+        self.setTitleColor(titleColor, for: .normal)
+        self.roundCorenrs(8)
+        
+    }
 }

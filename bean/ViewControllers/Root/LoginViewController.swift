@@ -8,18 +8,26 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import AuthenticationServices
 
 public protocol LoginViewControllerDelegate: AnyObject {
     func registerUser(with firebaseUser: FirebaseAuth.User?)
 }
 
 class LoginViewController: UIViewController {
-    
     @IBOutlet weak var googleSignInButton: UIButton!
-    weak var delegate: LoginViewControllerDelegate?
+    @IBOutlet weak var appleSignInButton: UIButton!
     
+    weak var delegate: LoginViewControllerDelegate?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
+        setSubviews()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -37,9 +45,37 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func onPressGoogleSignIn(_ sender: Any) {
+    @IBAction func googleSignInPressed(_ sender: Any) {
         GIDSignIn.sharedInstance().presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @IBAction func appleSignInPressed(_ sender: Any) {
+        let authorizationController = AuthManager.shared.startSignInWithAppleFlow(from: self)
+        authorizationController.delegate = self
+//        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+    func setSubviews() {
+        view.backgroundColor = .primary6
+        
+        googleSignInButton.setStyle(
+            bgColor: .white,
+            title: "Sing in with Google",
+            font: .title4Bold,
+            titleColor: .primary6,
+            radius: 8
+        )
+        appleSignInButton.setStyle(
+            bgColor: .grey9,
+            title: "Sing in with Apple",
+            font: .title4Bold,
+            titleColor: .white,
+            radius: 8
+        )
+        googleSignInButton.setImage(UIImage(named: "login_btn_google"), for: .normal)
+        appleSignInButton.setImage(UIImage(named: "login_btn_apple"), for: .normal)
     }
 }
 
@@ -58,5 +94,43 @@ extension LoginViewController: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         console("log out")
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+//    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+//
+//    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            guard let nonce = AuthManager.shared.currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            guard let appleIDToken = appleIDCredential.identityToken else {
+                print("Unable to fetch identity token")
+                return
+            }
+            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                return
+            }
+            // Initialize a Firebase credential.
+            guard let bundleId = Bundle.main.bundleIdentifier else {
+                return
+            }
+            
+            let credential = OAuthProvider.credential(withProviderID: bundleId,
+                                                      idToken: idTokenString,
+                                                      rawNonce: nonce)
+            
+            AuthManager.shared.finishedAppleSignIn(with: credential) { [weak self] user in
+                self?.onFinishedLoginToFirebase(user: user)
+            }
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Sign in with Apple errored: \(error)")
     }
 }
