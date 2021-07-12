@@ -40,13 +40,15 @@ class MusicPostTableViewCell: UITableViewCell {
     }
     
     private func setPost() {
-        if let post = post, let music = post.music {
-            dateLabel.text = post.createdAt.formattedString(.post)
-            musicTitleLabel.text = music.trackName
-            musicDescriptionLabel.text = music.artistName
-            if let thumbnailUrl = try? music.thumbnail.asURL() {
-                thumbnailImageView.kf.setImage(with: thumbnailUrl)
-            }
+        guard let post = post, let music = post.music else {
+            // init
+            return
+        }
+        dateLabel.text = post.createdAt.formattedString(.post)
+        musicTitleLabel.text = music.trackName
+        musicDescriptionLabel.text = music.artistName
+        if let thumbnailUrl = try? music.thumbnail.asURL() {
+            thumbnailImageView.kf.setImage(with: thumbnailUrl)
         }
     }
 }

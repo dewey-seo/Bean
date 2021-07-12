@@ -5,4 +5,7 @@
 //  Created by dewey seo on 29/06/2021.
 //
 
-import Foundation
+import UIKit
+
+class Place: Codable {
+}

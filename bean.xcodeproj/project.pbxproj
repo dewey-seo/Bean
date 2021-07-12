@@ -13,10 +13,11 @@
 		5806F7A926857DB8001117C6 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F7A826857DB8001117C6 /* FirebaseService.swift */; };
 		581232E026934EBD008BDB67 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232DF26934EBD008BDB67 /* Common.swift */; };
 		581232E32693614E008BDB67 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581232E22693614E008BDB67 /* RealmManager.swift */; };
-		5825559F2679D23E00416A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825559D2679D23E00416A6C /* MainViewController.swift */; };
-		582555A02679D23E00416A6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825559E2679D23E00416A6C /* MainViewController.xib */; };
 		582CAD8D269B065F004BA28A /* root-coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = 582CAD8C269B065F004BA28A /* root-coffee.json */; };
 		582D46622679925300A1B908 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D46612679925300A1B908 /* AuthManager.swift */; };
+		583C747E269C465E006CAF5B /* PlaceSearchResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C747C269C465E006CAF5B /* PlaceSearchResultItemCell.swift */; };
+		583C747F269C465E006CAF5B /* PlaceSearchResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583C747D269C465E006CAF5B /* PlaceSearchResultItemCell.xib */; };
+		583C7481269C526F006CAF5B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583C7480269C526F006CAF5B /* Location.swift */; };
 		58426E892695F216006FF23E /* BeanBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426E882695F216006FF23E /* BeanBarButtonItem.swift */; };
 		58426E8C2695F469006FF23E /* PostingPhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426E8B2695F469006FF23E /* PostingPhotoCoordinator.swift */; };
 		58426E8E2695F493006FF23E /* PostingWeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58426E8D2695F493006FF23E /* PostingWeatherCoordinator.swift */; };
@@ -54,8 +55,6 @@
 		585063F32699B35100ECD483 /* PlacePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585063F12699B35100ECD483 /* PlacePostTableViewCell.xib */; };
 		585063F52699DEA400ECD483 /* BeanLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585063F42699DEA400ECD483 /* BeanLabel.swift */; };
 		5859E2F6267DA27C0080BEDC /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E2F5267DA27C0080BEDC /* ApiRouter.swift */; };
-		5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E302267DAD330080BEDC /* MusicSearchViewController.swift */; };
-		5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5859E303267DAD330080BEDC /* MusicSearchViewController.xib */; };
 		5859E30D267DD8350080BEDC /* keys-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5859E30C267DD8350080BEDC /* keys-Info.plist */; };
 		5859E313267DDA0A0080BEDC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E312267DDA0A0080BEDC /* Weather.swift */; };
 		5859E315267E219B0080BEDC /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E314267E219B0080BEDC /* ApiService.swift */; };
@@ -64,8 +63,6 @@
 		5859E31E267E35C70080BEDC /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E31D267E35C70080BEDC /* BaseInterceptor.swift */; };
 		5859E320267E3EC80080BEDC /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E31F267E3EC80080BEDC /* ApiLogger.swift */; };
 		5859E325267EF8800080BEDC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E324267EF8800080BEDC /* LocationManager.swift */; };
-		5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5859E328267F1EA60080BEDC /* WeatherViewController.swift */; };
-		5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5859E329267F1EA60080BEDC /* WeatherViewController.xib */; };
 		585DFF7C2679189500CADE6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585DFF7B2679189500CADE6B /* AppDelegate.swift */; };
 		585DFF852679189600CADE6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF842679189600CADE6B /* Assets.xcassets */; };
 		585DFF882679189600CADE6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585DFF862679189600CADE6B /* LaunchScreen.storyboard */; };
@@ -129,11 +126,12 @@
 		5806F7A826857DB8001117C6 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		581232DF26934EBD008BDB67 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		581232E22693614E008BDB67 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		5825559D2679D23E00416A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5825559E2679D23E00416A6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		582CAD8A269B01BB004BA28A /* bean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bean.entitlements; sourceTree = "<group>"; };
 		582CAD8C269B065F004BA28A /* root-coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "root-coffee.json"; sourceTree = "<group>"; };
 		582D46612679925300A1B908 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		583C747C269C465E006CAF5B /* PlaceSearchResultItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchResultItemCell.swift; sourceTree = "<group>"; };
+		583C747D269C465E006CAF5B /* PlaceSearchResultItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceSearchResultItemCell.xib; sourceTree = "<group>"; };
+		583C7480269C526F006CAF5B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		58426E882695F216006FF23E /* BeanBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanBarButtonItem.swift; sourceTree = "<group>"; };
 		58426E8B2695F469006FF23E /* PostingPhotoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingPhotoCoordinator.swift; sourceTree = "<group>"; };
 		58426E8D2695F493006FF23E /* PostingWeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingWeatherCoordinator.swift; sourceTree = "<group>"; };
@@ -171,8 +169,6 @@
 		585063F12699B35100ECD483 /* PlacePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacePostTableViewCell.xib; sourceTree = "<group>"; };
 		585063F42699DEA400ECD483 /* BeanLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanLabel.swift; sourceTree = "<group>"; };
 		5859E2F5267DA27C0080BEDC /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
-		5859E302267DAD330080BEDC /* MusicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
-		5859E303267DAD330080BEDC /* MusicSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchViewController.xib; sourceTree = "<group>"; };
 		5859E30C267DD8350080BEDC /* keys-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "keys-Info.plist"; sourceTree = "<group>"; };
 		5859E312267DDA0A0080BEDC /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		5859E314267E219B0080BEDC /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 		5859E31D267E35C70080BEDC /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		5859E31F267E3EC80080BEDC /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		5859E324267EF8800080BEDC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		5859E328267F1EA60080BEDC /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		5859E329267F1EA60080BEDC /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 		585DFF782679189500CADE6B /* bean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585DFF7B2679189500CADE6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		585DFF842679189600CADE6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -378,11 +372,6 @@
 				585E41EE2695A13000EFD025 /* SignUp */,
 				58685D8826940F7400962AA3 /* Tabs */,
 				585DFF9326791E2400CADE6B /* Root */,
-				58C2803F2684646200E75801 /* MusicSearchViewController */,
-				5859E328267F1EA60080BEDC /* WeatherViewController.swift */,
-				5859E329267F1EA60080BEDC /* WeatherViewController.xib */,
-				5825559D2679D23E00416A6C /* MainViewController.swift */,
-				5825559E2679D23E00416A6C /* MainViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -555,6 +544,7 @@
 				58709AAA2690781400CD6BB8 /* Time.swift */,
 				581232DF26934EBD008BDB67 /* Common.swift */,
 				58685D8B2694167900962AA3 /* Device.swift */,
+				583C7480269C526F006CAF5B /* Location.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -568,20 +558,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		58C2803F2684646200E75801 /* MusicSearchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5859E302267DAD330080BEDC /* MusicSearchViewController.swift */,
-				5859E303267DAD330080BEDC /* MusicSearchViewController.xib */,
-			);
-			path = MusicSearchViewController;
-			sourceTree = "<group>";
-		};
 		58C280412684649900E75801 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */,
 				58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */,
+				583C747C269C465E006CAF5B /* PlaceSearchResultItemCell.swift */,
+				583C747D269C465E006CAF5B /* PlaceSearchResultItemCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -672,7 +655,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				585DFF9E267928B300CADE6B /* LoginViewController.xib in Resources */,
-				582555A02679D23E00416A6C /* MainViewController.xib in Resources */,
 				58426E9F2695FD75006FF23E /* PostingThoughtViewController.xib in Resources */,
 				585DFF882679189600CADE6B /* LaunchScreen.storyboard in Resources */,
 				58426E952695F7AD006FF23E /* PostingMusicViewController.xib in Resources */,
@@ -682,14 +664,13 @@
 				58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */,
 				58426EA526960064006FF23E /* PostingPlaceViewController.xib in Resources */,
 				585DFF9026791B9D00CADE6B /* GoogleService-Info.plist in Resources */,
+				583C747F269C465E006CAF5B /* PlaceSearchResultItemCell.xib in Resources */,
 				585063F32699B35100ECD483 /* PlacePostTableViewCell.xib in Resources */,
 				585FEDF42692095200E95219 /* HomeTabViewController.xib in Resources */,
 				585063EF2699B33C00ECD483 /* ThoughtPostTableViewCell.xib in Resources */,
 				5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */,
 				582CAD8D269B065F004BA28A /* root-coffee.json in Resources */,
 				585063D126994F7200ECD483 /* MusicPopupView.xib in Resources */,
-				5859E32B267F1EA60080BEDC /* WeatherViewController.xib in Resources */,
-				5859E305267DAD330080BEDC /* MusicSearchViewController.xib in Resources */,
 				585063E72699B31900ECD483 /* MusicPostTableViewCell.xib in Resources */,
 				585063E32699B30C00ECD483 /* PhotoPostTableViewCell.xib in Resources */,
 				5843183D268B7F0600EED39B /* PostingPhotoViewController.xib in Resources */,
@@ -769,11 +750,11 @@
 			files = (
 				58426E982695F7F4006FF23E /* PostingWeatherViewController.swift in Sources */,
 				58426E892695F216006FF23E /* BeanBarButtonItem.swift in Sources */,
-				5859E304267DAD330080BEDC /* MusicSearchViewController.swift in Sources */,
 				5806F7A626857CC7001117C6 /* User.swift in Sources */,
 				585FEDE12691858600E95219 /* HomeTabCoordinator.swift in Sources */,
 				585DFF9D267928B300CADE6B /* LoginViewController.swift in Sources */,
 				58E310EF269753EA00D56377 /* PopupViewController.swift in Sources */,
+				583C747E269C465E006CAF5B /* PlaceSearchResultItemCell.swift in Sources */,
 				5859E325267EF8800080BEDC /* LocationManager.swift in Sources */,
 				587536362697F56B00C20E62 /* BeanDate.swift in Sources */,
 				585E41E7269559F300EFD025 /* BeanString.swift in Sources */,
@@ -801,10 +782,10 @@
 				585FEDE5269185D100E95219 /* MyTabCoordinator.swift in Sources */,
 				585063D52699B1E000ECD483 /* DataManager.swift in Sources */,
 				58C2803E2684474D00E75801 /* Music.swift in Sources */,
+				583C7481269C526F006CAF5B /* Location.swift in Sources */,
 				585063F22699B35100ECD483 /* PlacePostTableViewCell.swift in Sources */,
 				585FEDF32692095200E95219 /* HomeTabViewController.swift in Sources */,
 				5859E319267E254A0080BEDC /* WeatherApiRouter.swift in Sources */,
-				5859E32A267F1EA60080BEDC /* WeatherViewController.swift in Sources */,
 				58E310EB2696FE6F00D56377 /* BottomSlideViewController.swift in Sources */,
 				3FEF9D43269806AF00D6518E /* NibLoadable.swift in Sources */,
 				58709AAB2690781400CD6BB8 /* Time.swift in Sources */,
@@ -814,7 +795,6 @@
 				58426E902695F4A2006FF23E /* PostingMusicCoordinator.swift in Sources */,
 				58426E9E2695FD75006FF23E /* PostingThoughtViewController.swift in Sources */,
 				58753639269802AF00C20E62 /* ChooserButton.swift in Sources */,
-				5825559F2679D23E00416A6C /* MainViewController.swift in Sources */,
 				585FEDD62691824B00E95219 /* Coordinator.swift in Sources */,
 				585063E62699B31900ECD483 /* MusicPostTableViewCell.swift in Sources */,
 				58685D87269407B100962AA3 /* BeanFont.swift in Sources */,

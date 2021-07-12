@@ -54,7 +54,7 @@ extension HomeTabCoordinator: HomeTabViewControllerDelegate {
         var coordinator: Coordinator? = nil
         switch type {
         case .place:
-            coordinator = PostingMusicCoordinator(from: self.router)
+            coordinator = PostingPlaceCoordinator(from: self.router)
         case .music:
             coordinator = PostingMusicCoordinator(from: self.router)
         case .photo:
@@ -70,19 +70,3 @@ extension HomeTabCoordinator: HomeTabViewControllerDelegate {
         }
     }
 }
-
-//extension HomeTabCoordinator: ImagePickerCoordinatorDelegate {
-//    func didFinishPickingImage(_ image: UIImage, target: ImagePickerCoordinatorTarget) {
-//        switch target {
-//        case .posting:
-//            let coordinator = PostingPhotoCoordinator(from: self.router)
-//            self.presentChild(coordinator, animated: true)
-//        default:
-//            break
-//        }
-//    }
-//
-//    func pickerControllerDidCancel(_ target: ImagePickerCoordinatorTarget) {
-//        self.router.navigationController.showAlert(message: "picker canceled")
-//    }
-//}

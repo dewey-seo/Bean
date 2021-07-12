@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "weather_rain@2x.png",
+      "filename" : "location_pin@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "weather_rain@3x.png",
+      "filename" : "location_pin@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

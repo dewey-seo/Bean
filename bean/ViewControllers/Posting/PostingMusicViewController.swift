@@ -64,7 +64,7 @@ class PostingMusicViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        tableView.register(UINib(nibName: "MusicSearchResultItemCell", bundle: nil), forCellReuseIdentifier: MusicSearchResultItemCell.cellIdentifier)
+        tableView.register(UINib(nibName: "MusicSearchResultItemCell", bundle: nil), forCellReuseIdentifier: MusicSearchResultItemCell.reuseIdentifier)
         tableView.separatorColor = .grey2
         tableView.separatorInset = .init(top: 0, left: 0, bottom: 16, right: 16)
     }
@@ -104,10 +104,12 @@ extension PostingMusicViewController: UITableViewDelegate, UITableViewDataSource
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MusicSearchResultItemCell.cellIdentifier) as! MusicSearchResultItemCell
-        cell.selectionStyle = .none
-        cell.setModel(searchResult[indexPath.row])
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: MusicSearchResultItemCell.reuseIdentifier) as? MusicSearchResultItemCell {
+            cell.selectionStyle = .none
+            cell.music = searchResult[indexPath.row]
+            return cell
+        }
+        return UITableViewCell(style: .default, reuseIdentifier: "unknown")
     }
     
     // method to run when table view cell is tapped

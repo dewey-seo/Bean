@@ -36,12 +36,14 @@ class PhotoPostTableViewCell: UITableViewCell {
     }
     
     private func setPost() {
-        if let post = post, let photo = post.photo {
-            dateLabel.text = post.createdAt.formattedString(.post)
-            if let url = try? photo.photoUrlString.asURL() {
-                photoImageView.kf.setImage(with: url, placeholder: photo.gsImage)
-            }
-            commentLabel.text = photo.comment
+        guard let post = post, let photo = post.photo else {
+            //init
+            return
         }
+        dateLabel.text = post.createdAt.formattedString(.post)
+        if let url = try? photo.photoUrlString.asURL() {
+            photoImageView.kf.setImage(with: url, placeholder: photo.gsImage)
+        }
+        commentLabel.text = photo.comment
     }
 }

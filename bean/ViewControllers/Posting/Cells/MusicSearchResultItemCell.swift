@@ -9,8 +9,12 @@ import UIKit
 
 class MusicSearchResultItemCell: UITableViewCell {
 
-    static var cellIdentifier = "MusicSearchResultItemCell"
-    
+    static var reuseIdentifier = "MusicSearchResultItemCell"
+    var music: Music? {
+        didSet {
+            setMusic()
+        }
+    }
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -30,9 +34,11 @@ class MusicSearchResultItemCell: UITableViewCell {
 
     }
     
-    func setModel(_ model: Music) {
-        let _ = try? thumbnail.kf.setImage(with: model.thumbnail.asURL())
-        self.titleLabel.text = model.trackName
-        self.descriptionLabel.text = model.artistName
+    func setMusic() {
+        if let music = music {
+            let _ = try? thumbnail.kf.setImage(with: music.thumbnail.asURL())
+            self.titleLabel.text = music.trackName
+            self.descriptionLabel.text = music.artistName
+        }
     }
 }

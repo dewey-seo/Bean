@@ -33,15 +33,17 @@ class WeatherPostTableViewCell: UITableViewCell {
     }
     
     private func setPost() {
-        if let post = post, let weather = post.weather {
-            weatherLabel.text = weather.display.first?.title ?? ""
-            weatherDescriptionLabel.text = weather.display.first?.description ?? ""
-            dateLabel.text = post.createdAt.formattedString(.post)
-            if let icon = weather.localIcon, let image = UIImage(named: icon) {
-                weatherIcon.image = image
-                return
-            }
-            let _ = try? weatherIcon.kf.setImage(with: weather.weatherIcon.asURL())
+        guard let post = post, let weather = post.weather else {
+            // init
+            return
         }
+        weatherLabel.text = weather.display.first?.title ?? ""
+        weatherDescriptionLabel.text = weather.display.first?.description ?? ""
+        dateLabel.text = post.createdAt.formattedString(.post)
+        if let icon = weather.localIcon, let image = UIImage(named: icon) {
+            weatherIcon.image = image
+            return
+        }
+        let _ = try? weatherIcon.kf.setImage(with: weather.weatherIcon.asURL())
     }
 }

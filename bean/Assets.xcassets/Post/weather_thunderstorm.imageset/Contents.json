@@ -5,11 +5,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "weather_thunderstorm@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "weather_thunderstorm.png",
+      "filename" : "weather_thunderstorm@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
