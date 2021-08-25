@@ -29,11 +29,18 @@ jobs:
 #         run: echo "$GITHUB_CONTEXT"
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
       - uses: actions/checkout@v2
       
+      - name: ls
+        run: ls
+        
       #- name: Select Xcode
       #  run: sudo xcode-select -switch /Applications/Xcode_11.4.1.app
       
+      - name: Xcode version
+        run: /usr/bin/xcodebuild -version
+        
       - name: Pod install
         run: pod install
     

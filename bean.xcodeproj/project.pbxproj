@@ -114,6 +114,7 @@
 		58C2803E2684474D00E75801 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2803D2684474D00E75801 /* Music.swift */; };
 		58C28044268464D600E75801 /* MusicSearchResultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */; };
 		58C28045268464D600E75801 /* MusicSearchResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */; };
+		58D2474826D6177400703822 /* dev_release.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D2474726D6177400703822 /* dev_release.yml */; };
 		58E310D22696AAE000D56377 /* BottomSlidePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310D12696AAE000D56377 /* BottomSlidePresentationController.swift */; };
 		58E310EB2696FE6F00D56377 /* BottomSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310E92696FE6F00D56377 /* BottomSlideViewController.swift */; };
 		58E310EF269753EA00D56377 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E310EE269753EA00D56377 /* PopupViewController.swift */; };
@@ -230,6 +231,7 @@
 		58C2803D2684474D00E75801 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		58C28042268464D600E75801 /* MusicSearchResultItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchResultItemCell.swift; sourceTree = "<group>"; };
 		58C28043268464D600E75801 /* MusicSearchResultItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicSearchResultItemCell.xib; sourceTree = "<group>"; };
+		58D2474726D6177400703822 /* dev_release.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = dev_release.yml; sourceTree = "<group>"; };
 		58E310D12696AAE000D56377 /* BottomSlidePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlidePresentationController.swift; sourceTree = "<group>"; };
 		58E310E92696FE6F00D56377 /* BottomSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSlideViewController.swift; sourceTree = "<group>"; };
 		58E310EE269753EA00D56377 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 		585DFF6F2679189500CADE6B = {
 			isa = PBXGroup;
 			children = (
+				58D2474526D6177400703822 /* .github */,
 				585DFF7A2679189500CADE6B /* bean */,
 				585DFF792679189500CADE6B /* Products */,
 				C618C336455B36B2AF6EA8E3 /* Pods */,
@@ -569,6 +572,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		58D2474526D6177400703822 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				58D2474626D6177400703822 /* workflows */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		58D2474626D6177400703822 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				58D2474726D6177400703822 /* dev_release.yml */,
+			);
+			path = workflows;
+			sourceTree = "<group>";
+		};
 		58E310D02696AA7300D56377 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,6 +685,7 @@
 				585DFF9026791B9D00CADE6B /* GoogleService-Info.plist in Resources */,
 				583C747F269C465E006CAF5B /* PlaceSearchResultItemCell.xib in Resources */,
 				585063F32699B35100ECD483 /* PlacePostTableViewCell.xib in Resources */,
+				58D2474826D6177400703822 /* dev_release.yml in Resources */,
 				585FEDF42692095200E95219 /* HomeTabViewController.xib in Resources */,
 				585063EF2699B33C00ECD483 /* ThoughtPostTableViewCell.xib in Resources */,
 				5897DAC226882AE300F288F4 /* SignUpViewController.xib in Resources */,
