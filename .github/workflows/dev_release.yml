@@ -61,50 +61,56 @@ jobs:
       - name: Pod install
         run: pod install
     
-      - name: Install the Apple certificate and provisioning profile
-        env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-        run: |
-          # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-
-          # import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
-
-          # create temporary keychain
-          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-
-          # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
-          
-      - name: Clean workspace with scheme
-        run: xcodebuild clean -workspace bean.xcworkspace -scheme bean
+#      - name: Install the Apple certificate and provisioning profile
+#        env:
+#          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+#          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+#          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+#          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+#        run: |
+#          # create variables
+#          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+#          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+#          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+#
+#          # import certificate and provisioning profile from secrets
+#          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
+#          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+#
+#          # create temporary keychain
+#          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+#          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+#          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+#
+#          # import certificate to keychain
+#          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+#          security list-keychain -d user -s $KEYCHAIN_PATH
+#
+#          # apply provisioning profile
+#          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+#          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+#
+#      - name: Clean workspace with scheme
+#        run: xcodebuild clean -workspace bean.xcworkspace -scheme bean
+#
+#      - name: Build workspace with scheme
+#        run: xcodebuild build -workspace bean.xcworkspace -scheme bean
+#
+#      - name: Archive workspace
+#        run: xcodebuild archive -workspace bean.xcworkspace -scheme bean -archivePath ~/result/bean.xcarchive
+#
+#      - name: Create an ipa
+#        run: xcodebuild -exportArchive -archivePath ~/result/bean.xcarchive -exportPath ~/result -exportOptionsPlist ~/result/ExportOptions.plist
         
-      - name: Build workspace with scheme
-        run: xcodebuild build -workspace bean.xcworkspace -scheme bean
-        
-      - name: Archive workspace
-        run: xcodebuild archive -workspace bean.xcworkspace -scheme bean -archivePath ~/result/bean.xcarchive
-        
-      - name: Create an ipa
-        run: xcodebuild -exportArchive -archivePath ~/result/bean.xcarchive -exportPath ~/result -exportOptionsPlist ~/result/ExportOptions.plist
-        
-      - name: ls
-        run: ls result
-        
+       - uses: yukiarrr/ios-build-action@v1.4.0
+         with:
+            project-path: bean.xcodeproj
+            p12-base64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+            certificate-password: ${{ secrets.P12_PASSWORD }}
+            mobileprovision-base64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
+            code-signing-identity: iOS Development
+            team-id: ${{ secrets.TEAM_ID }}
+    
       - name: Upload ipa to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
