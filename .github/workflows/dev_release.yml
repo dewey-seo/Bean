@@ -53,7 +53,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_11.4.1.app
       
       - name: Xcode list
-        run: Run ls -n /Applications/ | grep Xcode*
+        run: ls -n /Applications/ | grep Xcode*
         
       - name: Xcode version
         run: /usr/bin/xcodebuild -version
