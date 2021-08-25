@@ -91,7 +91,7 @@ jobs:
         run: xcodebuild clean -workspace bean.xcworkspace -scheme bean
         
       - name: Build workspace with scheme
-        run: xcodebuild build -workspace bean.xcworkspace - scheme bean
+        run: xcodebuild build -workspace bean.xcworkspace -scheme bean
         
       - name: Archive workspace
         run: xcodebuild archive -workspace bean.xcworkspace -scheme bean -archivePath ~/result/bean.xcarchive
