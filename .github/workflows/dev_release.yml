@@ -18,9 +18,10 @@ jobs:
 
     steps:
     - name: CHECK INPUT CHOICE
-      run: echo "${{ github.event.inputs.environment }}
+      run: echo "${{ github.event.inputs.environment }}"
+      
     - name: CHECK INPUT MESSAGE
-      run: echo "${{ github.event.inputs.message }}
+      run: echo "${{ github.event.inputs.message }}"
       
 # # This is a basic workflow to help you get started with Actions
 # name: DEV DISTRIBUTION
